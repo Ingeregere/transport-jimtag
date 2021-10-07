@@ -5,7 +5,6 @@ import {Link, useParams} from "react-router-dom";
 
 const Marque= () => {
     const [categories, setCategories] = useState([])
-    const {id} = useParams()
 
     useEffect(()=>{
         getAllCategory()

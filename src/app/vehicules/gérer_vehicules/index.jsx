@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
-import {Alert, Badge, Form} from 'react-bootstrap';
 import AllServices from "./GererVehiculeServices";
 import {Link, useParams} from "react-router-dom";
 
@@ -115,20 +114,24 @@ const Index= () => {
                                                 <td>{b.ptc}</td>
                                                 <td>{b.ptr}</td>
                                                 <td>{b.suspension}</td>
-                                                <td>
-                                                    {b.status?
-                                                        <Link to={`/vehicules/active-desactive/${b.id}`}>
-                                                            <button type="button" className="btn btn-primary btn-fw">
-                                                                Activé
-                                                            </button>
-                                                        </Link>:
-                                                        <Link to={`/vehicules/active-desactive/${b.id}`}>
-                                                            <button type="button" className="btn btn-warning btn-fw">
-                                                                Désactivé
-                                                            </button>
-                                                        </Link>
-                                                    }
-                                                </td>
+                                                {b.imageTransport ==='Insérer une image'?
+                                                   <span className={'nodispo'}> Insérer une image </span> :
+                                                    <td>
+                                                        {b.status?
+                                                            <Link to={`/vehicules/active-desactive/${b.id}`}>
+                                                                <button type="button" className="btn btn-primary btn-fw">
+                                                                    Activé
+                                                                </button>
+                                                            </Link>:
+                                                            <Link to={`/vehicules/active-desactive/${b.id}`}>
+                                                                <button type="button" className="btn btn-warning btn-fw">
+                                                                    Désactivé
+                                                                </button>
+                                                            </Link>
+                                                        }
+                                                    </td>
+                                                }
+
                                                 <td>
                                                     <Link to={`/vehicules/edit-transport/${b.id}`} className={'text-decoration-none'}>
                                                         <span className="icon-bg "><i className="mdi mdi-pen "></i>Editer</span>

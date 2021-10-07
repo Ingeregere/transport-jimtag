@@ -1,7 +1,6 @@
 import axios from 'axios'
-import {API} from "../../../config";
 
-const BRAND_API_URL = `${API}/api/brands/`;
+const BRAND_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/brands/';
 
 class AllServices {
     getAllBrand(){

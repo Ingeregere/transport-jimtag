@@ -34,7 +34,7 @@ const Marque= () => {
     const clickSubmit = event =>{
         event.preventDefault();
         setValues({...values, error: ''})
-        AllServices.postCategory(formData,id)
+        AllServices.postImageTransport(formData,id)
             .then(data =>{
                 if(data.error){
                     setValues({...values,error: false})

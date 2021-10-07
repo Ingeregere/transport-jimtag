@@ -1,7 +1,6 @@
 import axios from 'axios'
-import {API} from "../../../config";
 
-const COUNTRY_API_URL = `${API}/api/countries/`;
+const COUNTRY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/countries/';
 
 class CategoryServices {
     getAllCountry(){

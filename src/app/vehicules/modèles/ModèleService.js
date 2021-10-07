@@ -1,7 +1,6 @@
 import axios from 'axios'
-import {API} from "../../../config";
 
-const MODEL_API_URL = `${API}/api/models/`;
+const MODEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/models/';
 
 
 class AllServices {

@@ -43,7 +43,7 @@ const ContactUser = lazy(() => import('./contacts/contact-user'));
 const ContactPerDay = lazy(() => import('./dashboard/ContactDay'));
 const ContactFQA = lazy(() => import('./contacts/contact-question'));
 const ContactCustomer = lazy(() => import('../Client/Pages/Contact'));
-// const Error404 = lazy(() => import('./error-pages/Error404'));
+const Error404 = lazy(() => import('./error-pages/Error404'));
 const AllUser = lazy(() => import('./user-pages/AllUser'));
 const Login = lazy(() => import('../Client/Pages/Login'));
 const AddUser = lazy(() => import('./user-pages/Add'));
@@ -118,7 +118,7 @@ class AppRoutes extends Component {
           <Route path="/user-pages/editer_user/:id" component={ UpdateUser } />
           <Route path="/user-pages/ajouter_role" component={AddRole } />
           <Route path="/s'inscrirer" component={ Register1 } />
-          {/*<Route exact path="*" component={ Error404 } />*/}
+          <Route exact path="*" component={ Porteur } />
           <Redirect to="/" />
         </Switch>
       </Suspense>

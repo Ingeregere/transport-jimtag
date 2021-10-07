@@ -11,14 +11,13 @@ const RowCategory = () => {
     const {id} = useParams()
 
     useEffect(()=>{
-        getAllCategory()
+        let isMounted = true;
+        AllServices.getAllCategory().then((response) =>{
+            if (isMounted) setCategories(response.data)
+        })
+        return () => { isMounted = false };
     },[])
 
-    const getAllCategory = () =>{
-        AllServices.getAllCategory().then((response) =>{
-            setCategories(response.data)
-        })
-    }
     return (
         <Container>
             <Row className={'mainRowCategory'}>

@@ -1,8 +1,8 @@
 import axios from 'axios'
 import {API} from "../../config";
 
-const USERPROFIL_API_URL = `${API}/api/user/profile/`;
-const AUTHENTICATE_API_URL = `${API}/api/auth/`;
+const USERPROFIL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/user/profile/';
+const AUTHENTICATE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/auth/';
 
 
 class AllServices {

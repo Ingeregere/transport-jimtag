@@ -57,7 +57,7 @@ const Dash = () => {
                                             <div className="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                                                 <div className="card">
                                                     <div className="card-body text-center">
-                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes reçues.</h5>
+                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes que nous avons reçues.</h5>
                                                         <h2 className="mb-4 text-dark font-weight-bold">{countAllCommands}</h2>
                                                         <div className="px-4 d-flex align-items-center">
                                                             <svg width="0" height="0">
@@ -75,7 +75,6 @@ const Dash = () => {
                                                                 </div>
                                                             </CircularProgressbarWithChildren>
                                                         </div>
-                                                        <p className="mt-4 mb-0">Tous les commandes par jour</p>
                                                         <Link to={'/annonce/gérer_annonces'}>
                                                             <button type="button" className="btn btn-primary btn-fw">Voir tout <sup className={'text-dark'}>{countAllCommands}</sup></button>
                                                         </Link>
@@ -103,7 +102,6 @@ const Dash = () => {
                                                                 </div>
                                                             </CircularProgressbarWithChildren>
                                                         </div>
-                                                        <p className="mt-4 mb-0">Tous les commandes par jour.</p>
                                                         <Link to={'/commandes/par-jour'}>
                                                             <button type="button" className="btn btn-primary btn-fw">Voir tout <sup className={'text-dark'}>{countAllCommandsByCreatedAt}</sup></button>
                                                         </Link>
@@ -131,7 +129,6 @@ const Dash = () => {
                                                                 </div>
                                                             </CircularProgressbarWithChildren>
                                                         </div>
-                                                        <p className="mt-4 mb-0">Tous les contacts reçus par jour.</p>
                                                         <Link to={'/contacts/recus-par-jour'}>
                                                             <button type="button" className="btn btn-primary btn-fw">Voir tout <sup className={'text-dark'}>{countAllContactByCreatedAt}</sup></button>
                                                         </Link>
@@ -158,7 +155,6 @@ const Dash = () => {
                                                                     </div>
                                                                 </CircularProgressbarWithChildren>
                                                             </div>
-                                                            <p className="mt-4 mb-0">Tous les vehicules que nous avons.</p>
                                                             <Link to={'/vehicules/gérer_vehicules'}>
                                                                 <button type="button" className="btn btn-primary btn-fw">Voir tout <sup className={'text-dark'}>{countAllTransports}</sup></button>
                                                             </Link>

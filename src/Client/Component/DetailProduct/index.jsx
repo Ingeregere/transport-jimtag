@@ -1,12 +1,28 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './style.css'
-import iveco1 from '../../../assets/images/category/iveco1.jpg'
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
-import {currentproduct} from './data'
+import { Card, Col, Container, Row} from "react-bootstrap";
 import ModalContact from '../Modal'
+import AllServices from "./service";
+import {useParams} from "react-router-dom";
 
 const Detail = () => {
+    const {id} = useParams()
+    const [currentproduct,setCurrentProduct] = useState('')
 
+
+    const getTransportById = () =>{
+        AllServices.getTransportById(id)
+            .then( current=>{
+                setCurrentProduct(current.data)
+            })
+            .catch(error =>{
+                console.log('something went wrong', error)
+            })
+    }
+
+    useEffect(() =>{
+        getTransportById()
+    },[])
     return (
         <>
             <Container>
@@ -16,7 +32,7 @@ const Detail = () => {
 
                             <Col lg={6} md={6} sm={6} xs={12} >
                                 <Card className={'mb-2 mt-2 ml-2 cardProduct'}>
-                                            <Card.Img variant="top" src= {iveco1} className={'imageProduct img-fluid'}  />
+                                            <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
                                 </Card>
                             </Col>
                         <Col lg={6} md={6} sm={6} xs={12} >
@@ -24,11 +40,11 @@ const Detail = () => {
 
                                         <Card.Body>
                                             <Card.Title>Détail complet</Card.Title>
-                                            <h6>Marque : {currentproduct.marque} </h6>
+                                            <h6>Marque : {currentproduct.brand} </h6>
                                             <h6>Model : {currentproduct.model}</h6>
-                                            <h6>Fonction: {currentproduct.fonction}</h6>
-                                            <h6>Année : {currentproduct.année}</h6>
-                                            <h6>Km: {currentproduct.km}</h6>
+                                            <h6>Fonction: {currentproduct.box}</h6>
+                                            <h6>Année : {currentproduct.dateRegistration}</h6>
+                                            <h6>Km : {currentproduct.kilometer}</h6>
                                             <ModalContact />
 
                                         </Card.Body>
@@ -36,10 +52,6 @@ const Detail = () => {
                         </Col>
                     </Row>
                 </Card>
-
-
-
-
 
             </Container>
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {API} from "../../config";
 
-const Role_API_URL = `${API}/api/roles/`;
+const Role_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/roles/';
 
 class AllServices {
     getAllRoles(){

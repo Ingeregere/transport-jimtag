@@ -11,6 +11,7 @@ const CreateAnnonce = () => {
   const [countries, setCountries] = useState([])
   const [brand, setBrand] = useState('')
   const [kindProduct, setKindProduct] = useState('')
+  const [mapKilometer, setMapKilometer] = useState(0)
   const [budgetPlanned, setBudgetPlanned] = useState('')
   const [numberTransport, setNumberTransport] = useState('')
   const [tonnage, setTonnage] = useState('')
@@ -58,6 +59,7 @@ const CreateAnnonce = () => {
     const newAnnonce = {
       brand,
       budgetPlanned,
+      mapKilometer,
       countryDelivery,
       countryLoading,
       dateDelivery,
@@ -109,7 +111,7 @@ const CreateAnnonce = () => {
               <div className="card-body cardbodymaincommande">
                 <form className="forms-sample">
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="countryLoading" >Pays de Chargement</label>
+                    <label className={'text-dark '} htmlFor="countryLoading" >Pays de chargement</label>
                     <select
                         className="form-control"
                         id="exampleSelectGender"
@@ -123,7 +125,7 @@ const CreateAnnonce = () => {
                     </select>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="countryDelivery" >Pays de livraison</label>
+                    <label className={'text-dark '} htmlFor="countryDelivery" >Pays de livraison</label>
                     <select
                         className="form-control"
                         id="exampleSelectGender"
@@ -137,7 +139,7 @@ const CreateAnnonce = () => {
                     </select>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="placeLoading">Lieu de destination</label>
+                    <label className={'text-dark '} htmlFor="placeLoading">Lieu de destination</label>
                     <Form.Control
                         type="text"
                         className="form-control"
@@ -148,7 +150,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="placeDelivery">Lieu de livraison</label>
+                    <label className={'text-dark '} htmlFor="placeDelivery">Lieu de livraison</label>
                     <Form.Control
                         type="text"
                         className="form-control"
@@ -159,7 +161,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="brand" >Type de camion</label>
+                    <label className={'text-dark '} htmlFor="brand" >Type de camion</label>
                     <select
                         className="form-control"
                         id="exampleSelectGender"
@@ -174,7 +176,7 @@ const CreateAnnonce = () => {
                     </select>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="numberTransport">Nombre de transport</label>
+                    <label className={'text-dark '} htmlFor="numberTransport">Nombre de transport</label>
                     <Form.Control
                         type="number"
                         className="form-control"
@@ -194,7 +196,7 @@ const CreateAnnonce = () => {
 
                 <form className="forms-sample">
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="tonnage">Tonnage</label>
+                    <label className={'text-dark '} htmlFor="tonnage">Tonnage</label>
                     <Form.Control
                         type="number"
                         className="form-control"
@@ -205,7 +207,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="kindProduct">Type de marchandises</label>
+                    <label className={'text-dark '} htmlFor="kindProduct">Type de marchandises</label>
                     <Form.Control
                         type="text"
                         className="form-control "
@@ -216,7 +218,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize '} htmlFor="message">Inforamtion diverses</label>
+                    <label className={'text-dark  '} htmlFor="message">Inforamtion diverses</label>
                     <textarea
                         className="form-control"
                         id="exampleTextarea1"
@@ -227,7 +229,7 @@ const CreateAnnonce = () => {
                     ></textarea>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="dateDelivery">Date de livraison</label>
+                    <label className={'text-dark '} htmlFor="dateDelivery">Date de livraison</label>
                     <Form.Control
                         type="date"
                         className="form-control"
@@ -238,7 +240,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="numberTransport">Budget prévu</label>
+                    <label className={'text-dark '} htmlFor="numberTransport">Budget prévu</label>
                     <Form.Control
                         type="number"
                         className="form-control"

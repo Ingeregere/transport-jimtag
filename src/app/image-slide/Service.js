@@ -2,8 +2,8 @@
     import axios from 'axios'
     import {API} from "../../config";
 
-const CAROUSEL_API_URL = `${API}/api/carousel/`;
-const ARTICLE_API_URL = `${API}/api/articles/`;
+const CAROUSEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/carousel/';
+const ARTICLE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/articles/';
 
 
 class CarrosseriesServices {

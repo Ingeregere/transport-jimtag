@@ -1,8 +1,8 @@
 import axios from 'axios'
 import {API} from "../../../config";
 
-const TRANSPORT_API_URL = `${API}/api/transport/`;
-const CATEGORY_TRANSPORT_API_URL = `${API}/api/category/`;
+const TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/';
+const CATEGORY_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/category/';
 
 
 class TransportServices {

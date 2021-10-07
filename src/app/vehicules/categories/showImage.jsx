@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
-const API = "http://e-commerce-transport-backend.herokuapp.com:80/api/"
+const API = "https://backend-e-commerce-transport.jimtag.fr/api/"
 
 const ShowImage = ({item, getId, method, sort}) => {
     return (

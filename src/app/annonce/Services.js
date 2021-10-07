@@ -1,12 +1,12 @@
 import axios from 'axios'
 import {API} from "../../config";
-const ANNONCE_API_URL = `${API}/api/commands/`;
-const BRAND_API_URL = `${API}/api/brands/`;
-const COUNTRY_API_URL = `${API}/api/countries/`;
-const MODEL_API_URL = `${API}/api/models/`;
-const CATEGORY_API_URL = `${API}/api/categories/`;
-const CONTACT_API_URL = `${API}/api/contacts/`;
-const USER_API_URL = `${API}/api/users/`;
+const ANNONCE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/commands/';
+const BRAND_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/brands/';
+const COUNTRY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/countries/';
+const MODEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/models/';
+const CATEGORY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/categories/';
+const CONTACT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
+const USER_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/users/';
 class AllServices {
     getAllAnnonces(){
         return axios.get(ANNONCE_API_URL+'getAllCommands')

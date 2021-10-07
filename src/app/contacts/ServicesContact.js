@@ -1,29 +1,24 @@
 import axios from 'axios'
 import {API} from "../../config";
 
-const BODYWORK_API_URL = `${API}/api/contacts/`;
+const CONTACT_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 
 
 class ContactServices {
 
-    getAllContact(){
-        return axios.get(BODYWORK_API_URL+'getAllContacts')
+    getAllContactTransport(){
+        return axios.get(CONTACT_TRANSPORT_API_URL+'getAllContacts')
     }
-    getAllBodyworkById(id){
-        return axios.get(BODYWORK_API_URL+'getBodyworkById/'+id)
+    getContactById(id){
+        return axios.get(CONTACT_TRANSPORT_API_URL+'getContactById/'+id)
     }
-    updateBodywork(data){
-        return axios.put(BODYWORK_API_URL, data)
+    getAllContactByCreatedAt(id){
+        return axios.get(CONTACT_TRANSPORT_API_URL+'getAllContactByCreatedAt/')
     }
-    postBodywork(newBodyWork) {
-        return axios.post(BODYWORK_API_URL, newBodyWork)
-    }
+
 }
 
-
 export default new ContactServices
-
-
 
 
 

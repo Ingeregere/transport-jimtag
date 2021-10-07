@@ -1,9 +1,9 @@
 import axios from 'axios'
 import {API} from "../../config";
 
-const ANNONCE_API_URL = `${API}/api/commands/`;
-const ALLTRANSPORT_API_URL = `${API}/api/transport/`;
-const ALLCONTACT_PER_DAY_API_URL = `${API}/api/contacts/`;
+const ANNONCE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/commands/';
+const ALLTRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/';
+const ALLCONTACT_PER_DAY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 
 class AllServices {
     //first Card

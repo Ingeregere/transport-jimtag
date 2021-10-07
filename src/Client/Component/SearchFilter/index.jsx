@@ -9,15 +9,16 @@ const SearchFilter = () => {
     const [brands, setBrands] = useState([])
 
     const [countries, setCountries] = useState([])
-    const [categories, setCategories] = useState([])
     const [bodyworks, setBodyWorks] = useState([])
 
-
     useEffect(()=>{
-        getAllBrands()
-        getAllCountries()
-        getAllBodyWork()
-
+        let isMounted = true;
+        if(isMounted){
+            getAllBrands()
+            getAllCountries()
+            getAllBodyWork()
+        }
+        return () => { isMounted = false };
     },[])
     const getAllBrands = () =>{
         ServiceMarque.getAllBrand().then((response) =>{

@@ -1,8 +1,6 @@
 import axios from 'axios'
-import {API} from '../../../config'
 
-const CATEGORY_API_URL = `${API}/api/category/item/`;
-
+const CATEGORY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/category/item/';
 
 class CategoryServices {
     getAllCategory(){

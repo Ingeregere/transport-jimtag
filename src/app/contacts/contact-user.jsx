@@ -14,7 +14,7 @@ const Index= () => {
     },[])
 
     const getAllContact = () =>{
-        AllServices.getAllContact().then((response) =>{
+        AllServices.getAllContactTransport().then((response) =>{
             setContacts(response.data)
         })
     }

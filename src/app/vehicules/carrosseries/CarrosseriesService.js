@@ -1,7 +1,6 @@
 import axios from 'axios'
-import {API} from "../../../config";
 
-const BODYWORK_API_URL = `${API}/api/bodywork/`;
+const BODYWORK_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/bodywork/';
 
 
 class CarrosseriesServices {
