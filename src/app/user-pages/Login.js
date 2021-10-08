@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Alert, Form} from 'react-bootstrap';
 import AllServices from "./Service";
 import './style.css'
-import { useHistory } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 
 const Login =() =>{
@@ -67,15 +67,17 @@ const Login =() =>{
                         onChange={(e) => setPassword(e.target.value)}
                     />
                   </Form.Group>
-                  <div className="mt-3">
-                      <button
-                          type="submit"
-                          className="btn btn-primary mr-2 btn-fw"
-                          onClick={(event) => isAuthenticate(event)}
-                      >
-                          Se connecter
-                      </button>
-                  </div>
+                    <div className="mt-3">
+                        <button
+                            type="submit"
+                            className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                            onClick={(event) => isAuthenticate(event)}
+                        >Se connecter</button>
+                    </div>
+                    <div className="text-center mt-4 font-weight-light">
+                        Vous n'avez pas de compte? <Link to="/s'inscrirer" className="text-primary">S'inscrirer </Link>
+                    </div>
+
                 </Form>
               </div>
             </div>

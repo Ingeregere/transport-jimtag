@@ -33,7 +33,7 @@ export class Register extends Component {
                   </div>
 
                   <div className="mt-3">
-                    <Link className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/dashboard">S'inscrire</Link>
+                    <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" to="/dashboard">S'inscrirer</button>
                   </div>
                   <div className="text-center mt-4 font-weight-light">
                     Avez-vous déjà un compte? <Link to="/login" className="text-primary">Se connecter</Link>
