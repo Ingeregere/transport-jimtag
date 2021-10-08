@@ -1,10 +1,8 @@
 import React from 'react';
 import Navigation from '../../Component/Header'
 import RowCategory from "../../Component/RowCategory";
-import Product from "../../Component/Product";
+import Product from "../../Component/Divers";
 import SearchFilter from "../../Component/SearchFilter";
-import {Carousel} from "react-bootstrap";
-import CarrouselAds from "../../Component/Carrousel";
 import Footer from "../../Component/Footer";
 
 

@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import './style.css'
+import '../Porteur/style.css'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import AllServices from "./services";
+import AllServices from "../Porteur/services";
 import ShowImageTransport from "../HomeProduct/ShowImageTransport";
 
 const Product = () => {
     const [values, setValues] = useState([])
     useEffect(()=>{
         let isMounted = true;
-        AllServices.getAllTransportByCategory(1).then((response) =>{
+        AllServices.getAllTransportByCategory(4).then((response) =>{
             if (isMounted) setValues(response.data)
         })
         return () => { isMounted = false };
@@ -17,7 +17,7 @@ const Product = () => {
     return (
         <>
            <Container>
-               <h2 className={'text-dark'}>Voici la liste des porteurs</h2>
+               <h2 className={'text-dark'}>Voici la liste des divers</h2>
                        <Card className={'cardMain'}>
                            <Row>
                                {values.map((product) =>(

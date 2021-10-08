@@ -4,7 +4,6 @@ import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import ShowImageTransport from "./ShowImageTransport";
 import AllServices from "./Services";
-import ShowImage from "../../../app/vehicules/categories/showImage";
 
 const Product = () => {
     const [values, setValues] = useState([])

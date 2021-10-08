@@ -1,6 +1,9 @@
 .mainProduct{
 /*margin-top: -30rem;*/
 }
+.imagecarrousel{
+    height: 100%;
+}
 .imageProduct{
     height: 100%;
     border-radius: 0.5em;
