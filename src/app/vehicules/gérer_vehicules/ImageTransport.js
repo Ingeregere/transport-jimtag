@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, Badge, Form} from 'react-bootstrap';
+import {Alert, Form} from 'react-bootstrap';
 import AllServices from "./GererVehiculeServices";
 import {Link, useParams} from "react-router-dom";
 
 
 const Marque= () => {
 
-    const {id} = useParams()
     const [values,setValues] = useState({
-        imageCategoryItem: '',
+        imageTransport: '',
+        id: '',
         error: '',
         success: '',
         formData: ''
     })
     const {
+        id,
         formData,
         error,
         success
@@ -25,16 +26,16 @@ const Marque= () => {
 
 
     const handleChange = name => event =>{
-        const value = name === 'imageCategoryItem' ? event.target.files[0]: event.target.value
+        const value = name === 'imageTransport' ? event.target.files[0]: event.target.value
         formData.set(name, value)
         setValues({...values, [name]: value})
 
     }
 
     const clickSubmit = event =>{
-        event.preventDefault();
+        event.preventDefault()
         setValues({...values, error: ''})
-        AllServices.postImageTransport(formData,id)
+        AllServices.postImageTransport(formData)
             .then(data =>{
                 if(data.error){
                     setValues({...values,error: false})
@@ -42,8 +43,7 @@ const Marque= () => {
                 else{
                     setValues({
                         ...values,
-                        imageCategoryItem: '',
-                        categoryItem: '',
+                        imageTransport: '',
                         success: data.data.message,
                     })
                 }
@@ -95,8 +95,18 @@ const Marque= () => {
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
                                     accept={'image/*'}
-                                    name={'imageCategoryItem'}
-                                    onChange={handleChange('imageCategoryItem')}
+                                    name={'imageTransport'}
+                                    onChange={handleChange('imageTransport')}
+                                />
+                                <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
+                                <Form.Control
+                                    type="text"
+                                    className="form-control mb-2 mr-sm-2"
+                                    id="inlineFormInputName2"
+                                    placeholder="Ajouter une nouvelle categorie"
+                                    value={id}
+                                    name={'id'}
+                                    onChange={handleChange('id')}
                                 />
 
                                 <button

@@ -155,7 +155,8 @@ const Transport = () => {
                                         value={brand}
                                         onChange={(e) => setBrand(e.target.value)}
                                     >
-                                        <option placeholder={'Selectionner la marque ...'} />
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner la marque ...</option>
+
                                         {brands && brands.map((brand, index) => (
                                             <option key={brand.id} value={brand.id}>{brand.brand}</option>
                                         ))}

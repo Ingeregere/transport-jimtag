@@ -27,8 +27,8 @@ const Index= () => {
                 <h3 className="page-title"> {id? "Editer": "Ajouter"} un Contact </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <Link to={'/vehicules/ajouter_marques'}>
-                            <button type="button" className="btn btn-primary btn-fw">Ajouter</button>
+                        <Link to={'/admin'}>
+                            <button type="button" className="btn btn-primary btn-fw">Tableau de bord</button>
                         </Link>
                     </ol>
                 </nav>

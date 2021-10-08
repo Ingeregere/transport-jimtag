@@ -102,7 +102,7 @@ const Index= () => {
                                                     </Link> :
                                                     <Link to={`/vehicules/ajouter_image/${b.id}`}>
                                                         <button type="button" className="btn btn-primary btn-fw">
-                                                            Voir image
+                                                           Editer l'image
                                                         </button>
                                                     </Link>
                                                     }
@@ -115,7 +115,7 @@ const Index= () => {
                                                 <td>{b.ptr}</td>
                                                 <td>{b.suspension}</td>
                                                 {b.imageTransport ==='Insérer une image'?
-                                                   <span className={'nodispo'}> Insérer une image </span> :
+                                                    "Insérer une image ":
                                                     <td>
                                                         {b.status?
                                                             <Link to={`/vehicules/active-desactive/${b.id}`}>
