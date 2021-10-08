@@ -118,7 +118,7 @@ class AppRoutes extends Component {
           <Route path="/user-pages/editer_user/:id" component={ UpdateUser } />
           <Route path="/user-pages/ajouter_role" component={AddRole } />
           <Route path="/s'inscrirer" component={ Register1 } />
-          <Route exact path="*" component={ Porteur } />
+          {/*<Route exact path="*" component={ Porteur } />*/}
           <Redirect to="/" />
         </Switch>
       </Suspense>
