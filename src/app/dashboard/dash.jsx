@@ -57,7 +57,7 @@ const Dash = () => {
                                             <div className="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                                                 <div className="card">
                                                     <div className="card-body text-center">
-                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes que nous avons reçues.</h5>
+                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes que nous avons.</h5>
                                                         <h2 className="mb-4 text-dark font-weight-bold">{countAllCommands}</h2>
                                                         <div className="px-4 d-flex align-items-center">
                                                             <svg width="0" height="0">

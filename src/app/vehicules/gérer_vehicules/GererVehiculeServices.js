@@ -10,7 +10,7 @@ class GererServices {
     }
 
     postImageTransport(data){
-        return  axios.post(TRANSPORT_API_URL+'createUpdateTransportImage/',data)
+        return  axios.put(TRANSPORT_API_URL+'createUpdateTransportImage/',data)
     }
     updateTransport(data){
         return axios.put(TRANSPORT_API_URL, data)

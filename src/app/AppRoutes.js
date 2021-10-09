@@ -54,7 +54,7 @@ const AddCategory = lazy(() => import('./vehicules/categories/Add'));
 const Role = lazy(() => import('./Role'));
 const AddRole= lazy(() => import('./Role/Add'));
 const UpdateRole = lazy(() => import('./Role/UpdateRole'));
-const Register1 = lazy(() => import('./user-pages/Register'));
+const Register = lazy(() => import('../Client/Pages/Registre'));
 
 
 class AppRoutes extends Component {
@@ -117,7 +117,7 @@ class AppRoutes extends Component {
           <Route path="/user-pages/editer_role/:id" component={ UpdateRole } />
           <Route path="/user-pages/editer_user/:id" component={ UpdateUser } />
           <Route path="/user-pages/ajouter_role" component={AddRole } />
-          <Route path="/s'inscrirer" component={ Register1 } />
+          <Route path="/s'inscrirer" component={ Register } />
           <Route exact path="*" component={ Porteur } />
           <Redirect to="/" />
         </Switch>

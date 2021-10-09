@@ -171,7 +171,7 @@ const Transport = () => {
                                         value={bodywork}
                                         onChange={(e) => setBodyWork(e.target.value)}
                                     >
-                                        <option defaultValue={'Selectionner la marque'}>Selectionner carrosserie</option>
+                                        <option defaultValue={'Selectionner la carrosserie'}>Selectionner carrosserie</option>
                                         {bodyworks && bodyworks.map((bodywork, index) => (
                                             <option key={bodywork.id} value={bodywork.id} >{bodywork.bodywork}</option>
                                         ))}
@@ -224,6 +224,7 @@ const Transport = () => {
                                         value={country}
                                         onChange={(e) => setCountry(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la carrosserie'}>Selectionner pays</option>
                                         {countries && countries.map((country, index) => (
                                             <option key={country.id} value={country.id}>{country.country}</option>
                                         ))}
@@ -237,6 +238,8 @@ const Transport = () => {
                                         value={model}
                                         onChange={(e) => setModel(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner le model'}>Selectionner model</option>
+
                                         {models && models.map((model, index) => (
                                             <option key={model.id} value={model.id}>{model.model}</option>
                                         ))}
@@ -260,6 +263,8 @@ const Transport = () => {
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la carrosserie'}>Selectionner categorie</option>
+
                                         {categories && categories.map((categorie, index) => (
                                             <option key={categorie.id} value={categorie.id}>{categorie.category}</option>
                                         ))}

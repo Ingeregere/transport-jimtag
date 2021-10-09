@@ -74,7 +74,7 @@ const Login =() =>{
                             onClick={(event) => isAuthenticate(event)}
                         >Se connecter</button>
                     </div>
-                    <div className="text-center mt-4 font-weight-light">
+                    <div className="text-center mt-4 font-weight-bold text-dark">
                         Vous n'avez pas de compte? <Link to="/s'inscrirer" className="text-primary">S'inscrirer </Link>
                     </div>
 

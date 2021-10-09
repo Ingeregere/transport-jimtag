@@ -222,7 +222,7 @@ const Index= () => {
                                 <Form.Group>
                                     <label className={'text-dark text-capitalize'} htmlFor="placeDelivery">Password</label>
                                     <Form.Control
-                                        type="text"
+                                        type="password"
                                         className="form-control"
                                         id="exampleInputPassword4"
                                         placeholder="Password"

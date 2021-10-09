@@ -20,6 +20,7 @@ const Product = () => {
                <h2 className={'text-dark'}>Voici la liste des Pièces</h2>
                        <Card className={'cardMain'}>
                            <Row>
+
                                {values.map((product) =>(
                                    <Col lg={6} md={6} sm={6} xs={12} key={product.id}>
 
