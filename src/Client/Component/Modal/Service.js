@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const CONTACT_TRANSPORT_API_URL = 'http://backend-e-commerce-transport.jimtag.fr/api/contacts/';
+const CONTACT_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 
 
 class AllServices {
