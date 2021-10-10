@@ -185,7 +185,7 @@ const Transport = () => {
                                         value={brand}
                                         onChange={(e) => setBrand(e.target.value)}
                                     >
-                                        <option placeholder={'Selectionner la marque ...'} />
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner marque</option>
                                         {brands && brands.map((brand, index) => (
                                             <option key={brand.id} value={brand.id}>{brand.brand}</option>
                                         ))}
@@ -253,6 +253,7 @@ const Transport = () => {
                                         value={country}
                                         onChange={(e) => setCountry(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner pays</option>
                                         {countries && countries.map((country, index) => (
                                             <option key={country.id} value={country.id}>{country.country}</option>
                                         ))}
@@ -266,6 +267,7 @@ const Transport = () => {
                                         value={model}
                                         onChange={(e) => setModel(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner model</option>
                                         {models && models.map((model, index) => (
                                             <option key={model.id} value={model.id}>{model.model}</option>
                                         ))}
@@ -289,6 +291,7 @@ const Transport = () => {
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner categorie</option>
                                         {categories && categories.map((categorie, index) => (
                                             <option key={categorie.id} value={categorie.id}>{categorie.category}</option>
                                         ))}
