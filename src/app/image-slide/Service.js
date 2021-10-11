@@ -1,6 +1,4 @@
-
-    import axios from 'axios'
-    import {API} from "../../config";
+import axios from 'axios'
 
 const CAROUSEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/carousel/';
 const ARTICLE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/articles/';

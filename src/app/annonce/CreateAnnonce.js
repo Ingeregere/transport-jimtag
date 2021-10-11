@@ -10,6 +10,7 @@ const CreateAnnonce = () => {
   const [brands, setBrands] = useState([])
   const [countries, setCountries] = useState([])
   const [brand, setBrand] = useState('')
+  const [email, setEmail] = useState('')
   const [kindProduct, setKindProduct] = useState('')
   const [mapKilometer, setMapKilometer] = useState(0)
   const [budgetPlanned, setBudgetPlanned] = useState('')
@@ -58,6 +59,7 @@ const CreateAnnonce = () => {
     annonce.preventDefault();
     const newAnnonce = {
       brand,
+      email,
       budgetPlanned,
       mapKilometer,
       countryDelivery,
@@ -74,6 +76,7 @@ const CreateAnnonce = () => {
         .then(response=>{
           console.log('New annonce is added', response.data)
           setBrand('')
+          setEmail('')
           setNumberTransport('')
           setPlaceDelivery('')
           setPlaceLoading('')
@@ -248,6 +251,17 @@ const CreateAnnonce = () => {
                         placeholder="Budget prévu"
                         value={budgetPlanned}
                         onChange={(e) => setBudgetPlanned(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <label className={'text-dark '} htmlFor="placeLoading">Email</label>
+                    <Form.Control
+                        type="email"
+                        className="form-control"
+                        id="exampleInputPassword4"
+                        placeholder="Entrer votre email pour en disctuter de plus."
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                   </Form.Group>
                   <button

@@ -103,7 +103,7 @@ const Marque= () => {
                                     type="text"
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
-                                    placeholder="Ajouter une nouvelle categorie"
+                                    placeholder="numero"
                                     value={id}
                                     name={'id'}
                                     onChange={handleChange('id')}

@@ -4,13 +4,12 @@ const TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/tr
 
 
 class GererServices {
-
     getAllTransports(){
         return axios.get(TRANSPORT_API_URL)
     }
 
-    postImageTransport(data){
-        return  axios.put(TRANSPORT_API_URL+'createUpdateTransportImage/',data)
+    postImageTransport(data,id){
+        return  axios.put(TRANSPORT_API_URL+'updateTransportImage/',{data,id})
     }
     updateTransport(data){
         return axios.put(TRANSPORT_API_URL, data)

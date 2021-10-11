@@ -17,7 +17,7 @@ const Product = () => {
     return (
         <>
            <Container>
-               <h2 className={'text-dark'}>Voici la liste des Pièces</h2>
+               <h2 className={'text-dark'}>Voici la liste des pièces</h2>
                        <Card className={'cardMain'}>
                            <Row>
 

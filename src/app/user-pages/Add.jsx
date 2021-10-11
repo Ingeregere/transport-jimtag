@@ -145,6 +145,17 @@ const Index= () => {
                                     />
                                 </Form.Group>
                                 <Form.Group>
+                                    <label className={'text-dark '} htmlFor="dateDelivery">Nom d'utilisateur</label>
+                                    <Form.Control
+                                        type="text"
+                                        className="form-control"
+                                        id="exampleInputCity1"
+                                        placeholder="nom d'utilisateur"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
                                     <label className={'text-dark text-capitalize'} htmlFor="brand" >Pays</label>
                                     <select
                                         className="form-control"
@@ -171,21 +182,6 @@ const Index= () => {
                                     />
                                 </Form.Group>
 
-
-
-                                <Form.Group>
-                                    <label className={'text-dark text-capitalize'} htmlFor="countryLoading" >Role</label>
-                                    <select
-                                        className="form-control"
-                                        id="exampleSelectGender"
-                                        value={role}
-                                        onChange={(e) => setRole(e.target.value)}
-                                    >
-                                        {roles && roles.map((r, index) => (
-                                            <option key={r.id} value={r.id}>{r.role}</option>
-                                        ))}
-                                    </select>
-                                </Form.Group>
                             </form>
                         </div>
                     </div>
@@ -196,6 +192,20 @@ const Index= () => {
 
                             <form className="forms-sample">
                                 <Form.Group>
+                                    <label className={'text-dark text-capitalize'} htmlFor="countryLoading" >Role</label>
+                                    <select
+                                        className="form-control"
+                                        id="exampleSelectGender"
+                                        value={role}
+                                        onChange={(e) => setRole(e.target.value)}
+                                    >
+                                        <option defaultValue={'Selectionner la sex'}>Selectionner role</option>
+                                        {roles && roles.map((r, index) => (
+                                            <option key={r.id} value={r.id}>{r.role}</option>
+                                        ))}
+                                    </select>
+                                </Form.Group>
+                                <Form.Group>
                                     <label className={'text-dark text-capitalize'} htmlFor="brand" >sexe</label>
                                     <select
                                         className="form-control"
@@ -203,6 +213,7 @@ const Index= () => {
                                         value={sex}
                                         onChange={(e) => setSex(e.target.value)}
                                     >
+                                        <option defaultValue={'Selectionner la marque'}>Selectionner sex</option>
                                         <option value={'male'}>Masculin</option>
                                         <option value={'female'}>Féminin </option>
                                     </select>
@@ -242,21 +253,6 @@ const Index= () => {
                                         onChange={(e) => setBirthday(e.target.value)}
                                     />
                                 </Form.Group>
-
-                                <Form.Group>
-                                    <label className={'text-dark text-capitalize'} htmlFor="dateDelivery">Nom d'utilisateur</label>
-                                    <Form.Control
-                                        type="text"
-                                        className="form-control"
-                                        id="exampleInputCity1"
-                                        placeholder="nom d'utilisateur"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
-                                    />
-                                </Form.Group>
-
-
-
                                 <button
                                     type="submit"
                                     className="btn btn-primary mr-2 btn-fw"

@@ -15,7 +15,7 @@ const Index= () => {
   const [lastName, setLastName] = useState('')
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState('0')
+  const [role, setRole] = useState(1)
   const [sex, setSex] = useState('')
   const [username, setUsername] = useState('')
   const [error, setError] = useState(false)
@@ -85,7 +85,7 @@ const Index= () => {
   )
   const SuccessClose = () =>{
     setSuccess('')
-    history.push('/user-pages/utilisateur')
+    history.push("/s'inscrirer")
   }
   const showSuccess = () => (
 
@@ -96,11 +96,11 @@ const Index= () => {
   )
   return (
       <Container>
-        <span>{showError()}</span>
-        <span>{showSuccess()}</span>
-
         <div className="row  mainLogin">
-
+          <div className={'col-lg-12'} >
+            <span>{showError()}</span>
+            <span>{showSuccess()}</span>
+          </div>
           <div className="col-lg-6 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
@@ -125,6 +125,17 @@ const Index= () => {
                         placeholder="Prénom"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <label className={'text-dark'} htmlFor="dateDelivery">Nom d'utilisateur</label>
+                    <Form.Control
+                        type="text"
+                        className="form-control"
+                        id="exampleInputCity1"
+                        placeholder="nom d'utilisateur"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                   </Form.Group>
                   <Form.Group>
@@ -153,18 +164,7 @@ const Index= () => {
                         onChange={(e) => setAddress(e.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="brand" >sexe</label>
-                    <select
-                        className="form-control"
-                        id="exampleSelectGender"
-                        value={sex}
-                        onChange={(e) => setSex(e.target.value)}
-                    >
-                      <option value={'male'}>Masculin</option>
-                      <option value={'female'}>Féminin </option>
-                    </select>
-                  </Form.Group>
+
 
                 </form>
               </div>
@@ -175,6 +175,20 @@ const Index= () => {
               <div className="card-body">
 
                 <form className="forms-sample">
+                  <Form.Group>
+                    <label className={'text-dark text-capitalize'} htmlFor="brand" >sexe</label>
+                    <select
+                        className="form-control"
+                        id="exampleSelectGender"
+                        value={sex}
+                        onChange={(e) => setSex(e.target.value)}
+                    >
+                      <option defaultValue={'Selectionner la marque'}>Selectionner sex</option>
+
+                      <option value={'male'}>Masculin</option>
+                      <option value={'female'}>Féminin </option>
+                    </select>
+                  </Form.Group>
 
                   <Form.Group>
                     <label className={'text-dark text-capitalize'} htmlFor="placeLoading">Télephone</label>
@@ -208,18 +222,6 @@ const Index= () => {
                         placeholder="date de naissance"
                         value={birthday}
                         onChange={(e) => setBirthday(e.target.value)}
-                    />
-                  </Form.Group>
-
-                  <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="dateDelivery">Nom d'utilisateur</label>
-                    <Form.Control
-                        type="text"
-                        className="form-control"
-                        id="exampleInputCity1"
-                        placeholder="nom d'utilisateur"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
                     />
                   </Form.Group>
 
