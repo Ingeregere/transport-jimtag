@@ -1,29 +1,43 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Form} from 'react-bootstrap';
 import AllServices from "./GererVehiculeServices";
-import './style.css'
 import {Link, useParams} from "react-router-dom";
 
 
 const Marque= () => {
-
+    const {id} = useParams()
     const [values,setValues] = useState({
         imageTransport: '',
-        id: '',
         error: '',
         success: '',
         formData: ''
     })
     const {
-        id,
         formData,
         error,
         success
     } = values
 
     useEffect(()=>{
-        setValues({...values, formData: new FormData()})
-    }, [])
+        init(id)
+    },[])
+
+    const init=(id)=>{
+        AllServices.getVehiculeById(id).then(data=>{
+            if(data.error){
+                setValues({...values,error:data.error})
+            }
+            else{
+
+                setValues({
+                    ...values,
+                    formData: new FormData()
+                })
+            }
+
+        })
+
+    }
 
 
     const handleChange = name => event =>{
@@ -67,7 +81,7 @@ const Marque= () => {
     return (
         <div>
             <div className="page-header mainheader">
-                <h3 className="page-title">Voulez-vous Editer vehicule numero <span className={'numbervehicule'}>{useParams().id}</span>?</h3>
+                <h3 className="page-title">{id? "Editer" : "Ajouter"} une image du transport </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <Link to={'/vehicules/gérer_vehicules'}>
@@ -104,7 +118,7 @@ const Marque= () => {
                                     type="text"
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
-                                    placeholder="vehicule numero combien?"
+                                    placeholder="veuiller complète le numero"
                                     value={id}
                                     name={'id'}
                                     onChange={handleChange('id')}

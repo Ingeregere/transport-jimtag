@@ -8,8 +8,8 @@ class GererServices {
         return axios.get(TRANSPORT_API_URL)
     }
 
-    postImageTransport(data,id){
-        return  axios.put(TRANSPORT_API_URL+'updateTransportImage/',{data,id})
+    postImageTransport(data){
+        return  axios.put(TRANSPORT_API_URL+'updateTransportImage/', data)
     }
     updateTransport(data){
         return axios.put(TRANSPORT_API_URL, data)
