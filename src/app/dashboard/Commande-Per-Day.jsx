@@ -22,8 +22,9 @@ const Annonce = () => {
                 <h3 className="page-title"> Tableau des annonces </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to={'/'}>Tableau de bord</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page">Annonces</li>
+                        <Link to={'/admin'}>
+                            <button type="button" className="btn btn-primary btn-fw">Tableau de bord</button>
+                        </Link>
                     </ol>
                 </nav>
             </div>

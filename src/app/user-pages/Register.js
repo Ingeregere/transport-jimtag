@@ -3,7 +3,6 @@ import {Alert, Container, Form} from 'react-bootstrap';
 import AllServices from "./Service";
 import './style.css'
 import PaysService from "../vehicules/pays/PaysService";
-import RoleServices from "../Role/RoleServices";
 import {Link, useHistory} from "react-router-dom";
 
 const Index= () => {
@@ -15,7 +14,7 @@ const Index= () => {
   const [lastName, setLastName] = useState('')
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState(1)
+  const [role, setRole] = useState(2)
   const [sex, setSex] = useState('')
   const [username, setUsername] = useState('')
   const [error, setError] = useState(false)

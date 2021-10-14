@@ -3,7 +3,9 @@ import {Alert, Container, Form} from 'react-bootstrap';
 import AllServices from "./Services";
 import './style.css'
 import '../../Client/Component/Product/style.css'
+import GoogleMapReact from "google-map-react";
 
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const CreateAnnonce = () => {
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
@@ -35,6 +37,13 @@ const CreateAnnonce = () => {
         <strong> <center> {success} </center> </strong>
       </Alert>
   )
+  const defaultProps = {
+    center: {
+      lat: 59.95,
+      lng: 30.33
+    },
+    zoom: 11
+  };
 
 
   useEffect(()=>{
@@ -128,6 +137,31 @@ const CreateAnnonce = () => {
                     </select>
                   </Form.Group>
                   <Form.Group>
+                    <label className={'text-dark '} htmlFor="placeLoading">Lieu de chargement</label>
+                    <Form.Control
+                        type="text"
+                        className="form-control"
+                        id="exampleInputPassword4"
+                        placeholder="Lieu de chargement"
+                        value={placeLoading}
+                        onChange={(e) => setPlaceLoading(e.target.value)}
+                    />
+                    <div style={{ height: '20vh', width: '100%' }}>
+                      <GoogleMapReact
+                          bootstrapURLKeys={{ key: 'AIzaSyBqdxjzrI05HwCZFtzCQu6Ne7oLlXIpVFU'}}
+                          defaultCenter={defaultProps.center}
+                          defaultZoom={defaultProps.zoom}
+                      >
+                        <AnyReactComponent
+                            lat={59.955413}
+                            lng={30.337844}
+                            text="My Marker"
+                        />
+                      </GoogleMapReact>
+                    </div>
+                  </Form.Group>
+
+                  <Form.Group>
                     <label className={'text-dark '} htmlFor="countryDelivery" >Pays de livraison</label>
                     <select
                         className="form-control"
@@ -141,17 +175,7 @@ const CreateAnnonce = () => {
                       ))}
                     </select>
                   </Form.Group>
-                  <Form.Group>
-                    <label className={'text-dark '} htmlFor="placeLoading">Lieu de destination</label>
-                    <Form.Control
-                        type="text"
-                        className="form-control"
-                        id="exampleInputPassword4"
-                        placeholder="Lieu de destination"
-                        value={placeLoading}
-                        onChange={(e) => setPlaceLoading(e.target.value)}
-                    />
-                  </Form.Group>
+
                   <Form.Group>
                     <label className={'text-dark '} htmlFor="placeDelivery">Lieu de livraison</label>
                     <Form.Control
@@ -162,6 +186,19 @@ const CreateAnnonce = () => {
                         value={placeDelivery}
                         onChange={(e) => setPlaceDelivery(e.target.value)}
                     />
+                    <div style={{ height: '20vh', width: '100%' }}>
+                      <GoogleMapReact
+                          bootstrapURLKeys={{ key: 'AIzaSyBqdxjzrI05HwCZFtzCQu6Ne7oLlXIpVFU'}}
+                          defaultCenter={defaultProps.center}
+                          defaultZoom={defaultProps.zoom}
+                      >
+                        <AnyReactComponent
+                            lat={59.955413}
+                            lng={30.337844}
+                            text="My Marker"
+                        />
+                      </GoogleMapReact>
+                    </div>
                   </Form.Group>
                   <Form.Group>
                     <label className={'text-dark '} htmlFor="brand" >Type de camion</label>
@@ -221,7 +258,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark  '} htmlFor="message">Inforamtion diverses</label>
+                    <label className={'text-dark'} htmlFor="message">Inforamtions diverses</label>
                     <textarea
                         className="form-control"
                         id="exampleTextarea1"
@@ -229,7 +266,7 @@ const CreateAnnonce = () => {
                         value={message}
                         placeholder={'Entrez votre message'}
                         onChange={(e) => setMessage(e.target.value)}
-                    ></textarea>
+                    >Inforamtions diverses</textarea>
                   </Form.Group>
                   <Form.Group>
                     <label className={'text-dark '} htmlFor="dateDelivery">Date de livraison</label>

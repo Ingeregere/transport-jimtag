@@ -31,6 +31,7 @@ const Semis = lazy(()=>import('../Client/Pages/Semis'))
 const Divers = lazy(()=>import('../Client/Pages/Divers'))
 const Pieces = lazy(()=>import('../Client/Pages/Pieces'))
 const Detail = lazy(()=>import('../Client/Pages/Detail'))
+const Map = lazy(()=>import('../Client/Pages/Map'))
 const Contact = lazy(()=>import('../Client/Component/Modal'))
 const DeposerAnnnonce = lazy(() => import('../Client/Pages/DeposerAnnonce'));
 const GererAnnonce = lazy(() => import('./annonce/Annonce'));
@@ -64,6 +65,7 @@ class AppRoutes extends Component {
         <Switch>
           <Route exact path="/admin" component={ Dashboard } />
           <Route exact path="/" component={ HomePage } />
+          <Route exact path="/map" component={ Map } />
           <Route exact path="/vehicules/category/editer/:id" component={ UpdateCategory } />
           <Route exact path="/vehicules/ajouter_category" component={ AddCategory } />
           <Route exact path="/image-slide/ajouter-image" component={ AddSlide } />
