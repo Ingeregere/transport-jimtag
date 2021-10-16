@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, Container, Form} from 'react-bootstrap';
+import {Alert, Container, Form, Spinner} from 'react-bootstrap';
 import AllServices from "./Services";
 import './style.css'
 import '../../Client/Component/Product/style.css'
 import GoogleMapReact from "google-map-react";
+import {Map, Marker} from "google-maps-react";
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
+import {DistanceMatrixService} from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-const CreateAnnonce = () => {
+const CreateAnnonce = (props) => {
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
   const [brands, setBrands] = useState([])
@@ -107,6 +110,20 @@ const CreateAnnonce = () => {
         })
 
   }
+ const handleSelectLoading = async value => {
+    geocodeByAddress(value)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    setPlaceLoading(value)
+  }
+  const handleSelectDelivery = async value => {
+    geocodeByAddress(value)
+        .then(results => getLatLng(results[0]))
+        .then(latLng => console.log('Success', latLng))
+        .catch(error => console.error('Error', error));
+    setPlaceDelivery(value)
+  }
 
   return (
       <Container>
@@ -137,25 +154,56 @@ const CreateAnnonce = () => {
                     </select>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark '} htmlFor="placeLoading">Lieu de chargement</label>
-                    <Form.Control
-                        type="text"
-                        className="form-control"
-                        id="exampleInputPassword4"
-                        placeholder="Lieu de chargement"
+                    <PlacesAutocomplete
                         value={placeLoading}
-                        onChange={(e) => setPlaceLoading(e.target.value)}
-                    />
+                        onChange={setPlaceLoading}
+                        onSelect={handleSelectLoading}
+                    >
+                      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                          <div>
+                            <label className={'text-dark '} htmlFor="placeLoading">Lieu de chargement</label>
+                            <Form.Control
+                                {...getInputProps({
+                                  placeholder: 'Rechercher le lieu ...',
+                                  className: 'location-search-input',
+                                })}
+                            />
+
+                            <div className="autocomplete-dropdown-container">
+                              {loading && <div>Loading...</div>}
+                              {suggestions.map((suggestion,id) => {
+                                const className = suggestion.active
+                                    ? 'suggestion-item--active'
+                                    : 'suggestion-item';
+                                // inline style for demonstration purpose
+                                const style = suggestion.active
+                                    ? { backgroundColor: '#000000', cursor: 'pointer',color: '#ffffff' }
+                                    : { backgroundColor: '#5ce1e6', cursor: 'pointer',color: '#ffffff' };
+                                return (
+                                    <div
+                                        {...getSuggestionItemProps(suggestion, {
+                                          className,
+                                          style,
+                                        })}
+                                        key={id}
+                                    >
+                                      <span>{suggestion.description}</span>
+                                    </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                      )}
+                    </PlacesAutocomplete>
                     <div style={{ height: '20vh', width: '100%' }}>
                       <GoogleMapReact
-                          bootstrapURLKeys={{ key: 'AIzaSyBqdxjzrI05HwCZFtzCQu6Ne7oLlXIpVFU'}}
+                          bootstrapURLKeys={{ key: 'AIzaSyAk9QMxW7LuVReF-JfCdpIUUBg2BjrggJo'}}
                           defaultCenter={defaultProps.center}
                           defaultZoom={defaultProps.zoom}
                       >
                         <AnyReactComponent
                             lat={59.955413}
                             lng={30.337844}
-                            text="My Marker"
                         />
                       </GoogleMapReact>
                     </div>
@@ -177,25 +225,56 @@ const CreateAnnonce = () => {
                   </Form.Group>
 
                   <Form.Group>
-                    <label className={'text-dark '} htmlFor="placeDelivery">Lieu de livraison</label>
-                    <Form.Control
-                        type="text"
-                        className="form-control"
-                        id="exampleInputPassword4"
-                        placeholder="lieu de livraison"
+                    <PlacesAutocomplete
                         value={placeDelivery}
-                        onChange={(e) => setPlaceDelivery(e.target.value)}
-                    />
+                        onChange={setPlaceDelivery}
+                        onSelect={handleSelectDelivery}
+                    >
+                      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                          <div>
+                            <label className={'text-dark '} htmlFor="placeLoading">Lieu de livraison</label>
+                            <Form.Control
+                                {...getInputProps({
+                                  placeholder: 'Rechercher le lieu ...',
+                                  className: 'location-search-input',
+                                })}
+                            />
+
+                            <div className="autocomplete-dropdown-container">
+                              {loading && <div>Loading...</div>}
+                              {suggestions.map((suggestion, id) => {
+                                const className = suggestion.active
+                                    ? 'suggestion-item--active'
+                                    : 'suggestion-item';
+                                // inline style for demonstration purpose
+                                const style = suggestion.active
+                                    ? { backgroundColor: '#000000', cursor: 'pointer',color: '#ffffff' }
+                                    : { backgroundColor: '#5ce1e6', cursor: 'pointer',color: '#ffffff' };
+                                return (
+                                    <div
+                                        {...getSuggestionItemProps(suggestion, {
+                                          className,
+                                          style,
+                                        })}
+                                        key={id}
+                                    >
+                                      <span>{suggestion.description}</span>
+                                    </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                      )}
+                    </PlacesAutocomplete>
                     <div style={{ height: '20vh', width: '100%' }}>
                       <GoogleMapReact
-                          bootstrapURLKeys={{ key: 'AIzaSyDwypszfr-gQwOvcGwiGhnomqRVoTOj-sY'}}
+                          bootstrapURLKeys={{ key: 'AIzaSyAk9QMxW7LuVReF-JfCdpIUUBg2BjrggJo'}}
                           defaultCenter={defaultProps.center}
                           defaultZoom={defaultProps.zoom}
                       >
                         <AnyReactComponent
                             lat={59.955413}
                             lng={30.337844}
-                            text="My Marker"
                         />
                       </GoogleMapReact>
                     </div>

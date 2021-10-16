@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Map, Marker, GoogleApiWrapper} from "google-maps-react";
 import PlacesAutocomplete, {geocodeByAddress, getLatLng,} from 'react-places-autocomplete';
+import {Spinner} from "react-bootstrap";
 
 export class MapContainer extends Component {
     constructor(props) {
@@ -45,15 +46,15 @@ export class MapContainer extends Component {
                                 })}
                             />
                             <div className="autocomplete-dropdown-container">
-                                {loading && <div>Loading...</div>}
+                                {loading && <div>Chargement<Spinner animation="border" variant="info" /></div>}
                                 {suggestions.map(suggestion => {
                                     const className = suggestion.active
                                         ? 'suggestion-item--active'
                                         : 'suggestion-item';
                                     // inline style for demonstration purpose
                                     const style = suggestion.active
-                                        ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                        : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                        ? { backgroundColor: '#000000', cursor: 'pointer' }
+                                        : { backgroundColor: '#5ce1e6', cursor: 'pointer' };
                                     return (
                                         <div
                                             {...getSuggestionItemProps(suggestion, {
@@ -94,6 +95,6 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyDwypszfr-gQwOvcGwiGhnomqRVoTOj-sY'),
+    apiKey: ('AIzaSyAk9QMxW7LuVReF-JfCdpIUUBg2BjrggJo'),
     libraries: ["places"]
 })(MapContainer)
