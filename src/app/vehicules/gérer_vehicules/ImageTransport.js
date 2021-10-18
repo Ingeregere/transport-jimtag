@@ -9,7 +9,7 @@ const Marque= () => {
 
     const [values,setValues] = useState({
         imageTransport: '',
-        id: '',
+        id: useParams().id,
         error: '',
         success: '',
         formData: ''
@@ -25,12 +25,10 @@ const Marque= () => {
         setValues({...values, formData: new FormData()})
     }, [])
 
-
     const handleChange = name => event =>{
         const value = name === 'imageTransport' ? event.target.files[0]: event.target.value
         formData.set(name, value)
         setValues({...values, [name]: value})
-
     }
 
     const clickSubmit = event =>{
@@ -109,7 +107,6 @@ const Marque= () => {
                                     name={'id'}
                                     onChange={handleChange('id')}
                                 />
-
                                 <button
                                     type="submit"
                                     className="btn btn-primary mr-2  btn-fw"

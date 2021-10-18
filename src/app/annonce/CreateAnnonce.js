@@ -42,8 +42,8 @@ const CreateAnnonce = (props) => {
   )
   const defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: -3.382270,
+      lng: 29.363580
     },
     zoom: 11
   };
