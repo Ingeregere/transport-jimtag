@@ -99,12 +99,12 @@ class Sidebar extends Component {
           <li className={ this.isPathActive('/annonce') ? 'nav-item active' : 'nav-item' }>
             <div className={ this.state.formElementsMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('formElementsMenuOpen') } data-toggle="collapse">
               <span className="icon-bg"><i className="mdi mdi-format-list-bulleted menu-icon"></i></span>
-              <span className="menu-title"><Trans>Annonces</Trans></span>
+              <span className="menu-title"><Trans>Commandes</Trans></span>
               <i className="menu-arrow"></i>
             </div>
             <Collapse in={ this.state.formElementsMenuOpen }>
               <ul className="nav flex-column sub-menu">
-                <li className="nav-item"> <Link className={ this.isPathActive('/annonce/gérer_annonces') ? 'nav-link active' : 'nav-link' } to="/annonce/gérer_annonces"><Trans>Gérer les annonces</Trans></Link></li>
+                <li className="nav-item"> <Link className={ this.isPathActive('/annonce/gérer_annonces') ? 'nav-link active' : 'nav-link' } to="/annonce/gérer_annonces"><Trans>Gérer les commandes</Trans></Link></li>
               </ul>
             </Collapse>
           </li>

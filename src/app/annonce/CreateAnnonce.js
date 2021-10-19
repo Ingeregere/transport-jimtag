@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, Container, Form, Spinner} from 'react-bootstrap';
+import {Alert, Container, Form} from 'react-bootstrap';
 import AllServices from "./Services";
 import './style.css'
 import '../../Client/Component/Product/style.css'
@@ -9,7 +9,9 @@ import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-auto
 import {DistanceMatrixService} from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-const CreateAnnonce = (props) => {
+
+const CreateAnnonce = () => {
+
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
   const [brands, setBrands] = useState([])
@@ -295,7 +297,7 @@ const CreateAnnonce = (props) => {
                     </select>
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark '} htmlFor="numberTransport">Nombre de transport</label>
+                    <label className={'text-dark '} htmlFor="numberTransport">Nombre de camions</label>
                     <Form.Control
                         type="number"
                         className="form-control"
