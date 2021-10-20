@@ -19,7 +19,7 @@ const Product = () => {
         <>
 
            <Container>
-               <h2 className={'text-dark'}>Voici la liste des divers</h2>
+               <h2 className={'text-dark'}>Voici la liste des pièces et divers</h2>
                        <Card className={'cardMain'}>
                            <Row>
                                {values === []? "no product" : values.map((product) =>(

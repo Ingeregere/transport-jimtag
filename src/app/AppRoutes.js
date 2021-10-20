@@ -71,10 +71,10 @@ class AppRoutes extends Component {
           <Route exact path="/image-slide/ajouter-image" component={ AddSlide } />
           <Route exact path="/vehicules/categories/voir-image/:id" component={ VoirImageCategory } />
           <Route exact path="/tracteurs" component={ Tracteur } />
-          <Route exact path="/porteurs" component={ Porteur } />
+          <Route exact path="/bennes" component={ Porteur } />
           <Route exact path="/semis" component={ Semis } />
-          <Route exact path="/divers" component={ Divers } />
-          <Route exact path="/pièces" component={ Pieces } />
+          <Route exact path="/pièces et divers" component={ Divers } />
+          <Route exact path="/flat bed" component={ Pieces } />
           <Route exact path={'/detail/:id'} component={ Detail } />
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
@@ -120,7 +120,7 @@ class AppRoutes extends Component {
           <Route path="/user-pages/editer_user/:id" component={ UpdateUser } />
           <Route path="/user-pages/ajouter_role" component={AddRole } />
           <Route path="/s'inscrirer" component={ Register } />
-          <Route exact path="*" component={ Porteur } />
+          {/*<Route exact path="*" component={ Porteur } />*/}
           <Redirect to="/" />
         </Switch>
       </Suspense>

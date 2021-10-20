@@ -61,17 +61,7 @@ const SearchFilter = () => {
                                 </select>
                             </Form.Group>
                         </Col>
-                        <Col md={2} lg={2} sm={6} xs={6}>
-                            <Form.Group >
-                                <label htmlFor="exampleSelectGender" className={'Namelabel'}>Carrosserie</label>
-                                <select className="form-control" id="exampleSelectGender">
-                                    <option defaultValue={'Selectionner la marque'}>carrosserie</option>
-                                    {bodyworks && bodyworks.map((bodywork, index) => (
-                                        <option key={bodywork.id} value={bodywork.id} >{bodywork.bodywork}</option>
-                                    ))}
-                                </select>
-                            </Form.Group>
-                        </Col>
+
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Boite de vitesse</label>
@@ -83,7 +73,7 @@ const SearchFilter = () => {
                                 </select>
                             </Form.Group>
                         </Col>
-                        <Col md={2} lg={2} sm={6} xs={6}>
+                        <Col md={2} lg={2} sm={12} xs={12}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Pays</label>
                                 <select className="form-control" id="exampleSelectGender">
