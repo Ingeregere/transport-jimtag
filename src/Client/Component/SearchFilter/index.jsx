@@ -62,7 +62,7 @@ const SearchFilter = () => {
                             </Form.Group>
                         </Col>
 
-                        <Col md={2} lg={2} sm={6} xs={6}>
+                        <Col md={3} lg={3} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Boite de vitesse</label>
                                 <select className="form-control" id="exampleSelectGender">
@@ -73,7 +73,7 @@ const SearchFilter = () => {
                                 </select>
                             </Form.Group>
                         </Col>
-                        <Col md={2} lg={2} sm={12} xs={12}>
+                        <Col md={3} lg={3} sm={12} xs={12}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Pays</label>
                                 <select className="form-control" id="exampleSelectGender">

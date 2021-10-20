@@ -5,7 +5,7 @@ import { Trans } from 'react-i18next';
 
 class Navbar extends Component {
   toggleOffcanvas() {
-    document.querySelector('.sidebar-offcanvas').classList.toggle('active');
+    document.querySelector('.sidebar-offcanvas').classList.tsoggle('active');
   }
   render () {
     return (
