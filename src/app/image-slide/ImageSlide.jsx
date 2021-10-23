@@ -104,7 +104,7 @@ const Marque= () => {
                                     className="btn btn-primary mr-2  btn-fw"
                                     onClick={(event) => clickSubmit(event)}
                                 >
-                                    Envoyer
+                                    Enregistrer
                                 </button>
                             </form>
                         </div>

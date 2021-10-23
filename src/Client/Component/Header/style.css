@@ -9,6 +9,12 @@
     margin-top: -2px;
 
 }
+.whatsapp{
+    margin-top: 2em;
+}
+.btn-dark{
+    background-color: #000000;
+}
 .formSearch{
     margin-top: 6px !important;
     margin-left: 3em !important;

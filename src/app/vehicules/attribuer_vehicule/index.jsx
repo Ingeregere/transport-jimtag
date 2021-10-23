@@ -132,7 +132,7 @@ const Transport = () => {
             <span>{showSuccess()}</span>
 
             <div className="page-header mainheader">
-                <h3 className="page-title"> Une nouvelle attribution </h3>
+                <h3 className="page-title"> Un nouvel véhicule </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <Link to={'/vehicules/gérer_vehicules'}>
@@ -317,7 +317,7 @@ const Transport = () => {
                                 </Form.Group>
 
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="dateDelivery">Date de Registration</label>
+                                    <label className={'text-dark'} htmlFor="dateDelivery">Date de registration</label>
                                     <Form.Control
                                         type="date"
                                         className="form-control"
@@ -333,7 +333,7 @@ const Transport = () => {
                                     className="btn btn-primary mr-2 btn-fw"
                                     onClick={(event) => saveAttribuer(event)}
                                 >
-                                    Envoyer
+                                    Enregistrer
                                 </button>
                             </form>
                         </div>

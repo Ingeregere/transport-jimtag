@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css'
-import {Button, Container, Dropdown, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import NavLink from "react-bootstrap/NavLink";
 import {Link} from "react-router-dom";
 
@@ -31,16 +31,10 @@ const NavbarHeader = () => {
                         />
                     </Form>
 
-                    <NavLink  as={Link} to={'/nous-contact'}>
-                        <button type="button" className="btn btn-dark btn-fw">
-                            <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-right-bold-circle-outline"></i></span>
-                            Nous contactez
-                        </button>
-                    </NavLink>
                     <NavLink as={Link} to={'/commande-camion'}>
                         <button type="button" className="btn btn-dark btn-fw ">
                             <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
-                            Commandez un camion
+                            Louer un camion
                         </button>
                     </NavLink>
                     <NavLink as={Link} to={'/login'}>

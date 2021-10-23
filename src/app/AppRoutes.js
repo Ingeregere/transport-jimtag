@@ -2,10 +2,12 @@ import React, { Component,Suspense, lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Spinner from './share/Spinner';
+import AdminRoute from "./SecuriteRoute/AdminRoute";
 
 const Dashboard = lazy(() => import('./dashboard/Dashboard'));
 
 const GererVehicule = lazy(() => import('./vehicules/gérer_vehicules'));
+const SearchTransport = lazy(()=>import('../Client/Pages/Search'))
 const Marque = lazy(() => import('./vehicules/marques'));
 const UpdateMarque = lazy(() => import('./vehicules/marques/UpdateMarque'));
 const AddBrand = lazy(() => import('./vehicules/marques/Add'));
@@ -31,7 +33,6 @@ const Semis = lazy(()=>import('../Client/Pages/Semis'))
 const Divers = lazy(()=>import('../Client/Pages/Divers'))
 const Pieces = lazy(()=>import('../Client/Pages/Pieces'))
 const Detail = lazy(()=>import('../Client/Pages/Detail'))
-const Map = lazy(()=>import('../Client/Pages/Map'))
 const Contact = lazy(()=>import('../Client/Component/Modal'))
 const DeposerAnnnonce = lazy(() => import('../Client/Pages/DeposerAnnonce'));
 const GererAnnonce = lazy(() => import('./annonce/Annonce'));
@@ -63,13 +64,13 @@ class AppRoutes extends Component {
     return (
       <Suspense fallback={<Spinner/>}>
         <Switch>
-          <Route exact path="/admin" component={ Dashboard } />
+          <AdminRoute exact path="/admin" component={ Dashboard } />
           <Route exact path="/" component={ HomePage } />
-          <Route exact path="/map" component={ Map } />
-          <Route exact path="/vehicules/category/editer/:id" component={ UpdateCategory } />
-          <Route exact path="/vehicules/ajouter_category" component={ AddCategory } />
-          <Route exact path="/image-slide/ajouter-image" component={ AddSlide } />
-          <Route exact path="/vehicules/categories/voir-image/:id" component={ VoirImageCategory } />
+          <Route exact path="/recherche/:brand/:country/:box" component={ SearchTransport } />
+          <AdminRoute exact path="/vehicules/category/editer/:id" component={ UpdateCategory } />
+          <AdminRoute exact path="/vehicules/ajouter_category" component={ AddCategory } />
+          <AdminRoute exact path="/image-slide/ajouter-image" component={ AddSlide } />
+          <AdminRoute exact path="/vehicules/categories/voir-image/:id" component={ VoirImageCategory } />
           <Route exact path="/tracteurs" component={ Tracteur } />
           <Route exact path="/bennes" component={ Porteur } />
           <Route exact path="/semis" component={ Semis } />
@@ -78,49 +79,49 @@ class AppRoutes extends Component {
           <Route exact path={'/detail/:id'} component={ Detail } />
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
-          <Route path="/vehicules/marques" component={ Marque } />
-          <Route path="/vehicules/ajouter_marques" component={ AddBrand } />
-          <Route path="/vehicules/ajouter_carrosserie" component={ AddBodywork } />
-          <Route path="/vehicules/veh_carrosserie/:id" component={ UpdateBodywork } />
-          <Route path="/vehicules/edit-transport/:id" component={ UpdateVehicule } />
-          <Route path="/vehicules/marque/:id" component={UpdateMarque} />
-          <Route path="/vehicules/editer/:id" component={Marque} />
-          <Route path="/vehicules/categories" component={ Category } />
-          <Route path="/vehicules/category/editer/:id" component={ UpdateCategory } />
-          <Route path="/vehicules/modèles" component={ Model } />
-          <Route path="/vehicules/ajouter_models" component={ AddModel } />
-          <Route path="/vehicules/model/:id" component={UpdateModel} />
-          <Route path="/model/editer/:id" component={ Model } />
-          <Route path="/vehicules/veh_pays/:id" component={ UpdateCountry } />
-          <Route path="/vehicules/ajouter_pays" component={ AddCountry } />
-          <Route path="/vehicules/pays/editer:id" component={ Country } />
-          <Route path="/vehicules/pays" component={ Country } />
-          <Route path="/vehicules/carrosseries" component={ BodyWork } />
-          <Route path="/vehicules/attribuer_vehicules" component={ Attribuer_vehicule } />
-          <Route path="/vehicules/gérer_vehicules" component={ GererVehicule } />
-          <Route path="/vehicules/ajouter_image/:id" component={ AjouterImageTransport } />
-          <Route path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />
-          <Route path="/contacts/question" component={ ContactFQA } />
-          <Route path="/image-slide/image-slide" component={ ImageSlide } />
-          <Route path="/image-slide/editer/:id" component={ UpdateImageSlide } />
-          <Route path="/image-slide/image-publicite" component={ ImageArticle } />
-          <Route path="/image-slide/ajouter-publicite" component={ AddArticle } />
-          <Route path="/annonce/gérer_annonces" component={ GererAnnonce } />
-          <Route path="/commandes/par-jour" component={ CommandePerDay } />
-          <Route path="/annonce/nouvelle_annonces" component={ DeposerAnnnonce } />
+          <AdminRoute path="/vehicules/marques" component={ Marque } />
+          <AdminRoute path="/vehicules/ajouter_marques" component={ AddBrand } />
+          <AdminRoute path="/vehicules/ajouter_carrosserie" component={ AddBodywork } />
+          <AdminRoute path="/vehicules/veh_carrosserie/:id" component={ UpdateBodywork } />
+          <AdminRoute path="/vehicules/edit-transport/:id" component={ UpdateVehicule } />
+          <AdminRoute path="/vehicules/marque/:id" component={UpdateMarque} />
+          <AdminRoute path="/vehicules/editer/:id" component={Marque} />
+          <AdminRoute path="/vehicules/categories" component={ Category } />
+          <AdminRoute path="/vehicules/category/editer/:id" component={ UpdateCategory } />
+          <AdminRoute path="/vehicules/modèles" component={ Model } />
+          <AdminRoute path="/vehicules/ajouter_models" component={ AddModel } />
+          <AdminRoute path="/vehicules/model/:id" component={UpdateModel} />
+          <AdminRoute path="/model/editer/:id" component={ Model } />
+          <AdminRoute path="/vehicules/veh_pays/:id" component={ UpdateCountry } />
+          <AdminRoute path="/vehicules/ajouter_pays" component={ AddCountry } />
+          <AdminRoute path="/vehicules/pays/editer:id" component={ Country } />
+          <AdminRoute path="/vehicules/pays" component={ Country } />
+          <AdminRoute path="/vehicules/carrosseries" component={ BodyWork } />
+          <AdminRoute path="/vehicules/attribuer_vehicules" component={ Attribuer_vehicule } />
+          <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
+          <AdminRoute path="/vehicules/ajouter_image/:id" component={ AjouterImageTransport } />
+          <AdminRoute path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />
+          <AdminRoute path="/contacts/question" component={ ContactFQA } />
+          <AdminRoute path="/image-slide/image-slide" component={ ImageSlide } />
+          <AdminRoute path="/image-slide/editer/:id" component={ UpdateImageSlide } />
+          <AdminRoute path="/image-slide/image-publicite" component={ ImageArticle } />
+          <AdminRoute path="/image-slide/ajouter-publicite" component={ AddArticle } />
+          <AdminRoute path="/annonce/gérer_annonces" component={ GererAnnonce } />
+          <AdminRoute path="/commandes/par-jour" component={ CommandePerDay } />
+          <AdminRoute path="/annonce/nouvelle_annonces" component={ DeposerAnnnonce } />
           <Route path="/commande-camion" component={ DeposerAnnnonce } />
-          <Route path="/contacts/clients" component={ ContactUser } />
-          <Route path="/contacts/recus-par-jour" component={ ContactPerDay } />
-          <Route path="/user-pages/utilisateur" component={ AllUser } />
-          <Route path="/user-pages/ajouter_user" component={ AddUser } />
-          <Route path="/user-pages/edit_user/:id" component={ AddUser } />
+          <AdminRoute path="/contacts/clients" component={ ContactUser } />
+          <AdminRoute path="/contacts/recus-par-jour" component={ ContactPerDay } />
+          <AdminRoute path="/user-pages/utilisateur" component={ AllUser } />
+          <AdminRoute path="/user-pages/ajouter_user" component={ AddUser } />
+          <AdminRoute path="/user-pages/edit_user/:id" component={ AddUser } />
           <Route path="/login" component={ Login } />
-          <Route path="/user-pages/role" component={ Role } />
-          <Route path="/user-pages/editer_role/:id" component={ UpdateRole } />
-          <Route path="/user-pages/editer_user/:id" component={ UpdateUser } />
-          <Route path="/user-pages/ajouter_role" component={AddRole } />
+          <AdminRoute path="/user-pages/role" component={ Role } />
+          <AdminRoute path="/user-pages/editer_role/:id" component={ UpdateRole } />
+          <AdminRoute path="/user-pages/editer_user/:id" component={ UpdateUser } />
+          <AdminRoute path="/user-pages/ajouter_role" component={AddRole } />
           <Route path="/s'inscrirer" component={ Register } />
-          {/*<Route exact path="*" component={ Porteur } />*/}
+          <Route exact path="*" component={ Error404 } />
           <Redirect to="/" />
         </Switch>
       </Suspense>

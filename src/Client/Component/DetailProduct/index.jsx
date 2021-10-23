@@ -26,7 +26,7 @@ const Detail = () => {
     return (
         <>
             <Container>
-                <h2 className={'text-dark'}>Voici la détail complet du vehicule</h2>
+                <h3 className={'text-dark'}>Voici la détail complet du vehicule</h3>
                 <Card className={'cardMain'}>
                     <Row>
 

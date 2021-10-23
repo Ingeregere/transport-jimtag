@@ -56,8 +56,10 @@ const Country= () => {
                 <h3 className="page-title"> Voir tous les pays  </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <Link to={'/vehicules/ajouter_pays'}>
-                            <button type="button" className="btn btn-primary btn-fw">Ajouter</button>
+                        <Link to={'/admin'}>
+                            <button type="button" className="btn btn-primary btn-fw">
+                                Tableau de bord
+                            </button>
                         </Link>
                     </ol>
                 </nav>

@@ -156,8 +156,7 @@ const Transport = () => {
 
     return (
         <div>
-            <span>{showError()}</span>
-            <span>{showSuccess()}</span>
+
 
             <div className="page-header mainheader">
                 <h3 className="page-title"> {id? "Editer": "Ajouter"} une marque </h3>
@@ -172,10 +171,14 @@ const Transport = () => {
                 </nav>
             </div>
             <div className="row">
-
+                <div className="col-lg-12">
+                    <span>{showError()}</span>
+                    <span>{showSuccess()}</span>
+                </div>
                 <div className="col-lg-6 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
+
                             <form className="forms-sample">
                                 <Form.Group>
                                     <label className={'text-dark'} htmlFor="brand" >Marque</label>

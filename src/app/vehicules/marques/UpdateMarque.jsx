@@ -119,7 +119,7 @@ function ModalContact() {
                                     className="btn btn-primary mr-2 btn-fw"
                                     onClick={(event) => saveBrand(event)}
                                 >
-                                    Enregistre
+                                    Editer
                                 </button>
                             </form>
                         </div>

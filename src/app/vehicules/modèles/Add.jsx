@@ -100,7 +100,7 @@ const Country= () => {
                                     className="btn btn-primary mr-2  btn-fw"
                                     onClick={(event) => saveModel( event )}
                                 >
-                                    {id? 'Editer': 'Envoyer'}
+                                    {id? 'Editer': 'Enregistrer'}
                                 </button>
                             </form>
                         </div>

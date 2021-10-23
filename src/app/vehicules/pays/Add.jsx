@@ -111,7 +111,7 @@ const Index= () => {
                                     className="btn btn-primary mr-2 btn-fw"
                                     onClick={(event) => saveBrand(event)}
                                 >
-                                    {id? 'Editer': 'Envoyer'}
+                                    {id? 'Editer': 'Enregistrer'}
                                 </button>
                             </form>
                         </div>

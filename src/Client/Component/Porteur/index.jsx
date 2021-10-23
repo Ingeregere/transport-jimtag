@@ -17,7 +17,7 @@ const Product = () => {
     return (
         <>
            <Container>
-               <h2 className={'text-dark'}>Voici la liste des porteurs</h2>
+               <h2 className={'text-dark'}>Voici la liste des bennes</h2>
                        <Card className={'cardMain'}>
                            <Row>
                                {values.map((product) =>(

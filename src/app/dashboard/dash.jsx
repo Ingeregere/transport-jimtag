@@ -3,6 +3,7 @@ import {Tab, Tabs} from "react-bootstrap";
 import AllServices from './DashboardService'
 import {CircularProgressbarWithChildren} from "react-circular-progressbar";
 import {Link} from "react-router-dom";
+import {isAuthenticated} from "../user-pages/session";
 
 const Dash = () => {
     const [countAllCommandsByCreatedAt, setCountAllCommandsByCreatedAt] = useState('')
@@ -38,7 +39,7 @@ const Dash = () => {
         CountAllCommands()
         CountAllContactByCreatedAt()
     })
-
+    console.log('Role and token of user or admin',isAuthenticated()[0])
     return (
         <div>
 
@@ -59,7 +60,7 @@ const Dash = () => {
                                                     <div className="card-body text-center">
                                                         <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes que nous avons.</h5>
                                                         <h2 className="mb-4 text-dark font-weight-bold">{countAllCommands}</h2>
-                                                        <div className="px-4 d-flex align-items-center">
+                                                        <div className="px-4 d-flex align-items-center mb-4">
                                                             <svg width="0" height="0">
                                                                 <defs>
                                                                     <linearGradient id="progress-order">
@@ -84,9 +85,9 @@ const Dash = () => {
                                             <div className="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                                                 <div className="card">
                                                     <div className="card-body text-center">
-                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes par jour.</h5>
+                                                        <h5 className="mb-2 text-dark font-weight-normal">Tous les commandes reçus par jour.</h5>
                                                         <h2 className="mb-4 text-dark font-weight-bold">{countAllCommandsByCreatedAt}</h2>
-                                                        <div className="px-4 d-flex align-items-center">
+                                                        <div className="px-4 d-flex align-items-center mb-4">
                                                             <svg width="0" height="0">
                                                                 <defs>
                                                                     <linearGradient id="progress-followers" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -113,7 +114,7 @@ const Dash = () => {
                                                     <div className="card-body text-center">
                                                         <h5 className="mb-2 text-dark font-weight-normal">Tous les contacts reçus par jour.</h5>
                                                         <h2 className="mb-4 text-dark font-weight-bold">{countAllContactByCreatedAt}</h2>
-                                                        <div className="px-4 d-flex align-items-center">
+                                                        <div className="px-4 d-flex align-items-center mb-4">
                                                             <svg width="0" height="0">
                                                                 <defs>
                                                                     <linearGradient id="progress-impressions" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -138,9 +139,9 @@ const Dash = () => {
                                             <div className="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                                                     <div className="card">
                                                         <div className="card-body text-center">
-                                                            <h5 className="mb-2 text-dark font-weight-normal">Tous les Vehicules que nous avons. </h5>
+                                                            <h5 className="mb-2 text-dark font-weight-normal">Tous les véhicules que nous avons. </h5>
                                                             <h2 className="mb-4 text-dark font-weight-bold">{countAllTransports}</h2>
-                                                            <div className="px-4 d-flex align-items-center">
+                                                            <div className="px-4 d-flex align-items-center mb-4">
                                                                 <svg width="0" height="0">
                                                                     <defs>
                                                                         <linearGradient id="progress-visitors" x1="0%" y1="0%" x2="100%" y2="0%">

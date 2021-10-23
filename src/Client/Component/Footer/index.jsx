@@ -1,7 +1,7 @@
 import React from 'react';
-
+import WhatsAppWidget from "react-whatsapp-chat-widget";
+import "react-whatsapp-chat-widget/index.css";
 import {Link} from "react-router-dom";
-import {Button} from "bootstrap";
 import './style.css'
 
 const Footer = () => {
@@ -10,14 +10,12 @@ const Footer = () => {
             <div className="">
                 <footer className="py-4 bgfooter ">
                     <div className="row mx-4">
-
-
                         <div className="sectionFooter offset-1 col-md-2 col-sm-12 mb-2">
                             <h5 className={'text-white'}>Besoin d'aide?</h5>
                             <ul className="nav flex-column">
                                 <li className="nav-item mb-2 "><Link to={"/nous-contact"} className="nav-link p-0 text-dark all_link">Nous contacter</Link></li>
                                 <li className="nav-item mb-2 "><Link to={"/"} className="nav-link p-0 text-dark all_link">Nos services</Link></li>
-                                <li className="nav-item mb-2 "><Link to={"/"} className="nav-link p-0 text-dark all_link">FQA</Link></li>
+                                <li className="nav-item mb-2 "><Link to={"/"} className="nav-link p-0 text-dark all_link">F.A.Q</Link></li>
 
                             </ul>
                         </div>
@@ -49,6 +47,31 @@ const Footer = () => {
 
                 </footer>
             </div>
+            <WhatsAppWidget
+                phoneNo="+25772415986"
+                position="right"
+                widgetWidth="300px"
+                widgetWidthMobile="260px"
+                autoOpen={true}
+                autoOpenTimer={5000}
+                messageBox={true}
+                messageBoxTxt="Salut l'équipe, y a-t-il un service connexe disponible ?"
+                iconSize="40"
+                iconColor="white"
+                iconBgColor="#5ce1e6"
+                headerIcon="./logo.png"
+                headerIconColor="pink"
+                headerTxtColor="black"
+                headerBgColor="#5ce1e6"
+                headerTitle="Jim tag"
+                headerCaption="en ligne"
+                bodyBgColor="#bbb"
+                chatPersonName="jim tag"
+                chatMessage={<>salut 👋 <br /><br /> Comment puis-je t'aider?</>}
+                footerBgColor="#000"
+                btnBgColor="#5ce1e6"
+                btnTxtColor="black"
+            />
 
         </>
     );

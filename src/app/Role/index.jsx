@@ -25,8 +25,10 @@ const Index= () => {
                 <h3 className="page-title"> {id? "Editer": "Ajouter"} un role </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <Link to={'/user-pages/ajouter_role'}>
-                            <button type="button" className="btn btn-primary btn-fw">Ajouter</button>
+                        <Link to={'/admin'}>
+                            <button type="button" className="btn btn-primary btn-fw">
+                                Tableau de bord
+                            </button>
                         </Link>
                     </ol>
                 </nav>
@@ -45,7 +47,6 @@ const Index= () => {
                                     <tr className={'text-center'}>
                                         <th >index</th>
                                         <th >Name</th>
-                                        <th >Modifier</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -54,11 +55,6 @@ const Index= () => {
                                             <tr key={b.id} className={'text-center'}>
                                                 <td >{index+1}</td>
                                                 <td>{b.role}</td>
-                                                <td>
-                                                    <Link to={`/user-pages/editer_role/${b.id}`} className={'text-decoration-none'}>
-                                                        <span className="icon-bg "><i className="mdi mdi-pen "></i>Editer</span>
-                                                    </Link>
-                                                </td>
                                             </tr>
                                         ))
                                     }

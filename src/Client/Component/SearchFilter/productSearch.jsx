@@ -1,15 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import './style.css'
+import '../HomeProduct/style.css'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import ShowImageTransport from "./ShowImageTransport";
+import ShowImageTransport from "../../Component/HomeProduct/ShowImageTransport";
 import AllServices from "./Services";
 
 const Product = () => {
     const [values, setValues] = useState([])
+    const [brand, setBrand] = useState('')
+    const [country, setCountry] = useState('')
+    const [box, setBox] = useState('')
+    const currentURL = window.location.pathname
+    console.log("voici url:"+ currentURL)
+
     useEffect(()=>{
         let isMounted = true;
-        AllServices.getAllTransportHomePage().then((response) =>{
+
+        AllServices.search(1, 1, 'manual').then((response) =>{
             if (isMounted) setValues(response.data)
         })
         return () => { isMounted = false };
@@ -19,8 +26,6 @@ const Product = () => {
     return (
         <>
             <Container>
-                <h3 className={'text-dark'}>Nos derniers ajouts</h3>
-
                 <Card className={'cardMain'}>
                     <Row>
                         {values.map((product) =>(
