@@ -48,14 +48,14 @@ const Footer = () => {
                 </footer>
             </div>
             <WhatsAppWidget
-                phoneNo="+25772415986"
+                phoneNo="+25762243766"
                 position="right"
                 widgetWidth="300px"
                 widgetWidthMobile="260px"
                 autoOpen={true}
-                autoOpenTimer={5000}
+                autoOpenTimer={30000}
                 messageBox={true}
-                messageBoxTxt="Salut l'équipe, y a-t-il un service connexe disponible ?"
+                messageBoxTxt="Salut l'équipe JimTag"
                 iconSize="40"
                 iconColor="white"
                 iconBgColor="#5ce1e6"
@@ -63,11 +63,11 @@ const Footer = () => {
                 headerIconColor="pink"
                 headerTxtColor="black"
                 headerBgColor="#5ce1e6"
-                headerTitle="Jim tag"
+                headerTitle="JimTag"
                 headerCaption="en ligne"
                 bodyBgColor="#bbb"
-                chatPersonName="jim tag"
-                chatMessage={<>salut 👋 <br /><br /> Comment puis-je t'aider?</>}
+                chatPersonName="JimTag"
+                chatMessage={<>Salut 👋 <br /><br /> Comment puis-je t'aider?</>}
                 footerBgColor="#000"
                 btnBgColor="#5ce1e6"
                 btnTxtColor="black"

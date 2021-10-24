@@ -5,7 +5,9 @@ import AppRoutes from './AppRoutes';
 import Navbar from './share/Navbar';
 import Sidebar from './share/Sidebar';
 import Footer from './share/Footer';
+import UserSiderBar from "./share/UserSiderBar";
 import { withTranslation } from "react-i18next";
+import {isAuthenticated} from "./user-pages/session";
 
 class App extends Component {
 
@@ -17,13 +19,14 @@ class App extends Component {
 
     let navbarComponent = !this.state.isFullPageLayout ? <Navbar/> : '';
     let sidebarComponent = !this.state.isFullPageLayout ? <Sidebar/> : '';
+    let usersidebarComponent = !this.state.isFullPageLayout ? <UserSiderBar/> : '';
     let footerComponent = !this.state.isFullPageLayout ? <Footer/> : '';
     return (
 
       <div className="container-scroller">
         { navbarComponent }
         <div className="container-fluid page-body-wrapper">
-          { sidebarComponent }
+          { isAuthenticated() && isAuthenticated()[0] === 'admin'? sidebarComponent : usersidebarComponent}
           <div className="main-panel">
             <div className="content-wrapper">
               <AppRoutes/>
@@ -56,6 +59,7 @@ class App extends Component {
     window.scrollTo(0, 0);
     const fullPageLayoutRoutes = [
       "/admin",
+      "/user",
       "/vehicules/marques",
       "/vehicules/categories",
       "/vehicules/modèles",
@@ -68,6 +72,8 @@ class App extends Component {
       "/image-slide/basic-table",
       "/annonce/gérer_annonces",
       "/annonce/nouvelle_annonces",
+      "/commande/gérer_commande",
+      "/user/contacts",
       "/contacts/clients",
       "/vehicules/ajouter_marques",
       "/vehicules/ajouter_pays",

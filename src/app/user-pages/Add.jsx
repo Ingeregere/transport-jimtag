@@ -103,8 +103,7 @@ const Index= () => {
     )
     return (
         <Container>
-            <span>{showError()}</span>
-            <span>{showSuccess()}</span>
+
             <div className="page-header mainheader">
                 <h3 className="page-title"> Nouveau utilisateur </h3>
                 <nav aria-label="breadcrumb">
@@ -115,7 +114,8 @@ const Index= () => {
                     </ol>
                 </nav>
             </div>
-
+            <span>{showError()}</span>
+            <span>{showSuccess()}</span>
             <div className="row maintable">
 
                 <div className="col-lg-6 grid-margin stretch-card">

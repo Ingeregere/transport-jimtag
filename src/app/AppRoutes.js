@@ -3,8 +3,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Spinner from './share/Spinner';
 import AdminRoute from "./SecuriteRoute/AdminRoute";
+import PrivateRoute from "./SecuriteRoute/PrivateRoute";
+import UserRoute from "./SecuriteRoute/UserRoute";
 
 const Dashboard = lazy(() => import('./dashboard/Dashboard'));
+const UserDashboard = lazy(() => import('./dashboard/UserDashboard'));
 
 const GererVehicule = lazy(() => import('./vehicules/gérer_vehicules'));
 const SearchTransport = lazy(()=>import('../Client/Pages/Search'))
@@ -65,6 +68,7 @@ class AppRoutes extends Component {
       <Suspense fallback={<Spinner/>}>
         <Switch>
           <AdminRoute exact path="/admin" component={ Dashboard } />
+          <PrivateRoute exact path="/user" component={ UserDashboard } />
           <Route exact path="/" component={ HomePage } />
           <Route exact path="/recherche/:brand/:country/:box" component={ SearchTransport } />
           <AdminRoute exact path="/vehicules/category/editer/:id" component={ UpdateCategory } />
@@ -75,8 +79,8 @@ class AppRoutes extends Component {
           <Route exact path="/bennes" component={ Porteur } />
           <Route exact path="/semis" component={ Semis } />
           <Route exact path="/pièces et divers" component={ Divers } />
-          <Route exact path="/flat bed" component={ Pieces } />
-          <Route exact path={'/detail/:id'} component={ Detail } />
+          <Route exact path="/pelles" component={ Pieces } />
+          <PrivateRoute exact path={'/detail/:id'} component={ Detail } />
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
           <AdminRoute path="/vehicules/marques" component={ Marque } />
@@ -107,10 +111,12 @@ class AppRoutes extends Component {
           <AdminRoute path="/image-slide/image-publicite" component={ ImageArticle } />
           <AdminRoute path="/image-slide/ajouter-publicite" component={ AddArticle } />
           <AdminRoute path="/annonce/gérer_annonces" component={ GererAnnonce } />
+          <UserRoute path="/commande/gérer_commande" component={ GererAnnonce } />
           <AdminRoute path="/commandes/par-jour" component={ CommandePerDay } />
           <AdminRoute path="/annonce/nouvelle_annonces" component={ DeposerAnnnonce } />
-          <Route path="/commande-camion" component={ DeposerAnnnonce } />
+          <PrivateRoute path="/commande-camion" component={ DeposerAnnnonce } />
           <AdminRoute path="/contacts/clients" component={ ContactUser } />
+          <UserRoute path="/user/contacts" component={ ContactUser } />
           <AdminRoute path="/contacts/recus-par-jour" component={ ContactPerDay } />
           <AdminRoute path="/user-pages/utilisateur" component={ AllUser } />
           <AdminRoute path="/user-pages/ajouter_user" component={ AddUser } />

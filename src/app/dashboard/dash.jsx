@@ -3,7 +3,6 @@ import {Tab, Tabs} from "react-bootstrap";
 import AllServices from './DashboardService'
 import {CircularProgressbarWithChildren} from "react-circular-progressbar";
 import {Link} from "react-router-dom";
-import {isAuthenticated} from "../user-pages/session";
 
 const Dash = () => {
     const [countAllCommandsByCreatedAt, setCountAllCommandsByCreatedAt] = useState('')
@@ -39,7 +38,6 @@ const Dash = () => {
         CountAllCommands()
         CountAllContactByCreatedAt()
     })
-    console.log('Role and token of user or admin',isAuthenticated()[0])
     return (
         <div>
 

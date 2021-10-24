@@ -1,0 +1,23 @@
+import React, { Component } from 'react'
+import {Route,Redirect} from 'react-router-dom'
+import {isAuthenticated} from "../user-pages/session";
+
+const UserRoute=({component:Component, ...rest})=>(
+    <Route
+        {...rest}
+        render={props =>
+            isAuthenticated() && isAuthenticated()[0]==='user' ? (
+                <Component {...props}/>
+            ):(
+                <Redirect
+                    to={
+                        {
+                            pathname:'/login',
+                            state:{from:props.location}
+                        }
+                    }
+                />
+            )} />
+)
+
+export  default  UserRoute

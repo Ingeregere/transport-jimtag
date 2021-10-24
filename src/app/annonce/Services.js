@@ -7,6 +7,7 @@ const MODEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/models
 const CATEGORY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/categories/';
 const CONTACT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 const USER_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/users/';
+const COMMAND_TOKEN_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/users/';
 class AllServices {
     getAllAnnonces(){
         return axios.get(ANNONCE_API_URL+'getAllCommands')

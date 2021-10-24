@@ -18,6 +18,7 @@ const CreateAnnonce = () => {
   const [countries, setCountries] = useState([])
   const [brand, setBrand] = useState('')
   const [email, setEmail] = useState('')
+  const [mobile, setMobile] = useState('')
   const [kindProduct, setKindProduct] = useState('')
   const [mapKilometer, setMapKilometer] = useState(0)
   const [budgetPlanned, setBudgetPlanned] = useState('')
@@ -74,6 +75,7 @@ const CreateAnnonce = () => {
     const newAnnonce = {
       brand,
       email,
+      mobile,
       budgetPlanned,
       mapKilometer,
       countryDelivery,
@@ -339,7 +341,7 @@ const CreateAnnonce = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark'} htmlFor="message">Inforamtions diverses</label>
+                    <label className={'text-dark'} htmlFor="message">Informations diverses</label>
                     <textarea
                         className="form-control"
                         id="exampleTextarea1"
@@ -369,6 +371,17 @@ const CreateAnnonce = () => {
                         placeholder="Budget prévu"
                         value={budgetPlanned}
                         onChange={(e) => setBudgetPlanned(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <label className={'text-dark '} htmlFor="placeLoading">Telephone</label>
+                    <Form.Control
+                        type="tel"
+                        className="form-control"
+                        id="exampleInputPassword4"
+                        placeholder="Entrer votre numero +257... ."
+                        value={email}
+                        onChange={(e) => setMobile(e.target.value)}
                     />
                   </Form.Group>
                   <Form.Group>

@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.css'
-import { Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { Form, FormControl, Nav, Navbar} from "react-bootstrap";
 import NavLink from "react-bootstrap/NavLink";
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
+import {isAuthenticated, signout} from "../../../app/user-pages/session";
 
 const NavbarHeader = () => {
+    const history = useHistory()
     return (
         <Navbar expand="lg" className={'navbarMain'}  fixed="top" >
 
@@ -30,19 +32,58 @@ const NavbarHeader = () => {
                             aria-label="Search"
                         />
                     </Form>
-
                     <NavLink as={Link} to={'/commande-camion'}>
                         <button type="button" className="btn btn-dark btn-fw ">
                             <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
                             Louer un camion
                         </button>
                     </NavLink>
-                    <NavLink as={Link} to={'/login'}>
-                        <button type="button" className="btn btn-dark btn-fw ">
-                            <span className="icon-bg iconBtn"><i className="mdi mdi-account-circle"></i></span>
-                            Mon espace
-                        </button>
-                    </NavLink>
+                    {isAuthenticated() && isAuthenticated()[0] === 'admin' &&(
+                        <NavLink as={Link} to={'/admin'}>
+                            <button type="button" className="btn btn-dark btn-fw ">
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                Mon espace
+                            </button>
+                        </NavLink>
+                    )}
+                    {isAuthenticated() && isAuthenticated()[0] === 'user' &&(
+                        <NavLink as={Link} to={'/commande/gérer_commande'}>
+                            <button type="button" className="btn btn-dark btn-fw ">
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                Mon espace
+                            </button>
+                        </NavLink>
+                    )}
+
+
+                    {isAuthenticated() &&(
+                        <NavLink as={Link} to={'/'}>
+                            <button
+                                type="button"
+                                className="btn btn-dark btn-fw "
+                                style={{cursor:'pointer',color:'#ffffff'}}
+                                onClick={()=>signout(()=>{
+                                    history.push('/')
+                                })}
+                            >
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                Déconnecter
+                            </button>
+                        </NavLink>
+                    )}
+                    {!isAuthenticated() &&(
+                        <NavLink as={Link} to={'/login'}>
+                            <button type="button" className="btn btn-dark btn-fw ">
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                Se connecter
+                            </button>
+                        </NavLink>
+                    )}
+
+
+
+
+
 
                 </Nav>
 

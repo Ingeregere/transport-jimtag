@@ -13,8 +13,7 @@ const Login =() =>{
       const [token, setToken] = useState('')
       const [username, setUsername] = useState('')
       const [password, setPassword] = useState('')
-      const history= useHistory()
-     const {Localuser}=isAuthenticated()
+      const history = useHistory()
 
     const isAuthenticate = (event) =>{
     event.preventDefault();
@@ -30,25 +29,17 @@ const Login =() =>{
 
             const loginData = response.data.message;
             const authorite = loginData.split('-');
-            console.log(Localuser)
               authenticate(authorite,()=>{
                   setRole(authorite[0])
                   setToken(authorite[1])
-                  console.log('role of user or admin', Localuser)
               })
-            if(authorite[0] == 'admin') {
-
-              history.push('/admin')
-            }else if(authorite[0] == 'user'){
-              history.push('/')
-            }
+           history.push('/')
           }
         })
         .catch(error =>{
           setError('true')
         })
   }
-    console.log('role of user or admin',Localuser)
 
     const showError = () => (
 

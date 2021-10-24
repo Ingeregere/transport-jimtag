@@ -2,8 +2,25 @@ import React, { Component } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Trans } from 'react-i18next';
+import AllServices from "./ServicesCustomer/Services";
+import {isAuthenticated} from "../user-pages/session";
 
 class Navbar extends Component {
+  _isMounted = false;
+  state = {
+    infoUser: []
+  };
+  componentDidMount() {
+    this._isMounted = true;
+    AllServices.getAllData(isAuthenticated()[1])
+        .then(infos => {
+          this.setState({ infoUser: infos.data });
+        });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   toggleOffcanvas() {
     document.querySelector('.sidebar-offcanvas').classList.tsoggle('active');
   }
@@ -37,7 +54,9 @@ class Navbar extends Component {
                       {/*<img src={require("../../assets/images/faces/face28.png")} alt="profile" />*/}
                     </div>
                     <div className="nav-profile-text">
-                      <p className="mb-1 text-black"><Trans>Administrateur</Trans></p>
+                      <p className="mb-1 text-black"><Trans>
+                        {this.state.infoUser['firstName'] } {" "} { this.state.infoUser['lastName']}
+                      </Trans></p>
                   </div>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="preview-list navbar-dropdown">

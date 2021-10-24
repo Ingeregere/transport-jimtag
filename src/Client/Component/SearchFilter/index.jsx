@@ -4,12 +4,14 @@ import {Col, Container, Form, Row} from "react-bootstrap";
 import ServiceMarque from "../../../app/vehicules/marques/ServiceMarque";
 import PaysService from "../../../app/vehicules/pays/PaysService";
 import CarrosseriesService from "../../../app/vehicules/carrosseries/CarrosseriesService";
+import CategoryService from '../../../app/vehicules/attribuer_vehicule/Services'
 
 const SearchFilter = () => {
     const [brands, setBrands] = useState([])
 
     const [countries, setCountries] = useState([])
     const [bodyworks, setBodyWorks] = useState([])
+    const [categories, setCategories] = useState([])
 
     useEffect(()=>{
         let isMounted = true;
@@ -17,12 +19,19 @@ const SearchFilter = () => {
             getAllBrands()
             getAllCountries()
             getAllBodyWork()
+            getAllCategories()
         }
         return () => { isMounted = false };
     },[])
     const getAllBrands = () =>{
         ServiceMarque.getAllBrand().then((response) =>{
             setBrands(response.data)
+            // console.log(response.data)
+        })
+    }
+    const getAllCategories = () =>{
+        CategoryService.getAllCategoryTransport().then((response) =>{
+            setCategories(response.data)
             // console.log(response.data)
         })
     }
@@ -49,6 +58,17 @@ const SearchFilter = () => {
                             <p className={'mb-4'}></p>
                             <button type="button" className="btn btn-primary btn-fw btnView ">Sélectionner</button>
                         </Col>
+                        <Col md={2} lg={2} sm={6} xs={6}>
+                            <Form.Group >
+                                <label htmlFor="exampleSelectGender" className={'Namelabel'}>Categorie</label>
+                                <select className="form-control" id="exampleSelectGender">
+                                    <option defaultValue={'Selectionner la marque'}>Categorie</option>
+                                    {categories && categories.map((category, index) => (
+                                        <option key={category.id} value={category.id} >{category.category}</option>
+                                    ))}
+                                </select>
+                            </Form.Group>
+                        </Col>
 
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
@@ -62,7 +82,7 @@ const SearchFilter = () => {
                             </Form.Group>
                         </Col>
 
-                        <Col md={3} lg={3} sm={6} xs={6}>
+                        <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Boite de vitesse</label>
                                 <select className="form-control" id="exampleSelectGender">
@@ -73,7 +93,7 @@ const SearchFilter = () => {
                                 </select>
                             </Form.Group>
                         </Col>
-                        <Col md={3} lg={3} sm={12} xs={12}>
+                        <Col md={2} lg={2} sm={12} xs={12}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Pays</label>
                                 <select className="form-control" id="exampleSelectGender">
