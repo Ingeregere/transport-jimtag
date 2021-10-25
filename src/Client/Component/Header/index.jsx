@@ -12,7 +12,7 @@ const NavbarHeader = () => {
 
             <Navbar.Brand as={Link} to={'/'} >
                 <img
-                    src="/logo.ico"
+                    src="/logo.jpeg"
                     width="100"
                     height="40"
                     className="d-inline-block align-top logo"
