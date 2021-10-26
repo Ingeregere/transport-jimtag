@@ -59,7 +59,7 @@ const Footer = () => {
                 iconSize="40"
                 iconColor="white"
                 iconBgColor="#5ce1e6"
-                headerIcon="./logo.png"
+                headerIcon="/logo.png"
                 headerIconColor="pink"
                 headerTxtColor="black"
                 headerBgColor="#5ce1e6"
