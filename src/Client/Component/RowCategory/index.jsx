@@ -26,7 +26,7 @@ const RowCategory = () => {
                     Allccategories.map((category) =>(
                         <Col className={'RowCard'} key={category.id} >
                             <NavLink as={Link} to={`/${category.categoryItem.toLowerCase()}`} >
-                                <Card className="bg-dark text-white border-white shadow ">
+                                <Card className="text-white border-white shadow ">
                                     <ShowImage item={'item'} sort={'category'} method={'viewImageCategoryItemById'} getId={category} />
                                     <Card.Footer className=" footerCard " >
                                         <p className={'NameCategorie'}>{category.categoryItem}</p>

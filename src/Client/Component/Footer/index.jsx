@@ -1,10 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import WhatsAppWidget from "react-whatsapp-chat-widget";
+import AllServices from '../../../app/share/ServicesCustomer/Services'
+import {isAuthenticated} from "../../../app/user-pages/session";
 import "react-whatsapp-chat-widget/index.css";
 import {Link} from "react-router-dom";
 import './style.css'
+import ReactAppWhatsapp from "../../Pages/Map";
 
 const Footer = () => {
+    const [nameAndlastname, setName] = useState([])
+
+    const getNameLastnameChact = () =>{
+        AllServices.getAllData(isAuthenticated()[1]).then((response) =>{
+            setName(response.data)
+        })
+    }
+    useEffect(()=>{
+        getNameLastnameChact()
+    },[])
     return (
         <>
             <div className="">
@@ -41,37 +54,14 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="border-top text-center">
-                        <p className={'designed text-dark mt-5'} > designed by Burundi-jobs &copy; {new Date().getFullYear()} Company, Inc. All rights reserved.</p>
-                    </div>
+                    {/*<div className="border-top text-center">*/}
+                    {/*    <p className={'designed text-dark mt-5'} >  &copy; {new Date().getFullYear()} Company, Inc. All rights reserved.</p>*/}
+                    {/*</div>*/}
 
                 </footer>
             </div>
-            <WhatsAppWidget
-                phoneNo="+25762243766"
-                position="right"
-                widgetWidth="300px"
-                widgetWidthMobile="260px"
-                autoOpen={true}
-                autoOpenTimer={30000}
-                messageBox={true}
-                messageBoxTxt="Salut l'équipe JimTag"
-                iconSize="40"
-                iconColor="white"
-                iconBgColor="#5ce1e6"
-                headerIcon="/logowhatsapp.png"
-                headerIconColor="pink"
-                headerTxtColor="black"
-                headerBgColor="#5ce1e6"
-                headerTitle="JimTag"
-                headerCaption="en ligne"
-                bodyBgColor="#bbb"
-                chatPersonName="JimTag"
-                chatMessage={<>Salut 👋 <br /><br /> Comment puis-je t'aider?</>}
-                footerBgColor="#000"
-                btnBgColor="#5ce1e6"
-                btnTxtColor="black"
-            />
+            <ReactAppWhatsapp />
+
 
         </>
     );

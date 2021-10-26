@@ -7,7 +7,9 @@ class Footer extends Component {
       <footer className="footer">
         <div className="container-fluid">
           <div className="d-sm-flex justify-content-center justify-content-sm-between py-2 w-100">
-            <span className="text-muted text-center text-sm-left d-block d-sm-inline-block"><Trans>Copyright</Trans> © <a href="https://www.burundi-jobs.com/" target="_blank" rel="noopener noreferrer"><Trans>burundi-jobs.com</Trans> </a>{new Date().getFullYear()}</span>
+            <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                &copy; {new Date().getFullYear()} JimTag All rights reserved. Designed by <a href='https://www.burundi.jobs.bi' target={'_blank'}> Burundijobs</a>
+            </span>
           </div>
         </div>
       </footer>

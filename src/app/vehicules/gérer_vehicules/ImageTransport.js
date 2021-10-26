@@ -9,7 +9,7 @@ const Marque= () => {
 
     const [values,setValues] = useState({
         imageTransport: '',
-        id: useParams().id,
+        id: '',
         error: '',
         success: '',
         formData: ''

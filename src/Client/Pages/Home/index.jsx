@@ -5,6 +5,7 @@ import HomeProduct from "../../Component/HomeProduct";
 import SearchFilter from "../../Component/SearchFilter";
 import CarrouselAds from "../../Component/Carrousel";
 import Footer from "../../Component/Footer";
+import ReactAppWhatsapp from "../Map";
 
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
             <HomeProduct />
             <CarrouselAds />
             <Footer />
+
 
         </>
     );

@@ -6,62 +6,26 @@ import {Link, useParams} from "react-router-dom";
 
 const Marque= () => {
     const {id} = useParams()
-    const [values,setValues] = useState({
-        imageTransport: '',
-        error: '',
-        success: '',
-        formData: ''
-    })
-    const {
-        formData,
-        error,
-        success
-    } = values
-
-    useEffect(()=>{
-        init(id)
-    },[])
-
-    const init=(id)=>{
-        AllServices.getVehiculeById(id).then(data=>{
-            if(data.error){
-                setValues({...values,error:data.error})
-            }
-            else{
-
-                setValues({
-                    ...values,
-                    formData: new FormData()
-                })
-            }
-
-        })
-
-    }
-
-
-    const handleChange = name => event =>{
-        const value = name === 'imageTransport' ? event.target.files[0]: event.target.value
-        formData.set(name, value)
-        setValues({...values, [name]: value})
-
-    }
+    const [imageTransport, setimageTransport] = useState('')
+    const [formaData, setFormaData] = useState('')
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState('')
 
     const clickSubmit = event =>{
         event.preventDefault()
-        setValues({...values, error: ''})
-        AllServices.postImageTransport(formData)
-            .then(data =>{
-                if(data.error){
-                    setValues({...values,error: false})
-                }
-                else{
-                    setValues({
-                        ...values,
-                        imageTransport: '',
-                        success: data.data.message,
-                    })
-                }
+        const data = {imageTransport, id}
+        AllServices.postImageTransport(data)
+            .then(response=>{
+                console.log('New annonce is added', response.data)
+                setSuccess(response.data.message)
+                setError('')
+                setimageTransport('')
+
+            })
+            .catch(error =>{
+                console.log('something went wrong', error)
+                setError('true')
+                setSuccess('')
             })
 
 
@@ -110,18 +74,8 @@ const Marque= () => {
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
                                     accept={'image/*'}
-                                    name={'imageTransport'}
-                                    onChange={handleChange('imageTransport')}
-                                />
-                                <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
-                                <Form.Control
-                                    type="text"
-                                    className="form-control mb-2 mr-sm-2"
-                                    id="inlineFormInputName2"
-                                    placeholder="veuiller complète le numero"
-                                    value={id}
-                                    name={'id'}
-                                    onChange={handleChange('id')}
+                                    value={imageTransport}
+                                    onChange={(event) => setimageTransport(event.target.files[0])}
                                 />
 
                                 <button

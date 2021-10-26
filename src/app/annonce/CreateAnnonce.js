@@ -304,7 +304,7 @@ const CreateAnnonce = () => {
                         type="number"
                         className="form-control"
                         id="exampleInputEmail3"
-                        placeholder="Nombre de transport"
+                        placeholder="Nombre de camions"
                         value={numberTransport}
                         onChange={(e) => setNumberTransport(e.target.value)}
                     />
@@ -380,7 +380,7 @@ const CreateAnnonce = () => {
                         className="form-control"
                         id="exampleInputPassword4"
                         placeholder="Entrer votre numero +257... ."
-                        value={email}
+                        value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
                     />
                   </Form.Group>
