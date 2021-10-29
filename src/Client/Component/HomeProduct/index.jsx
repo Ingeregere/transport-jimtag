@@ -30,7 +30,7 @@ const Product = () => {
                                 <Card className={'mb-2 mt-2 mr-2 ml-2 cardProduct'}>
                                     <Row>
                                         <Col xs={12} md={6} className={'w-100'}>
-                                            <ShowImageTransport item={'transport'}  method={'viewImageTransportById'} getId={product} />
+                                            <ShowImageTransport item={'transport'}  method={'viewFirstImageTransportById'} getId={product} />
                                         </Col>
                                         <Col xs={12} md={6} >
                                             <Card.Body className={'cardbodymain'}>

@@ -28,6 +28,9 @@ const UpdateBodywork = lazy(() => import('./vehicules/carrosseries/UpdateCarross
 const Attribuer_vehicule = lazy(() => import('./vehicules/attribuer_vehicule'));
 const UpdateVehicule = lazy(() => import('./vehicules/gérer_vehicules/UpdateVehicules'));
 const AjouterImageTransport = lazy(() => import('./vehicules/gérer_vehicules/ImageTransport'));
+const secondImage = lazy(() => import('./vehicules/gérer_vehicules/secondImage'));
+const ThirdImage = lazy(() => import('./vehicules/gérer_vehicules/ThirdImage'));
+const FourthImage = lazy(() => import('./vehicules/gérer_vehicules/FourthImage'));
 const EnableAndDesable = lazy(() => import('./vehicules/gérer_vehicules/EnableDesable'));
 const HomePage = lazy(()=>import('../Client/Pages/Home'))
 const Tracteur = lazy(()=>import('../Client/Pages/Tracteur'))
@@ -80,7 +83,7 @@ class AppRoutes extends Component {
           <Route exact path="/semis" component={ Semis } />
           <Route exact path="/pièces et divers" component={ Divers } />
           <Route exact path="/pelles" component={ Pieces } />
-          <PrivateRoute exact path={'/detail/:id'} component={ Detail } />
+          <Route exact path={'/detail/:id'} component={ Detail } />
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
           <AdminRoute path="/vehicules/marques" component={ Marque } />
@@ -103,7 +106,10 @@ class AppRoutes extends Component {
           <AdminRoute path="/vehicules/carrosseries" component={ BodyWork } />
           <AdminRoute path="/vehicules/attribuer_vehicules" component={ Attribuer_vehicule } />
           <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
-          <AdminRoute path="/vehicules/ajouter_image/:id" component={ AjouterImageTransport } />
+          <AdminRoute path="/vehicules/ajouter_image1/:id" component={ AjouterImageTransport } />
+          <AdminRoute path="/vehicules/ajouter_image2/:id" component={ secondImage } />
+          <AdminRoute path="/vehicules/ajouter_image3/:id" component={ ThirdImage } />
+          <AdminRoute path="/vehicules/ajouter_image4/:id" component={ FourthImage } />
           <AdminRoute path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />
           <AdminRoute path="/contacts/question" component={ ContactFQA } />
           <AdminRoute path="/image-slide/image-slide" component={ ImageSlide } />

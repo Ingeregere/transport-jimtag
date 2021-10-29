@@ -4,9 +4,7 @@ import AllServices from "./Services";
 import './style.css'
 import '../../Client/Component/Product/style.css'
 import GoogleMapReact from "google-map-react";
-import {Map, Marker} from "google-maps-react";
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete";
-import {DistanceMatrixService} from "@react-google-maps/api";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -14,10 +12,11 @@ const CreateAnnonce = () => {
 
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [brands, setBrands] = useState([])
+  const [categories, setCategories] = useState([])
   const [countries, setCountries] = useState([])
-  const [brand, setBrand] = useState('')
+  const [category, setCategory] = useState('')
   const [email, setEmail] = useState('')
+  const [currency, setCurrency] = useState('')
   const [mobile, setMobile] = useState('')
   const [kindProduct, setKindProduct] = useState('')
   const [mapKilometer, setMapKilometer] = useState(0)
@@ -53,14 +52,14 @@ const CreateAnnonce = () => {
 
 
   useEffect(()=>{
-    getAllBrands()
+    getAllCategory()
     getAllCountries()
 
   },[])
 
-  const getAllBrands = () =>{
-    AllServices.getAllBrand().then((response) =>{
-      setBrands(response.data)
+  const getAllCategory = () =>{
+    AllServices.getAllCategory().then((response) =>{
+      setCategories(response.data)
       // console.log(response.data)
     })
   }
@@ -73,8 +72,9 @@ const CreateAnnonce = () => {
   const saveAnnonce = (annonce) =>{
     annonce.preventDefault();
     const newAnnonce = {
-      brand,
+      category,
       email,
+      currency,
       mobile,
       budgetPlanned,
       mapKilometer,
@@ -91,8 +91,9 @@ const CreateAnnonce = () => {
     AllServices.postAnnonces(newAnnonce)
         .then(response=>{
           console.log('New annonce is added', response.data)
-          setBrand('')
+          setCategory('')
           setEmail('')
+          setCurrency('')
           setNumberTransport('')
           setPlaceDelivery('')
           setPlaceLoading('')
@@ -288,12 +289,12 @@ const CreateAnnonce = () => {
                     <select
                         className="form-control"
                         id="exampleSelectGender"
-                        value={brand}
-                        onChange={(e) => setBrand(e.target.value)}
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
                     >
-                      <option defaultValue={'Selectionner la marque'}>Selectionner la marque</option>
-                      {brands && brands.map((brand, index) => (
-                          <option key={brand.id} value={brand.id} >{brand.brand}</option>
+                      <option defaultValue={'Selectionner la marque'}>Selectionner le type de camion</option>
+                      {categories && categories.map((category, index) => (
+                          <option key={category.id} value={category.id} >{category.category}</option>
                       ))}
 
                     </select>
@@ -372,6 +373,20 @@ const CreateAnnonce = () => {
                         value={budgetPlanned}
                         onChange={(e) => setBudgetPlanned(e.target.value)}
                     />
+                  </Form.Group>
+                  <Form.Group>
+                    <label className={'text-dark'} htmlFor="brand" >Devise</label>
+                    <select
+                        className="form-control"
+                        id="exampleSelectGender"
+                        value={currency}
+                        onChange={(e) => setCurrency(e.target.value)}
+                    >
+                      <option defaultValue={'Selectionner la marque'}>choisissez...</option>
+                      <option value={'$'}>$(dollard)</option>
+                      <option value={'BIF'}>BIF(fbu)</option>
+
+                    </select>
                   </Form.Group>
                   <Form.Group>
                     <label className={'text-dark '} htmlFor="placeLoading">Telephone</label>

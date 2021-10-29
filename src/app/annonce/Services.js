@@ -4,6 +4,7 @@ const ANNONCE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/comm
 const BRAND_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/brands/';
 const COUNTRY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/countries/';
 const MODEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/models/';
+const CATEGORY_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/category/';
 const CATEGORY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/categories/';
 const CONTACT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 const USER_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/users/';
@@ -15,7 +16,9 @@ class AllServices {
     getAllBrand(){
         return axios.get(BRAND_API_URL+'getAllBrands' )
     }
-
+    getAllCategory(){
+        return axios.get(CATEGORY_TRANSPORT_API_URL+'getAllCategory')
+    }
 
     postModels(newModel) {
         return axios.post(MODEL_API_URL, newModel)

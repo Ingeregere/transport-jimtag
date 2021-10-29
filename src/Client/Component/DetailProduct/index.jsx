@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
-import { Card, Col, Container, Row} from "react-bootstrap";
+import {Card, Carousel, Col, Container, Row} from "react-bootstrap";
 import ModalContact from '../Modal'
 import AllServices from "./service";
 import {useParams} from "react-router-dom";
@@ -31,9 +31,20 @@ const Detail = () => {
                     <Row>
 
                             <Col lg={6} md={6} sm={6} xs={12} >
-                                <Card className={'mb-2 mt-2 ml-2 cardProduct'}>
-                                            <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
-                                </Card>
+                                <Carousel>
+                                    <Carousel.Item>
+                                        <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewFirstImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewSecondImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewThirdImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <Card.Img variant="top" src= {`http://backend-e-commerce-transport.jimtag.fr:80/api/transport/viewThirdImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                    </Carousel.Item>
+                                </Carousel>
                             </Col>
                         <Col lg={6} md={6} sm={6} xs={12} >
                             <Card className={'mb-2 mt-2 ml-2 mr-2 cardProduct'}>

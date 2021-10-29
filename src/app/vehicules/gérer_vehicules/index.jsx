@@ -95,16 +95,46 @@ const Index= () => {
                                                 <td>{b.country}</td>
                                                 <td>{b.dateRegistration}</td>
                                                 <td>{ b.imageTransport==='Insérer une image'?
-                                                    <Link to={`/vehicules/ajouter_image/${b.id}`}>
+                                                    <Link to={`/vehicules/ajouter_image1/${b.id}`}>
                                                         <button type="button" className="btn btn-primary btn-fw">
-                                                            Insérer une image
+                                                            Insérer une image1
                                                         </button>
                                                     </Link> :
-                                                    <Link to={`/vehicules/ajouter_image/${b.id}`}>
-                                                        <button type="button" className="btn btn-primary btn-fw">
-                                                           Editer l'image
-                                                        </button>
+                                                    <Link to={`/vehicules/ajouter_image1/${b.id}`}>
+                                                        <span className="icon-bg "><i className="mdi mdi-image "></i>Editer1</span>
                                                     </Link>
+                                                    } <br/>
+                                                    { b.imageTransport==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image2/${b.id}`}>
+                                                            <button type="button" className="btn btn-primary btn-fw">
+                                                                Insérer une image1
+                                                            </button>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image2/${b.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer2</span>
+                                                        </Link>
+                                                    }
+                                                    <br/>
+                                                    { b.imageTransport==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image3/${b.id}`}>
+                                                            <button type="button" className="btn btn-primary btn-fw">
+                                                                Insérer une image1
+                                                            </button>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image3/${b.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer3</span>
+                                                        </Link>
+                                                    }
+                                                    <br/>
+                                                    { b.imageTransport==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image4/${b.id}`}>
+                                                            <button type="button" className="btn btn-primary btn-fw">
+                                                                Insérer une image1
+                                                            </button>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image4/${b.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer4</span>
+                                                        </Link>
                                                     }
                                                 </td>
                                                 <td>{b.kilometer}</td>

@@ -54,9 +54,11 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/*<div className="border-top text-center">*/}
-                    {/*    <p className={'designed text-dark mt-5'} >  &copy; {new Date().getFullYear()} Company, Inc. All rights reserved.</p>*/}
-                    {/*</div>*/}
+                    <div className="border-top text-center">
+                        <p className={'designed text-dark mt-5'} >
+                            &copy; {new Date().getFullYear()} JimTag All rights reserved.
+                        </p>
+                    </div>
 
                 </footer>
             </div>

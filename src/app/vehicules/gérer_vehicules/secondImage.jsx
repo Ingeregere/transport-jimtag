@@ -8,7 +8,7 @@ import {Link, useParams} from "react-router-dom";
 const Marque= () => {
 
     const [values,setValues] = useState({
-        firstImage: '',
+        secondImage: '',
         id: '',
         error: '',
         loading: false,
@@ -28,14 +28,14 @@ const Marque= () => {
     }, [])
 
     const handleChange = name => event =>{
-        const value = name === 'firstImage' ? event.target.files[0]: event.target.value
+        const value = name === 'secondImage' ? event.target.files[0]: event.target.value
         formData.set(name, value)
         setValues({...values, [name]: value})
     }
 
     const clickSubmit = event =>{
         event.preventDefault()
-        setValues({...values, error: '', loading:true})
+        setValues({...values, error: '', loading: true})
         AllServices.postImageTransport(formData)
             .then(data =>{
                 if(data.error){
@@ -44,8 +44,7 @@ const Marque= () => {
                 else{
                     setValues({
                         ...values,
-                        firstImage: '',
-                        loading:false,
+                        secondImage: '',
                         success: data.data.message,
                     })
                 }
@@ -53,7 +52,6 @@ const Marque= () => {
 
 
     }
-
     const showError = () => (
 
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
@@ -116,8 +114,8 @@ const Marque= () => {
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
                                     accept={'image/*'}
-                                    name={'firstImage'}
-                                    onChange={handleChange('firstImage')}
+                                    name={'secondImage'}
+                                    onChange={handleChange('secondImage')}
                                 />
                                 <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
                                 <Form.Control

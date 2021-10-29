@@ -3,6 +3,7 @@ import './style.css'
 import {Alert, Button, Col, Form, Modal, Row} from "react-bootstrap";
 import {useParams, useHistory} from "react-router-dom";
 import AllServices from "./Service";
+import PrivateRoute from "../../../app/SecuriteRoute/PrivateRoute";
 
 function ModalContact() {
     const {id} = useParams()
@@ -67,9 +68,10 @@ function ModalContact() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} >
-                Nous Contacter pour ce vehicule
-            </Button>
+                <Button variant="primary" onClick={handleShow} >
+                   Nous Contacter pour ce vehicule
+                </Button>
+
 
             <Modal show={show} onHide={handleClose} >
 
