@@ -45,6 +45,7 @@ const DeposerAnnnonce = lazy(() => import('../Client/Pages/DeposerAnnonce'));
 const GererAnnonce = lazy(() => import('./annonce/Annonce'));
 const CommandePerDay = lazy(() => import('./dashboard/Commande-Per-Day'));
 const ImageSlide = lazy(() => import('./image-slide'));
+const deleteSlide = lazy(() => import('./image-slide/delete'));
 const UpdateImageSlide = lazy(() => import('./image-slide/UpdateImageSlide'));
 const ImageArticle = lazy(() => import('./image-slide/ImageArticle'));
 const AddArticle = lazy(() => import('./image-slide/AddArticle'));
@@ -116,6 +117,7 @@ class AppRoutes extends Component {
           <AdminRoute path="/contacts/question" component={ ContactFQA } />
           <AdminRoute path="/image-slide/image-slide" component={ ImageSlide } />
           <AdminRoute path="/image-slide/editer/:id" component={ UpdateImageSlide } />
+          <AdminRoute path="/image-slide/supprimer/:id" component={ deleteSlide } />
           <AdminRoute path="/image-slide/image-publicite" component={ ImageArticle } />
           <AdminRoute path="/image-slide/ajouter-publicite" component={ AddArticle } />
           <AdminRoute path="/annonce/gérer_annonces" component={ GererAnnonce } />

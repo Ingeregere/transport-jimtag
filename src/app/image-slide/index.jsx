@@ -60,7 +60,10 @@ const Index= () => {
                                                 <td>{b.imageName}</td>
                                                 <td>
                                                     <Link to={`/image-slide/editer/${b.id}`} className={'text-decoration-none'}>
-                                                        <span className="icon-bg "><i className="mdi mdi-pen"></i>Editer</span>
+                                                        <span className="icon-bg "><i className="mdi mdi-pen">Editer</i></span>
+                                                    </Link> {" "}
+                                                    <Link to={`/image-slide/supprimer/${b.id}`} className={'text-decoration-none'}>
+                                                        <span className="icon-bg "><i className="mdi mdi-delete">supprimer</i></span>
                                                     </Link>
                                                 </td>
                                             </tr>

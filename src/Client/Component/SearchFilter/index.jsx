@@ -5,13 +5,18 @@ import ServiceMarque from "../../../app/vehicules/marques/ServiceMarque";
 import PaysService from "../../../app/vehicules/pays/PaysService";
 import CarrosseriesService from "../../../app/vehicules/carrosseries/CarrosseriesService";
 import CategoryService from '../../../app/vehicules/attribuer_vehicule/Services'
+import AllServices from "./Services"
 
 const SearchFilter = () => {
     const [brands, setBrands] = useState([])
-
+    const [brand, setBrand] = useState('')
     const [countries, setCountries] = useState([])
+    const [country, setCountry] = useState('')
     const [bodyworks, setBodyWorks] = useState([])
+    const [bodywork, setBodyWork] = useState([])
     const [categories, setCategories] = useState([])
+    const [category, setCategory] = useState('')
+    const [box, setBox] = useState('')
 
     useEffect(()=>{
         let isMounted = true;
@@ -46,6 +51,17 @@ const SearchFilter = () => {
             setBodyWorks(response.data)
         })
     }
+    const clickSearch = (event) =>{
+        event.preventDefault();
+        AllServices.search(category,brand,country,box)
+            .then(response=>{
+                console.log('New search')
+
+            })
+            .catch(error =>{
+                console.log('something went wrong')
+            })
+    }
 
     return (
         <>
@@ -61,7 +77,10 @@ const SearchFilter = () => {
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Categorie</label>
-                                <select className="form-control" id="exampleSelectGender">
+                                <select className="form-control" id="exampleSelectGender"
+                                        value={category}
+                                        onChange={(e) => setCategory(e.target.value)}
+                                >
                                     <option defaultValue={'Selectionner la marque'}>Categorie</option>
                                     {categories && categories.map((category, index) => (
                                         <option key={category.id} value={category.id} >{category.category}</option>
@@ -73,7 +92,10 @@ const SearchFilter = () => {
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Marque</label>
-                                <select className="form-control" id="exampleSelectGender">
+                                <select className="form-control" id="exampleSelectGender"
+                                        value={brand}
+                                        onChange={(e) => setBrand(e.target.value)}
+                                >
                                     <option defaultValue={'Selectionner la marque'}>marque</option>
                                     {brands && brands.map((brand, index) => (
                                         <option key={brand.id} value={brand.id} >{brand.brand}</option>
@@ -85,7 +107,10 @@ const SearchFilter = () => {
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Boite de vitesse</label>
-                                <select className="form-control" id="exampleSelectGender">
+                                <select className="form-control" id="exampleSelectGender"
+                                        value={box}
+                                        onChange={(e) => setBox(e.target.value)}
+                                >
                                     <option defaultValue={'Boite de vitesse'}>Boite de vitesse</option>
                                     <option value={'automatic'}>Automatique</option>
                                     <option value={'manual'}>Manuel</option>
@@ -106,7 +131,8 @@ const SearchFilter = () => {
                         </Col>
                         <Col md={2} lg={2} sm={6} xs={6} className={'btnSubmit'}>
                             <p className={'mb-4'}></p>
-                            <button type="button" className="btn btn-primary btn-fw btnSub">Envoyer votre recherche</button>
+                            <button
+                                type="button" className="btn btn-primary btn-fw btnSub">Envoyer votre recherche</button>
                         </Col>
 
                     </Row>

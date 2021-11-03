@@ -4,8 +4,8 @@ const SEARCH_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/trans
 
 
 class AllServices {
-    search(brand,country,box){
-        return axios.get(SEARCH_API_URL+'/'+brand+'/'+country+'/'+box)
+    search(category,brand,country,box){
+        return axios.post(SEARCH_API_URL+'/'+category+'/'+brand+'/'+country+'/'+box)
     }
 
 }

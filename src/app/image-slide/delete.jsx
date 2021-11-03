@@ -36,7 +36,7 @@ const Marque= () => {
     const clickSubmit = event =>{
         event.preventDefault();
         setValues({...values, error: ''})
-        AllServices.updateCarousel(formData)
+        AllServices.removeCarousel(id)
             .then(response =>{
                 if(response.error){
                     setValues({...values,error: true})
@@ -69,7 +69,7 @@ const Marque= () => {
     return (
         <div>
             <div className="page-header mainheader">
-                <h3 className="page-title">{id? "Editer" : "Ajouter"} une slide </h3>
+                <h3 className="page-title">{id? "Supprimer" : "Ajouter"} une slide </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <Link to={'/image-slide/image-slide'}>
@@ -103,10 +103,10 @@ const Marque= () => {
 
                                 <button
                                     type="submit"
-                                    className="btn btn-primary mr-2  btn-fw"
+                                    className="btn btn-danger mr-2  btn-fw"
                                     onClick={(event) => clickSubmit(event)}
                                 >
-                                    Envoyer
+                                    Supprimer
                                 </button>
                             </form>
                         </div>

@@ -18,6 +18,9 @@ class CarrosseriesServices {
     updateCarousel(formData){
         return axios.put(CAROUSEL_API_URL, formData)
     }
+    removeCarousel(id){
+        return axios.delete(CAROUSEL_API_URL+id)
+    }
     postCarousel(formData) {
         return axios.post(CAROUSEL_API_URL, formData)
     }
