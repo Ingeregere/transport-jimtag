@@ -11,6 +11,9 @@ class GererServices {
     postImageTransport(data){
         return  axios.put(TRANSPORT_API_URL+'updateTransportImage/', data)
     }
+    remove(id){
+        return axios.delete( TRANSPORT_API_URL +id)
+    }
     updateTransport(data){
         return axios.put(TRANSPORT_API_URL, data)
     }

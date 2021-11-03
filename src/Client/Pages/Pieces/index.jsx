@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../../Component/Header'
 import RowCategory from "../../Component/RowCategory";
-import Product from "../../Component/Pièces";
+import Product from "../../Component/Pelle";
 import SearchFilter from "../../Component/SearchFilter";
 import Footer from "../../Component/Footer";
 

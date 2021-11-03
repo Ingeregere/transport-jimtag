@@ -9,7 +9,7 @@ const Product = () => {
     const [values, setValues] = useState([])
     useEffect(()=>{
         let isMounted = true;
-        AllServices.getAllTransportByCategory(1).then((response) =>{
+        AllServices.getAllTransportByCategory(2).then((response) =>{
             if (isMounted) setValues(response.data)
         })
         return () => { isMounted = false };

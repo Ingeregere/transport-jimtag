@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import '../Porteur/style.css'
+import '../Benne/style.css'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import AllServices from "../Porteur/services";
+import AllServices from "../Benne/services";
 import ShowImageTransport from "../HomeProduct/ShowImageTransport";
 
 const Product = () => {
     const [values, setValues] = useState([])
     useEffect(()=>{
         let isMounted = true;
-        AllServices.getAllTransportByCategory(3).then((response) =>{
+        AllServices.getAllTransportByCategory(4).then((response) =>{
             if (isMounted) setValues(response.data)
         })
         return () => { isMounted = false };

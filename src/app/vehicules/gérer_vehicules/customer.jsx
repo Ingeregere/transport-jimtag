@@ -103,7 +103,7 @@ const Index= () => {
                                                     <Link to={`/vehicules/ajouter_image1/${b.id}`}>
                                                         <span className="icon-bg "><i className="mdi mdi-image "></i>Editer1</span>
                                                     </Link>
-                                                    } <br/>
+                                                } <br/>
                                                     { b.imageTransport==='Insérer une image'?
                                                         <Link to={`/vehicules/ajouter_image2/${b.id}`}>
                                                             <button type="button" className="btn btn-primary btn-fw">

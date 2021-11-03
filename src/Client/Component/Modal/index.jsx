@@ -1,9 +1,10 @@
-import React , {useState} from "react";
+import React , {useEffect, useState} from "react";
 import './style.css'
 import {Alert, Button, Col, Form, Modal, Row} from "react-bootstrap";
 import {useParams, useHistory} from "react-router-dom";
 import AllServices from "./Service";
-import PrivateRoute from "../../../app/SecuriteRoute/PrivateRoute";
+import AllServicesCustomer from "../../../app/share/ServicesCustomer/Services";
+import {isAuthenticated} from "../../../app/user-pages/session";
 
 function ModalContact() {
     const {id} = useParams()
@@ -14,11 +15,22 @@ function ModalContact() {
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState('')
     const [email, setEmail] = useState('')
+    const [infoUser, setInfoUser] = useState([])
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [mobile, setMobile] = useState('')
     const [transport, setTransport] = useState(id)
     const [message, setMessage] = useState('')
+
+ useEffect(()=>{
+     getAllDataUser()
+ })
+    const getAllDataUser = () => {
+        AllServicesCustomer.getAllData(isAuthenticated()[1])
+            .then(infos => {
+               setInfoUser(infos.data)
+            });
+    }
     const showError = () => (
 
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
@@ -94,18 +106,17 @@ function ModalContact() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Nom"
-                                        value={firstName}
+                                        value={infoUser['firstName']}
                                         onChange={(e)=>setFirstName(e.target.value)}
                                     />
                                 </Form.Group>
                             </Col>
                             <Col md={6} sm={6}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Label className={'text-dark'}>Prenom</Form.Label>
+                                    <Form.Label className={'text-dark'}>Prénom</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        placeholder="Prénom"
-                                        value={lastName}
+                                        value={infoUser['lastName']}
                                         onChange={(e)=>setLastName(e.target.value)}
                                     />
                                 </Form.Group>
@@ -116,7 +127,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="email"
                                         placeholder="Email"
-                                        value={email}
+                                        value={infoUser['username']}
                                         onChange={(e)=>setEmail(e.target.value)}
                                     />
                                 </Form.Group>
@@ -127,7 +138,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="tel"
                                         placeholder="Téléphone"
-                                        value={mobile}
+                                        value={infoUser['mobile']}
                                         onChange={(e)=>setMobile(e.target.value)}
                                     />
                                 </Form.Group>

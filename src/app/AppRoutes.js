@@ -31,6 +31,7 @@ const AjouterImageTransport = lazy(() => import('./vehicules/gérer_vehicules/Im
 const secondImage = lazy(() => import('./vehicules/gérer_vehicules/secondImage'));
 const ThirdImage = lazy(() => import('./vehicules/gérer_vehicules/ThirdImage'));
 const FourthImage = lazy(() => import('./vehicules/gérer_vehicules/FourthImage'));
+const DeleteTransport = lazy(() => import('./vehicules/gérer_vehicules/delete'));
 const EnableAndDesable = lazy(() => import('./vehicules/gérer_vehicules/EnableDesable'));
 const HomePage = lazy(()=>import('../Client/Pages/Home'))
 const Tracteur = lazy(()=>import('../Client/Pages/Tracteur'))
@@ -108,6 +109,7 @@ class AppRoutes extends Component {
           <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
           <AdminRoute path="/vehicules/ajouter_image1/:id" component={ AjouterImageTransport } />
           <AdminRoute path="/vehicules/ajouter_image2/:id" component={ secondImage } />
+          <AdminRoute path="/vehicules/supprimer_transport/:id" component={ DeleteTransport } />
           <AdminRoute path="/vehicules/ajouter_image3/:id" component={ ThirdImage } />
           <AdminRoute path="/vehicules/ajouter_image4/:id" component={ FourthImage } />
           <AdminRoute path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../../Component/Header'
 import RowCategory from "../../Component/RowCategory";
-import Porteur from "../../Component/Porteur";
+import Porteur from "../../Component/Benne";
 import SearchFilter from "../../Component/SearchFilter";
 import Footer from "../../Component/Footer";
 

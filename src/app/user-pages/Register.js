@@ -127,12 +127,12 @@ const Index= () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <label className={'text-dark'} htmlFor="dateDelivery">Nom d'utilisateur</label>
+                    <label className={'text-dark'} htmlFor="dateDelivery">Email</label>
                     <Form.Control
                         type="text"
                         className="form-control"
                         id="exampleInputCity1"
-                        placeholder="nom d'utilisateur"
+                        placeholder="email"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />

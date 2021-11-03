@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import WhatsAppWidget from "react-whatsapp-chat-widget";
+import whatsappimage from "../../../assets/images/whatsappimage.svg";
 import AllServices from '../../../app/share/ServicesCustomer/Services'
 import {isAuthenticated} from "../../../app/user-pages/session";
 import "react-whatsapp-chat-widget/index.css";
 import {Link} from "react-router-dom";
 import './style.css'
-import ReactAppWhatsapp from "../../Pages/Map";
 
 const Footer = () => {
     const [nameAndlastname, setName] = useState([])
@@ -58,11 +57,16 @@ const Footer = () => {
                         <p className={'designed text-dark mt-5'} >
                             &copy; {new Date().getFullYear()} JimTag All rights reserved.
                         </p>
+
                     </div>
 
                 </footer>
+                <div className={'whatsapp_float'}>
+                    <a href={'https://wa.me/25762243766'} target={'_blank'}>
+                        <img src={whatsappimage}/>
+                    </a>
+                </div>
             </div>
-            <ReactAppWhatsapp />
 
 
         </>

@@ -112,6 +112,7 @@ class App extends Component {
     const idvoirimageCat = currentURL.slice(33,1000000000)
     const imagetransport = currentURL.slice(26,1000000000)
     const edittransport = currentURL.slice(26,1000000000)
+    const deletetransport = currentURL.slice(31,1000000000)
 
     for ( let i = 0; i < fullPageLayoutRoutes.length; i++ ) {
 
@@ -134,6 +135,7 @@ class App extends Component {
           this.props.location.pathname === `/vehicules/ajouter_image4/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/active-desactive/${idactivedesactive}` ||
           this.props.location.pathname === `/vehicules/edit-transport/${edittransport}` ||
+          this.props.location.pathname === `/vehicules/supprimer_transport/${deletetransport}` ||
           this.props.location.pathname === `/image-slide/editer/${idslide}`
 
 

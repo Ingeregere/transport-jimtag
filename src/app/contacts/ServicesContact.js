@@ -11,7 +11,7 @@ class ContactServices {
         return axios.get(CONTACT_TRANSPORT_API_URL+'getAllContacts')
     }
     getAllContactTransportByToken(token){
-        return axios.get(CONTACT_TRANSPORT_API_URL+token)
+        return axios.get(CONTACTBYTOKEN_TRANSPORT_API_URL+token)
     }
     getContactById(id){
         return axios.get(CONTACT_TRANSPORT_API_URL+'getContactById/'+id)
