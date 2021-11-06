@@ -62,6 +62,14 @@ const Index= () => {
                                                 <td>{b.description}</td>
                                                 <td>{b.title}</td>
                                                 <td>{b.subTitle}</td>
+
+                                                <td>
+                                                    <Link to={`/image-article/editer/${b.id}`} className={'text-decoration-none'}>
+                                                     <span className="icon-bg "><i className="mdi mdi-pen">Editer</i></span>
+                                                       </Link>
+
+                                                </td>
+
                                             </tr>
                                         ))
                                     }

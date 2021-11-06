@@ -109,6 +109,7 @@ class App extends Component {
     const iduserEditer = currentURL.slice(24,1000000000)
     const idcategory = currentURL.slice(27,1000000000)
     const idslide = currentURL.slice(20,1000000000)
+    const idarticle = currentURL.slice(22,1000000000)
     const deleteslide = currentURL.slice(23,1000000000)
     const idvoirimageCat = currentURL.slice(33,1000000000)
     const imagetransport = currentURL.slice(26,1000000000)
@@ -146,6 +147,7 @@ class App extends Component {
           this.props.location.pathname === `/vehicules/edit-transport/${edittransport}` ||
           this.props.location.pathname === `/vehicules/supprimer_transport/${deletetransport}` ||
           this.props.location.pathname === `/image-slide/editer/${idslide}`||
+          this.props.location.pathname === `/image-article/editer/${idarticle}`||
           this.props.location.pathname === `/image-slide/supprimer/${deleteslide}`
 
 

@@ -15,8 +15,8 @@ class CarrosseriesServices {
     getAllBodyworkById(id){
         return axios.get(CAROUSEL_API_URL+'getBodyworkById/'+id)
     }
-    updateCarousel(formData){
-        return axios.put(CAROUSEL_API_URL, formData)
+    updateArticles(formData){
+        return axios.put(ARTICLE_API_URL, formData)
     }
     removeCarousel(id){
         return axios.delete(CAROUSEL_API_URL+id)
