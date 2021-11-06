@@ -106,7 +106,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Nom"
-                                        value={infoUser['firstName']}
+                                        value={firstName}
                                         onChange={(e)=>setFirstName(e.target.value)}
                                     />
                                 </Form.Group>
@@ -116,7 +116,7 @@ function ModalContact() {
                                     <Form.Label className={'text-dark'}>Prénom</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        value={infoUser['lastName']}
+                                        value={lastName}
                                         onChange={(e)=>setLastName(e.target.value)}
                                     />
                                 </Form.Group>
@@ -127,7 +127,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="email"
                                         placeholder="Email"
-                                        value={infoUser['username']}
+                                        value={email}
                                         onChange={(e)=>setEmail(e.target.value)}
                                     />
                                 </Form.Group>
@@ -138,7 +138,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="tel"
                                         placeholder="Téléphone"
-                                        value={infoUser['mobile']}
+                                        value={mobile}
                                         onChange={(e)=>setMobile(e.target.value)}
                                     />
                                 </Form.Group>

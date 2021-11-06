@@ -14,6 +14,7 @@ const Index= () => {
         getAllTransports()
         postImageTransport()
     },[])
+
     const getAllTransports = () =>{
         AllServices.getAllTransports().then((response) =>{
             setTransports(response.data)
@@ -94,48 +95,12 @@ const Index= () => {
                                                 <td>{b.category}</td>
                                                 <td>{b.country}</td>
                                                 <td>{b.dateRegistration}</td>
-                                                <td>{ b.imageTransport==='Insérer une image'?
-                                                    <Link to={`/vehicules/ajouter_image1/${b.id}`}>
+                                                <td>
+                                                    <Link to={`/vehicules/inserer-image/${b.id}`}>
                                                         <button type="button" className="btn btn-primary btn-fw">
-                                                            Insérer une image1
+                                                            Images
                                                         </button>
-                                                    </Link> :
-                                                    <Link to={`/vehicules/ajouter_image1/${b.id}`}>
-                                                        <span className="icon-bg "><i className="mdi mdi-image "></i>Editer1</span>
                                                     </Link>
-                                                    } <br/>
-                                                    { b.imageTransport==='Insérer une image'?
-                                                        <Link to={`/vehicules/ajouter_image2/${b.id}`}>
-                                                            <button type="button" className="btn btn-primary btn-fw">
-                                                                Insérer une image1
-                                                            </button>
-                                                        </Link> :
-                                                        <Link to={`/vehicules/ajouter_image2/${b.id}`}>
-                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer2</span>
-                                                        </Link>
-                                                    }
-                                                    <br/>
-                                                    { b.imageTransport==='Insérer une image'?
-                                                        <Link to={`/vehicules/ajouter_image3/${b.id}`}>
-                                                            <button type="button" className="btn btn-primary btn-fw">
-                                                                Insérer une image1
-                                                            </button>
-                                                        </Link> :
-                                                        <Link to={`/vehicules/ajouter_image3/${b.id}`}>
-                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer3</span>
-                                                        </Link>
-                                                    }
-                                                    <br/>
-                                                    { b.imageTransport==='Insérer une image'?
-                                                        <Link to={`/vehicules/ajouter_image4/${b.id}`}>
-                                                            <button type="button" className="btn btn-primary btn-fw">
-                                                                Insérer une image1
-                                                            </button>
-                                                        </Link> :
-                                                        <Link to={`/vehicules/ajouter_image4/${b.id}`}>
-                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer4</span>
-                                                        </Link>
-                                                    }
                                                 </td>
                                                 <td>{b.kilometer}</td>
                                                 <td>{b.model}</td>
@@ -144,7 +109,7 @@ const Index= () => {
                                                 <td>{b.ptc}</td>
                                                 <td>{b.ptr}</td>
                                                 <td>{b.suspension}</td>
-                                                {b.imageTransport ==='Insérer une image'?
+                                                {b.firstImage ==='Insérer une image'?
                                                     "Insérer une image ":
                                                     <td>
                                                         {b.status?
@@ -167,7 +132,7 @@ const Index= () => {
                                                         <span className="icon-bg "><i className="mdi mdi-pen "></i></span>
                                                     </Link> {" "}
                                                     <Link to={`/vehicules/supprimer_transport/${b.id}`} className={'text-decoration-none'}>
-                                                        <span className="icon-bg " bg={'danger'}><i className="mdi mdi-delete"></i></span>
+                                                        <span className="icon-bg text-danger"><i className="mdi mdi-delete"></i></span>
                                                     </Link>
                                                 </td>
 

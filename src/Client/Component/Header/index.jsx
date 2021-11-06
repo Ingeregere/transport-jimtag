@@ -34,14 +34,14 @@ const NavbarHeader = () => {
                     </Form>
                     <NavLink as={Link} to={'/commande-camion'}>
                         <button type="button" className="btn btn-dark btn-fw ">
-                            <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                            <span className="icon-bg iconBtn"><i className="mdi mdi-truck-delivery"></i></span>
                             Louer un camion
                         </button>
                     </NavLink>
                     {isAuthenticated() && isAuthenticated()[0] === 'admin' &&(
                         <NavLink as={Link} to={'/admin'}>
                             <button type="button" className="btn btn-dark btn-fw ">
-                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-account-circle"></i></span>
                                 Mon espace
                             </button>
                         </NavLink>
@@ -49,7 +49,7 @@ const NavbarHeader = () => {
                     {isAuthenticated() && isAuthenticated()[0] === 'user' &&(
                         <NavLink as={Link} to={'/commande/gérer_commande'}>
                             <button type="button" className="btn btn-dark btn-fw ">
-                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-account-circle"></i></span>
                                 Mon espace
                             </button>
                         </NavLink>
@@ -66,7 +66,7 @@ const NavbarHeader = () => {
                                     history.push('/')
                                 })}
                             >
-                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-account-key"></i></span>
                                 Déconnecter
                             </button>
                         </NavLink>
@@ -74,7 +74,7 @@ const NavbarHeader = () => {
                     {!isAuthenticated() &&(
                         <NavLink as={Link} to={'/login'}>
                             <button type="button" className="btn btn-dark btn-fw ">
-                                <span className="icon-bg iconBtn"><i className="mdi mdi-arrow-down-bold-circle-outline"></i></span>
+                                <span className="icon-bg iconBtn"><i className="mdi mdi-account-key"></i></span>
                                 Se connecter
                             </button>
                         </NavLink>

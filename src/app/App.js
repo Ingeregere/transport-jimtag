@@ -112,6 +112,7 @@ class App extends Component {
     const deleteslide = currentURL.slice(23,1000000000)
     const idvoirimageCat = currentURL.slice(33,1000000000)
     const imagetransport = currentURL.slice(26,1000000000)
+    const inserimageTranspo = currentURL.slice(25,1000000000)
     const edittransport = currentURL.slice(26,1000000000)
     const deletetransport = currentURL.slice(31,1000000000)
 
@@ -123,6 +124,7 @@ class App extends Component {
           this.props.location.pathname === `/vehicules/marque/${idMarques}`||
           this.props.location.pathname === `/vehicules/model/${idModel}`||
           this.props.location.pathname === `/vehicules/categories/voir-image/${idvoirimageCat}`||
+          this.props.location.pathname === `/vehicules/inserer-image/${inserimageTranspo}`||
           this.props.location.pathname === `/vehicules/category/editer/${idcategory}`||
           this.props.location.pathname === `/model/editer/${idModelEditer}`||
           this.props.location.pathname === `/vehicules/veh_pays/${idpays}`||
@@ -134,6 +136,12 @@ class App extends Component {
           this.props.location.pathname === `/vehicules/ajouter_image2/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/ajouter_image3/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/ajouter_image4/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image5/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image6/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image7/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image8/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image9/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_image10/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/active-desactive/${idactivedesactive}` ||
           this.props.location.pathname === `/vehicules/edit-transport/${edittransport}` ||
           this.props.location.pathname === `/vehicules/supprimer_transport/${deletetransport}` ||

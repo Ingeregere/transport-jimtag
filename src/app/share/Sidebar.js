@@ -151,7 +151,7 @@ class Sidebar extends Component {
                     <Collapse in={ this.state.tablesMenuOpen }>
                       <ul className="nav flex-column sub-menu">
                         <li className="nav-item"> <Link className={ this.isPathActive('/image-slide/image-slide') ? 'nav-link active' : 'nav-link' } to="/image-slide/image-slide"><Trans>Image slide</Trans></Link></li>
-                        {/* <li className="nav-item"> <Link className={ this.isPathActive('/image-slide/image-publicite') ? 'nav-link active' : 'nav-link' } to="/image-slide/image-publicite"><Trans>Image Publicité</Trans></Link></li> */}
+                         {/*<li className="nav-item"> <Link className={ this.isPathActive('/image-slide/image-publicite') ? 'nav-link active' : 'nav-link' } to="/image-slide/image-publicite"><Trans>Image Publicité</Trans></Link></li>*/}
                       </ul>
                     </Collapse>
                   </li>

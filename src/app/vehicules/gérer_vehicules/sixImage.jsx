@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Button, Form, Spinner} from 'react-bootstrap';
-import AllServices from "./Service";
+import AllServices from "./GererVehiculeServices";
 import './style.css'
 import {Link, useParams} from "react-router-dom";
 
@@ -8,7 +8,7 @@ import {Link, useParams} from "react-router-dom";
 const Marque= () => {
 
     const [values,setValues] = useState({
-        image: '',
+        sixthImage: '',
         id: '',
         error: '',
         loading: false,
@@ -28,15 +28,15 @@ const Marque= () => {
     }, [])
 
     const handleChange = name => event =>{
-        const value = name === 'image' ? event.target.files[0]: event.target.value
+        const value = name === 'sixthImage' ? event.target.files[0]: event.target.value
         formData.set(name, value)
         setValues({...values, [name]: value})
     }
 
     const clickSubmit = event =>{
         event.preventDefault()
-        setValues({...values, error: '', loading:true})
-        AllServices.updateCarousel(formData)
+        setValues({...values, error: '', loading: true})
+        AllServices.postImageTransport(formData)
             .then(data =>{
                 if(data.error){
                     setValues({...values,error: false})
@@ -44,8 +44,7 @@ const Marque= () => {
                 else{
                     setValues({
                         ...values,
-                        image: '',
-                        loading:false,
+                        sixthImage: '',
                         success: data.data.message,
                     })
                 }
@@ -53,7 +52,6 @@ const Marque= () => {
 
 
     }
-
     const showError = () => (
 
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
@@ -84,10 +82,10 @@ const Marque= () => {
     return (
         <div>
             <div className="page-header mainheader">
-                <h3 className="page-title">Voulez-vous Editer slide numero <span className={'numbervehicule'}>{useParams().id}</span>?</h3>
+                <h3 className="page-title">Voulez-vous Editer vehicule numero <span className={'numbervehicule'}>{useParams().id}</span>?</h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <Link to={'/image-slide/image-slide'}>
+                        <Link to={'/vehicules/gérer_vehicules'}>
                             <button type="button" className="btn btn-primary btn-fw">
                                 <span>  <i className="mdi mdi-arrow-left-bold-circle-outline "></i>Retour</span>
                             </button>
@@ -116,15 +114,15 @@ const Marque= () => {
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
                                     accept={'image/*'}
-                                    name={'image'}
-                                    onChange={handleChange('image')}
+                                    name={'sixthImage'}
+                                    onChange={handleChange('sixthImage')}
                                 />
                                 <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
                                 <Form.Control
                                     type="text"
                                     className="form-control mb-2 mr-sm-2"
                                     id="inlineFormInputName2"
-                                    placeholder="slide numero combien?"
+                                    placeholder="vehicule numero combien?"
                                     value={id}
                                     name={'id'}
                                     onChange={handleChange('id')}

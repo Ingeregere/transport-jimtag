@@ -271,35 +271,35 @@ const Transport = () => {
                                     </select>
                                 </Form.Group>
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="placeLoading">Pav</label>
+                                    <label className={'text-dark'} htmlFor="placeLoading">Etat et dimmensions des pneus</label>
                                     <Form.Control
                                         type="text"
                                         className="form-control"
                                         id="exampleInputPassword4"
-                                        placeholder="Pav"
+                                        placeholder="Etat et dimmensions des pneus"
                                         value={pav}
                                         onChange={(e) => setPav(e.target.value)}
                                     />
                                 </Form.Group>
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="placeDelivery">Ptc</label>
+                                    <label className={'text-dark'} htmlFor="placeDelivery">Charge autorisée et Volume du bac</label>
                                     <Form.Control
                                         type="text"
                                         className="form-control"
                                         id="exampleInputPassword4"
-                                        placeholder="Ptc"
+                                        placeholder="Charge autorisée et Volume du bac"
                                         value={ptc}
                                         onChange={(e) => setPtc(e.target.value)}
                                     />
                                 </Form.Group>
 
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="placeDelivery">Ptr</label>
+                                    <label className={'text-dark'} htmlFor="placeDelivery">Consommation moyenne du carburant</label>
                                     <Form.Control
                                         type="text"
                                         className="form-control"
                                         id="exampleInputPassword4"
-                                        placeholder="Ptr"
+                                        placeholder="Consommation moyenne du carburant"
                                         value={ptr}
                                         onChange={(e) => setPtr(e.target.value)}
                                     />

@@ -63,7 +63,7 @@ const Index= () => {
                                                         <span className="icon-bg "><i className="mdi mdi-pen">Editer</i></span>
                                                     </Link> {" "}
                                                     <Link to={`/image-slide/supprimer/${b.id}`} className={'text-decoration-none'}>
-                                                        <span className="icon-bg "><i className="mdi mdi-delete">supprimer</i></span>
+                                                        <span className="icon-bg  text-danger"><i className="mdi mdi-delete">supprimer</i></span>
                                                     </Link>
                                                 </td>
                                             </tr>
