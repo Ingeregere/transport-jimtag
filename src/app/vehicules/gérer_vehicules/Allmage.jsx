@@ -17,8 +17,6 @@ const Index= () => {
         return () => { isMounted = false };
     }, []);
 
-
-
     return (
         <div>
             <div className="page-header mainheader">
@@ -75,7 +73,7 @@ const Index= () => {
                                                 <td>{ current.firstImage==='Insérer une image'?
                                                     <Link to={`/vehicules/ajouter_image1/${current.id}`}>
                                                         <span className="icon-bg text-danger">
-                                                            Insérer une image
+                                                            Insérer une image1
                                                         </span>
                                                     </Link> :
                                                     <Link to={`/vehicules/ajouter_image1/${current.id}`}>
@@ -85,7 +83,7 @@ const Index= () => {
                                                     { current.secondImage==='Insérer une image'?
                                                         <Link to={`/vehicules/ajouter_image2/${current.id}`}>
                                                             <span className="icon-bg text-danger">
-                                                                Insérer une image
+                                                                Insérer une image2
                                                             </span>
                                                         </Link> :
                                                         <Link to={`/vehicules/ajouter_image2/${current.id}`}>
@@ -96,7 +94,7 @@ const Index= () => {
                                                     { current.thirdImage==='Insérer une image'?
                                                         <Link to={`/vehicules/ajouter_image3/${current.id}`}>
                                                             <span className="icon-bg text-danger">
-                                                                Insérer une image
+                                                                Insérer une image3
                                                              </span >
                                                         </Link> :
                                                         <Link to={`/vehicules/ajouter_image3/${current.id}`}>
@@ -107,13 +105,75 @@ const Index= () => {
                                                     { current.fourthImage==='Insérer une image'?
                                                         <Link to={`/vehicules/ajouter_image4/${current.id}`}>
                                                             <span className="icon-bg text-danger ">
-                                                                Insérer une image
+                                                                Insérer une image4
                                                             </span>
                                                         </Link> :
                                                         <Link to={`/vehicules/ajouter_image4/${current.id}`}>
                                                             <span className="icon-bg "><i className="mdi mdi-image "></i>Editer4</span>
                                                         </Link>
+                                                    }    <br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image5/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image5
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image6/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer5</span>
+                                                        </Link>
+                                                    }  <br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image6/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image6
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image6/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer6</span>
+                                                        </Link>
+                                                    } <br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image7/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image7
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image7/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer7</span>
+                                                        </Link>
+                                                    }<br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image8/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image8
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image8/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer8</span>
+                                                        </Link>
+                                                    }<br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image9/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image9
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image9/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer9</span>
+                                                        </Link>
+                                                    }<br/>
+                                                    { current.fourthImage==='Insérer une image'?
+                                                        <Link to={`/vehicules/ajouter_image10/${current.id}`}>
+                                                            <span className="icon-bg text-danger ">
+                                                                Insérer une image10
+                                                            </span>
+                                                        </Link> :
+                                                        <Link to={`/vehicules/ajouter_image10/${current.id}`}>
+                                                            <span className="icon-bg "><i className="mdi mdi-image "></i>Editer10</span>
+                                                        </Link>
                                                     }
+
+                                                    
                                                 </td>
                                                 <td>{current.kilometer}</td>
                                                 <td>{current.model}</td>
