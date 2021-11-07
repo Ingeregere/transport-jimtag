@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
-import Tracteur from '../../../assets/Icones/1 Tracteur.jpg'
-import Benne from '../../../assets/Icones/2 Benne.jpg'
-import Semi from '../../../assets/Icones/3 Semi.jpg'
-import Pelle from '../../../assets/Icones/4 Pelle.jpg'
-import Pieces from '../../../assets/Icones/5 Pièces et divers.jpg'
+import Tracteur from '../../../assets/Icones/Tracteur.jpg'
+import Benne from '../../../assets/Icones/Benne.jpg'
+import Semi from '../../../assets/Icones/Semi.jpg'
+import Pelle from '../../../assets/Icones/Pelle.jpg'
+import Pieces from '../../../assets/Icones/PiecesDivers.jpg'
 import {Col, Container, Row, Card} from "react-bootstrap";
 import {Link, useParams} from "react-router-dom";
 import NavLink from "react-bootstrap/NavLink";
