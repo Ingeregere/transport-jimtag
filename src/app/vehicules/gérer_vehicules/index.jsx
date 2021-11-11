@@ -96,7 +96,7 @@ const Index= () => {
                                                 <td>{b.country}</td>
                                                 <td>{b.dateRegistration}</td>
                                                 <td>
-                                                    <Link to={`/vehicules/inserer-image/${b.id}`}>
+                                                    <Link to={`/vehicules/ajouter_les_images/${b.id}`}>
                                                         <button type="button" className="btn btn-primary btn-fw">
                                                             Images
                                                         </button>

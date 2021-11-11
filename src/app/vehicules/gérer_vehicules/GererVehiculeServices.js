@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/';
+const TRANSPORT_API_URL_IMAGE = 'https://backend-e-commerce-transport.jimtag.fr/api/image/transport/';
 
 
 class GererServices {
@@ -9,7 +10,7 @@ class GererServices {
     }
 
     postImageTransport(data){
-        return  axios.put(TRANSPORT_API_URL+'updateTransportImage/', data)
+        return  axios.put(TRANSPORT_API_URL_IMAGE+'updateTransportImage/', data)
     }
     remove(id){
         return axios.delete( TRANSPORT_API_URL +id)

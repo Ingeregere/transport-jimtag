@@ -9,6 +9,15 @@ const Marque= () => {
 
     const [values,setValues] = useState({
         firstImage: '',
+        secondImage: '',
+        thirdImage: '',
+        fourthImage: '',
+        fifthImage: '',
+        sixthImage: '',
+        seventhImage: '',
+        eighthImage: '',
+        ninthImage: '',
+        tenthImage: '',
         id: '',
         error: '',
         loading: false,
@@ -28,7 +37,7 @@ const Marque= () => {
     }, [])
 
     const handleChange = name => event =>{
-        const value = name === 'firstImage' ? event.target.files[0]: event.target.value
+        const value = name ===  'id'? event.target.value: event.target.files[0]
         formData.set(name, value)
         setValues({...values, [name]: value})
     }
@@ -45,23 +54,29 @@ const Marque= () => {
                     setValues({
                         ...values,
                         firstImage: '',
+                        secondImage: '',
+                        thirdImage: '',
+                        fourthImage: '',
+                        fifthImage: '',
+                        sixthImage: '',
+                        seventhImage: '',
+                        eighthImage: '',
+                        ninthImage: '',
+                        tenthImage: '',
+                        id: '',
                         loading:false,
                         success: data.data.message,
                     })
                 }
             })
-
-
     }
 
     const showError = () => (
-
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
             <strong><center>Veiller complète tous les champs</center></strong>
         </Alert>
     )
     const showSuccess = () => (
-
         <Alert className={"alert-success"} style={{ display: success ? '' : 'none' }}>
             <strong> <center>{success} </center> </strong>
         </Alert>
@@ -76,70 +91,187 @@ const Marque= () => {
                     role="status"
                     aria-hidden="true"
                 />
-                chargement...
+                <center>chargement...</center>
+
             </Alert>
         )
 
     )
     return (
         <div>
+            <span>{showError()}</span>
+            <span>{showLoading()}</span>
+            <span>{showSuccess()}</span>
+
             <div className="page-header mainheader">
-                <h3 className="page-title">Voulez-vous Editer vehicule numero <span className={'numbervehicule'}>{useParams().id}</span>?</h3>
+                <h3 className="page-title"> les images du véhicule numero <span className={'text-success'}>{useParams().id}</span> </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <Link to={'/vehicules/gérer_vehicules'}>
-                            <button type="button" className="btn btn-primary btn-fw">
-                                <span>  <i className="mdi mdi-arrow-left-bold-circle-outline "></i>Retour</span>
-                            </button>
+                            <button type="button" className="btn btn-primary btn-fw">Voir tout</button>
                         </Link>
                     </ol>
                 </nav>
             </div>
-            {
-                showError()
-            }
-            {
-                showLoading()
-            }
-            {
-                showSuccess()
-            }
-            <div className="row maintable">
-                <div className="col-12 grid-margin stretch-card">
+            <div className="row">
+
+                <div className="col-lg-6 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <form className="form-inline">
-                                <h4 className="card-title px-2">Image du transport</h4>
-                                <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                <Form.Control
-                                    type="file"
-                                    className="form-control mb-2 mr-sm-2"
-                                    id="inlineFormInputName2"
-                                    accept={'image/*'}
-                                    name={'firstImage'}
-                                    onChange={handleChange('firstImage')}
-                                />
-                                <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
-                                <Form.Control
-                                    type="text"
-                                    className="form-control mb-2 mr-sm-2"
-                                    id="inlineFormInputName2"
-                                    placeholder="vehicule numero combien?"
-                                    value={id}
-                                    name={'id'}
-                                    onChange={handleChange('id')}
-                                />
+                            <form className="forms-sample">
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 1</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'firstImage'}
+                                        onChange={handleChange('firstImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 2</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'secondImage'}
+                                        onChange={handleChange('secondImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 3</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'thirdImage'}
+                                        onChange={handleChange('thirdImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 4</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'fourthImage'}
+                                        onChange={handleChange('fourthImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 5</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'fifthImage'}
+                                        onChange={handleChange('fifthImage')}
+                                    />
+                                </Form.Group>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-6 grid-margin stretch-card">
+                    <div className="card">
+                        <div className="card-body">
+
+                            <form className="forms-sample">
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 6</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'sixthImage'}
+                                        onChange={handleChange('sixthImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 7</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'seventhImage'}
+                                        onChange={handleChange('seventhImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 8</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'eighthImage'}
+                                        onChange={handleChange('eighthImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 9</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'ninthImage'}
+                                        onChange={handleChange('ninthImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 10</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'tenthImage'}
+                                        onChange={handleChange('tenthImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
+                                    <Form.Control
+                                        type="text"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        placeholder="vehicule numero combien?"
+                                        value={id}
+                                        name={'id'}
+                                        onChange={handleChange('id')}
+                                    />
+                                </Form.Group>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary mr-2  btn-fw"
+                                    className="btn btn-primary mr-2 btn-fw"
                                     onClick={(event) => clickSubmit(event)}
                                 >
-                                    Envoyer
+                                    Enregistrer
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )

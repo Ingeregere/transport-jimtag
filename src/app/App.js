@@ -113,6 +113,7 @@ class App extends Component {
     const deleteslide = currentURL.slice(23,1000000000)
     const idvoirimageCat = currentURL.slice(33,1000000000)
     const imagetransport = currentURL.slice(26,1000000000)
+    const imagetransporte = currentURL.slice(30,1000000000)
     const inserimageTranspo = currentURL.slice(25,1000000000)
     const edittransport = currentURL.slice(26,1000000000)
     const deletetransport = currentURL.slice(31,1000000000)
@@ -133,7 +134,7 @@ class App extends Component {
           this.props.location.pathname === `/user-pages/editer_role/${idrole}`||
           this.props.location.pathname === `/user-pages/editer_user/${iduserEditer}`||
           this.props.location.pathname === `/vehicules/pays/editer/${idpaysEditer}` ||
-          this.props.location.pathname === `/vehicules/ajouter_image1/${imagetransport}` ||
+          this.props.location.pathname === `/vehicules/ajouter_les_images/${imagetransporte}` ||
           this.props.location.pathname === `/vehicules/ajouter_image2/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/ajouter_image3/${imagetransport}` ||
           this.props.location.pathname === `/vehicules/ajouter_image4/${imagetransport}` ||

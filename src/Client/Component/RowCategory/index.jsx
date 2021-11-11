@@ -15,14 +15,6 @@ const RowCategory = () => {
     const [Allccategories, setCategories] = useState([])
     const {id} = useParams()
 
-    useEffect(()=>{
-        let isMounted = true;
-        AllServices.getAllCategory().then((response) =>{
-            if (isMounted) setCategories(response.data)
-        })
-        return () => { isMounted = false };
-    },[])
-
     return (
         <Container>
             <Row className={'mainRowCategory'}>

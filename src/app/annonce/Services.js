@@ -1,5 +1,4 @@
 import axios from 'axios'
-import {API} from "../../config";
 const ANNONCE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/commands/';
 const BRAND_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/brands/';
 const COUNTRY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/countries/';

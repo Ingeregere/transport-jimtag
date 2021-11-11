@@ -33,21 +33,21 @@ const Detail = () => {
                             <Col lg={6} md={6} sm={6} xs={12} >
                                 <Carousel>
                                     <Carousel.Item>
-                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewFirstImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewFirstImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewSecondImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewSecondImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewThirdImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
+                                        <Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewThirdImageTransportById/${id}`} className={'imageProduct img-fluid'}  />
                                     </Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewFourthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewFifthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewSixthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewSeventhImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewEighthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewNinthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
-                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/transport/viewTenthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewFourthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewFifthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewSixthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewSeventhImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewEighthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewNinthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
+                                    <Carousel.Item><Card.Img variant="top" src= {`https://backend-e-commerce-transport.jimtag.fr/api/image/transport/viewTenthImageTransportById/${id}`} className={'imageProduct img-fluid'} /></Carousel.Item>
                                 </Carousel>
                             </Col>
                         <Col lg={6} md={6} sm={6} xs={12} >

@@ -102,7 +102,7 @@ const Index= () => {
           </div>
           <div className="col-lg-6 grid-margin stretch-card">
             <div className="card mt-3">
-              <div className="card-body">
+              <div className="card-body mainLogine">
                 <form className="forms-sample">
                   <Form.Group>
                     <label className={'text-dark text-capitalize'} htmlFor="numberTransport">Nom</label>

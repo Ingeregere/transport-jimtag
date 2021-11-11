@@ -117,7 +117,7 @@ class AppRoutes extends Component {
           <AdminRoute path="/vehicules/carrosseries" component={ BodyWork } />
           <AdminRoute path="/vehicules/attribuer_vehicules" component={ Attribuer_vehicule } />
           <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
-          <AdminRoute path="/vehicules/ajouter_image1/:id" component={ AjouterImageTransport } />
+          <AdminRoute path="/vehicules/ajouter_les_images/:id" component={ AjouterImageTransport } />
           <AdminRoute path="/vehicules/ajouter_image2/:id" component={ secondImage } />
           <AdminRoute path="/vehicules/supprimer_transport/:id" component={ DeleteTransport } />
           <AdminRoute path="/vehicules/ajouter_image3/:id" component={ ThirdImage } />

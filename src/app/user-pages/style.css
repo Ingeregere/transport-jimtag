@@ -25,6 +25,9 @@
     margin-top: 6em;
     margin-bottom: 3rem;
 }
+.mainLogine{
+    padding: 1rem;
+}
 .page-body-wrapper.full-page-wrapper .main-panel .content-wrapper > div{
     height: auto;
 }
