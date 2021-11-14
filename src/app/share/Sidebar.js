@@ -92,7 +92,6 @@ class Sidebar extends Component {
                     <Collapse in={ this.state.basicUiMenuOpen }>
                       <ul className="nav flex-column sub-menu">
                         <li className="nav-item"> <Link className={ this.isPathActive('/vehicules/marques') ? 'nav-link active' : 'nav-link' } to="/vehicules/marques"><Trans>Gérer les marques</Trans></Link></li>
-                        <li className="nav-item"> <Link className={ this.isPathActive('/vehicules/categories') ? 'nav-link active' : 'nav-link' } to="/vehicules/categories"><Trans>Gérer les categories</Trans></Link></li>
                         <li className="nav-item"> <Link className={ this.isPathActive('/vehicules/modèles') ? 'nav-link active' : 'nav-link' } to="/vehicules/modèles"><Trans>Gérer les modèles</Trans></Link></li>
                         <li className="nav-item"> <Link className={ this.isPathActive('/vehicules/pays') ? 'nav-link active' : 'nav-link' } to="/vehicules/pays"><Trans>Gérer les pays</Trans></Link></li>
                         <li className="nav-item"> <Link className={ this.isPathActive('/vehicules/carrosseries') ? 'nav-link active' : 'nav-link' } to="/vehicules/carrosseries"><Trans>Gérer les carrosseries</Trans></Link></li>

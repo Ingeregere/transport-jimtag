@@ -382,8 +382,12 @@ const CreateAnnonce = () => {
                         onChange={(e) => setCurrency(e.target.value)}
                     >
                       <option defaultValue={'Selectionner la marque'}>choisissez...</option>
-                      <option value={'$'}>$(dollard)</option>
-                      <option value={'BIF'}>BIF(fbu)</option>
+                      <option value={'USD'}>USD($)-Dollard</option>
+                      <option value={'BIF'}>BIF- Franc Burundais</option>
+                      <option value={'RWF'}>RWF- Franc Rwandais</option>
+                      <option value={'KES'}>KES-Shilling Kenyan</option>
+                      <option value={'UGX'}>UGX-Shilling Ougandais</option>
+                      <option value={'TZS'}>TZS-Shilling Tanzanien</option>
 
                     </select>
                   </Form.Group>

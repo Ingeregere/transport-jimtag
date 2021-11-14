@@ -1,6 +1,6 @@
 import axios from 'axios'
 const USERPROFIL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/user/profile/';
-const AUTHENTICATE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/authenticate';
+const AUTHENTICATE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/authenticate/';
 
 
 class AllServices {

@@ -231,7 +231,7 @@ const Transport = () => {
                                     </select>
                                 </Form.Group>
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="countryLoading" >Model </label>
+                                    <label className={'text-dark'} htmlFor="countryLoading" >Modèle </label>
                                     <select
                                         className="form-control"
                                         id="exampleSelectGender"
@@ -256,14 +256,14 @@ const Transport = () => {
                             <form className="forms-sample">
 
                                 <Form.Group>
-                                    <label className={'text-dark'} htmlFor="countryDelivery" >Category</label>
+                                    <label className={'text-dark'} htmlFor="countryDelivery" >Catégorie</label>
                                     <select
                                         className="form-control"
                                         id="exampleSelectGender"
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
-                                        <option defaultValue={'Selectionner la carrosserie'}>Selectionner categorie</option>
+                                        <option defaultValue={'Selectionner la carrosserie'}>Selectionner catégorie</option>
 
                                         {categories && categories.map((categorie, index) => (
                                             <option key={categorie.id} value={categorie.id}>{categorie.category}</option>

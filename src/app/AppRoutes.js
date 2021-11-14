@@ -27,19 +27,11 @@ const AddBodywork = lazy(() => import('./vehicules/carrosseries/Add'));
 const UpdateBodywork = lazy(() => import('./vehicules/carrosseries/UpdateCarrosserie'));
 const Attribuer_vehicule = lazy(() => import('./vehicules/attribuer_vehicule'));
 const UpdateVehicule = lazy(() => import('./vehicules/gérer_vehicules/UpdateVehicules'));
-const AjouterImageTransport = lazy(() => import('./vehicules/gérer_vehicules/ImageTransport'));
-const secondImage = lazy(() => import('./vehicules/gérer_vehicules/secondImage'));
-const ThirdImage = lazy(() => import('./vehicules/gérer_vehicules/ThirdImage'));
-const FourthImage = lazy(() => import('./vehicules/gérer_vehicules/FourthImage'));
-const FiveImage = lazy(() => import('./vehicules/gérer_vehicules/fiveImage'));
-const sixImage = lazy(() => import('./vehicules/gérer_vehicules/sixImage'));
-const sevenImage = lazy(() => import('./vehicules/gérer_vehicules/sevenImage'));
-const eightImage = lazy(() => import('./vehicules/gérer_vehicules/eightImage'));
-const nineImage = lazy(() => import('./vehicules/gérer_vehicules/nineImage'));
-const tenImage = lazy(() => import('./vehicules/gérer_vehicules/tenImage'));
+const AjouterImageTransport1 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie1'));
+const AjouterImageTransport2 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie2'));
 const DeleteTransport = lazy(() => import('./vehicules/gérer_vehicules/delete'));
 const EnableAndDesable = lazy(() => import('./vehicules/gérer_vehicules/EnableDesable'));
-const InserImageTransport = lazy(() => import('./vehicules/gérer_vehicules/Allmage'));
+const InserImageTransport = lazy(() => import('./vehicules/gérer_vehicules/Partie1Image'));
 const HomePage = lazy(()=>import('../Client/Pages/Home'))
 const Tracteur = lazy(()=>import('../Client/Pages/Tracteur'))
 const Porteur = lazy(()=>import('../Client/Pages/Porteur'))
@@ -117,17 +109,9 @@ class AppRoutes extends Component {
           <AdminRoute path="/vehicules/carrosseries" component={ BodyWork } />
           <AdminRoute path="/vehicules/attribuer_vehicules" component={ Attribuer_vehicule } />
           <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
-          <AdminRoute path="/vehicules/ajouter_les_images/:id" component={ AjouterImageTransport } />
-          <AdminRoute path="/vehicules/ajouter_image2/:id" component={ secondImage } />
+          <AdminRoute path="/vehicules/ajouter_les_images/partie1/:id" component={ AjouterImageTransport1 } />
+          <AdminRoute path="/vehicules/ajouter_les_images/partie2/:id" component={ AjouterImageTransport2 } />
           <AdminRoute path="/vehicules/supprimer_transport/:id" component={ DeleteTransport } />
-          <AdminRoute path="/vehicules/ajouter_image3/:id" component={ ThirdImage } />
-          <AdminRoute path="/vehicules/ajouter_image4/:id" component={ FourthImage } />
-          <AdminRoute path="/vehicules/ajouter_image5/:id" component={ FiveImage } />
-          <AdminRoute path="/vehicules/ajouter_image6/:id" component={ sixImage } />
-          <AdminRoute path="/vehicules/ajouter_image7/:id" component={ sevenImage } />
-          <AdminRoute path="/vehicules/ajouter_image8/:id" component={ eightImage } />
-          <AdminRoute path="/vehicules/ajouter_image9/:id" component={ nineImage } />
-          <AdminRoute path="/vehicules/ajouter_image10/:id" component={ tenImage } />
           <AdminRoute path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />
           <AdminRoute path="/contacts/question" component={ ContactFQA } />
           <AdminRoute path="/image-slide/image-slide" component={ ImageSlide } />

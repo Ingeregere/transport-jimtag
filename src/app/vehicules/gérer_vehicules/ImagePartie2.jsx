@@ -45,7 +45,7 @@ const Marque= () => {
     const clickSubmit = event =>{
         event.preventDefault()
         setValues({...values, error: '', loading:true})
-        AllServices.postImageTransport(formData)
+        AllServices.postImageTransportPart2(formData)
             .then(data =>{
                 if(data.error){
                     setValues({...values,error: false})
@@ -104,7 +104,7 @@ const Marque= () => {
             <span>{showSuccess()}</span>
 
             <div className="page-header mainheader">
-                <h3 className="page-title"> les images du véhicule numero <span className={'text-success'}>{useParams().id}</span> </h3>
+                <h3 className="page-title"> les images du véhicule numéro <span className={'text-success'}>{useParams().id}</span> </h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <Link to={'/vehicules/gérer_vehicules'}>
@@ -120,75 +120,6 @@ const Marque= () => {
                         <div className="card-body">
                             <form className="forms-sample">
                                 <Form.Group>
-                                    <h4 className="card-title px-2">Image 1</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'firstImage'}
-                                        onChange={handleChange('firstImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 2</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'secondImage'}
-                                        onChange={handleChange('secondImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 3</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'thirdImage'}
-                                        onChange={handleChange('thirdImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 4</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'fourthImage'}
-                                        onChange={handleChange('fourthImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 5</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'fifthImage'}
-                                        onChange={handleChange('fifthImage')}
-                                    />
-                                </Form.Group>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-6 grid-margin stretch-card">
-                    <div className="card">
-                        <div className="card-body">
-
-                            <form className="forms-sample">
-                                <Form.Group>
                                     <h4 className="card-title px-2">Image 6</h4>
                                     <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
                                     <Form.Control
@@ -198,18 +129,6 @@ const Marque= () => {
                                         accept={'image/*'}
                                         name={'sixthImage'}
                                         onChange={handleChange('sixthImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 7</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'seventhImage'}
-                                        onChange={handleChange('seventhImage')}
                                     />
                                 </Form.Group>
                                 <Form.Group>
@@ -225,6 +144,39 @@ const Marque= () => {
                                     />
                                 </Form.Group>
                                 <Form.Group>
+                                    <h4 className="card-title px-2">Image 10</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'tenthImage'}
+                                        onChange={handleChange('tenthImage')}
+                                    />
+                                </Form.Group>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-6 grid-margin stretch-card">
+                    <div className="card">
+                        <div className="card-body">
+
+                            <form className="forms-sample">
+                                <Form.Group>
+                                    <h4 className="card-title px-2">Image 7</h4>
+                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
+                                    <Form.Control
+                                        type="file"
+                                        className="form-control mb-2 mr-sm-2"
+                                        id="inlineFormInputName2"
+                                        accept={'image/*'}
+                                        name={'seventhImage'}
+                                        onChange={handleChange('seventhImage')}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
                                     <h4 className="card-title px-2">Image 9</h4>
                                     <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
                                     <Form.Control
@@ -237,19 +189,7 @@ const Marque= () => {
                                     />
                                 </Form.Group>
                                 <Form.Group>
-                                    <h4 className="card-title px-2">Image 10</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'tenthImage'}
-                                        onChange={handleChange('tenthImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">id</label>
+                                    <h4 className="card-title px-2">Id</h4>
                                     <Form.Control
                                         type="text"
                                         className="form-control mb-2 mr-sm-2"

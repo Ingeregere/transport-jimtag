@@ -1,19 +1,23 @@
 import axios from 'axios'
 
 const TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/';
-const TRANSPORT_API_URL_IMAGE = 'https://backend-e-commerce-transport.jimtag.fr/api/image/transport/';
+const TRANSPORT_API_URL_IMAGE_PART1 = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/image/';
+const TRANSPORT_API_URL_IMAGE_PART2 = 'https://backend-e-commerce-transport.jimtag.fr/api/image/transport/';
 
 
 class GererServices {
     getAllTransports(){
-        return axios.get(TRANSPORT_API_URL)
+        return axios.get(TRANSPORT_API_URL+'getAllTransport')
     }
 
-    postImageTransport(data){
-        return  axios.put(TRANSPORT_API_URL_IMAGE+'updateTransportImage/', data)
+    postImageTransportPart1(data){
+        return  axios.put(TRANSPORT_API_URL_IMAGE_PART1+'updateTransportImage/', data)
+    }
+    postImageTransportPart2(data){
+        return  axios.put(TRANSPORT_API_URL_IMAGE_PART2+'updateTransportImage/', data)
     }
     remove(id){
-        return axios.delete( TRANSPORT_API_URL +id)
+        return axios.delete( TRANSPORT_API_URL+'/deleteTransport'+id)
     }
     updateTransport(data){
         return axios.put(TRANSPORT_API_URL, data)
