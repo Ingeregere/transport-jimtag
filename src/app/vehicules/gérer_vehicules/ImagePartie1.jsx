@@ -99,9 +99,7 @@ const Marque= () => {
     )
     return (
         <div>
-            <span>{showError()}</span>
-            <span>{showLoading()}</span>
-            <span>{showSuccess()}</span>
+
 
             <div className="page-header mainheader">
                 <h3 className="page-title"> les images du véhicule numéro <span className={'text-success'}>{useParams().id}</span> </h3>
@@ -113,7 +111,11 @@ const Marque= () => {
                     </ol>
                 </nav>
             </div>
+             <span>{showError()}</span>
+                       <span>{showLoading()}</span>
+                        <span>{showSuccess()}</span>
             <div className="row">
+
 
                 <div className="col-lg-6 grid-margin stretch-card">
                     <div className="card">

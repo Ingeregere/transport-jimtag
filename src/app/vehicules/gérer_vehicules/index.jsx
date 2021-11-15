@@ -12,18 +12,11 @@ const Index= () => {
 
     useEffect(()=>{
         getAllTransports()
-        postImageTransport()
     },[])
 
     const getAllTransports = () =>{
         AllServices.getAllTransports().then((response) =>{
             setTransports(response.data)
-        })
-    }
-
-    const postImageTransport = () =>{
-        AllServices.postImageTransport().then((response) =>{
-            setStatus(response.data)
         })
     }
     const saveStus = (event) =>{
