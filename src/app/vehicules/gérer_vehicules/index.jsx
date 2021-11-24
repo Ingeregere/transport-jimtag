@@ -93,12 +93,28 @@ const Index= () => {
                                                         <button type="button" className="btn btn-primary btn-fw">
                                                             Images partie1
                                                         </button>
-                                                    </Link>
+                                                    </Link><br/>
                                                     <Link to={`/vehicules/ajouter_les_images/partie2/${b.id}`}>
                                                          <button type="button" className="btn btn-primary btn-fw">
                                                              Images partie2
                                                           </button>
-                                                     </Link>
+                                                     </Link><br/>
+                                                      <Link to={`/vehicules/ajouter_les_images/partie3/${b.id}`}>
+                                                           <button type="button" className="btn btn-primary btn-fw">
+                                                               Images partie3
+                                                           </button>
+                                                      </Link><br/>
+                                                      <Link to={`/vehicules/ajouter_les_images/partie4/${b.id}`}>
+                                                           <button type="button" className="btn btn-primary btn-fw">
+                                                               Images partie4
+                                                           </button>
+                                                      </Link><br/>
+                                                      <Link to={`/vehicules/ajouter_les_images/partie5/${b.id}`}>
+                                                           <button type="button" className="btn btn-primary btn-fw">
+                                                               Images partie5
+                                                           </button>
+                                                      </Link><br/>
+
                                                 </td>
                                                 <td>{b.kilometer}</td>
                                                 <td>{b.model}</td>

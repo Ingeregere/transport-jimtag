@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
-const API = "https://backend-e-commerce-transport.jimtag.fr/api/image/"
+const API = "https://backend-e-commerce-transport.jimtag.fr/api/one/part/image/"
 
 const ShowImageTransport = ({item, method, getId}) => {
     return (

@@ -10,14 +10,6 @@ const Marque= () => {
     const [values,setValues] = useState({
         firstImage: '',
         secondImage: '',
-        thirdImage: '',
-        fourthImage: '',
-        fifthImage: '',
-        sixthImage: '',
-        seventhImage: '',
-        eighthImage: '',
-        ninthImage: '',
-        tenthImage: '',
         id: '',
         error: '',
         loading: false,
@@ -55,14 +47,6 @@ const Marque= () => {
                         ...values,
                         firstImage: '',
                         secondImage: '',
-                        thirdImage: '',
-                        fourthImage: '',
-                        fifthImage: '',
-                        sixthImage: '',
-                        seventhImage: '',
-                        eighthImage: '',
-                        ninthImage: '',
-                        tenthImage: '',
                         id: '',
                         loading:false,
                         success: data.data.message,
@@ -78,7 +62,7 @@ const Marque= () => {
     )
     const showSuccess = () => (
         <Alert className={"alert-success"} style={{ display: success ? '' : 'none' }}>
-            <strong> <center>{success} </center> </strong>
+            <strong> <center>{success}</center> </strong>
         </Alert>
     )
     const showLoading=()=>(
@@ -100,7 +84,6 @@ const Marque= () => {
     return (
         <div>
 
-
             <div className="page-header mainheader">
                 <h3 className="page-title"> les images du véhicule numéro <span className={'text-success'}>{useParams().id}</span> </h3>
                 <nav aria-label="breadcrumb">
@@ -121,6 +104,7 @@ const Marque= () => {
                     <div className="card">
                         <div className="card-body">
                             <form className="forms-sample">
+
                                 <Form.Group>
                                     <h4 className="card-title px-2">Image 1</h4>
                                     <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
@@ -131,30 +115,6 @@ const Marque= () => {
                                         accept={'image/*'}
                                         name={'firstImage'}
                                         onChange={handleChange('firstImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 3</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'thirdImage'}
-                                        onChange={handleChange('thirdImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 5</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'fifthImage'}
-                                        onChange={handleChange('fifthImage')}
                                     />
                                 </Form.Group>
                             </form>
@@ -178,30 +138,20 @@ const Marque= () => {
                                         onChange={handleChange('secondImage')}
                                     />
                                 </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Image 4</h4>
-                                    <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
-                                    <Form.Control
-                                        type="file"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        accept={'image/*'}
-                                        name={'fourthImage'}
-                                        onChange={handleChange('fourthImage')}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Id</h4>
-                                    <Form.Control
+                                 <Form.Group>
+                                   <h4 className="card-title px-2">Id</h4>
+                                      <Form.Control
                                         type="text"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        placeholder="vehicule numero combien?"
-                                        value={id}
-                                        name={'id'}
-                                        onChange={handleChange('id')}
-                                    />
-                                </Form.Group>
+                                         className="form-control mb-2 mr-sm-2"
+                                         id="inlineFormInputName2"
+                                         placeholder="vehicule numero combien?"
+                                         value={id}
+                                         name={'id'}
+                                         onChange={handleChange('id')}
+                                      />
+                                    </Form.Group>
+
+
                                 <button
                                     type="submit"
                                     className="btn btn-primary mr-2 btn-fw"

@@ -136,6 +136,9 @@ class App extends Component {
           this.props.location.pathname === `/vehicules/pays/editer/${idpaysEditer}` ||
           this.props.location.pathname === `/vehicules/ajouter_les_images/partie1/${imagetransporte}` ||
           this.props.location.pathname === `/vehicules/ajouter_les_images/partie2/${imagetransporte}` ||
+          this.props.location.pathname === `/vehicules/ajouter_les_images/partie3/${imagetransporte}` ||
+          this.props.location.pathname === `/vehicules/ajouter_les_images/partie4/${imagetransporte}` ||
+          this.props.location.pathname === `/vehicules/ajouter_les_images/partie5/${imagetransporte}` ||
           this.props.location.pathname === `/vehicules/active-desactive/${idactivedesactive}` ||
           this.props.location.pathname === `/vehicules/edit-transport/${edittransport}` ||
           this.props.location.pathname === `/vehicules/supprimer_transport/${deletetransport}` ||

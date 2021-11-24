@@ -29,6 +29,9 @@ const Attribuer_vehicule = lazy(() => import('./vehicules/attribuer_vehicule'));
 const UpdateVehicule = lazy(() => import('./vehicules/gérer_vehicules/UpdateVehicules'));
 const AjouterImageTransport1 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie1'));
 const AjouterImageTransport2 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie2'));
+const AjouterImageTransport3 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie3'));
+const AjouterImageTransport4 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie4'));
+const AjouterImageTransport5 = lazy(() => import('./vehicules/gérer_vehicules/ImagePartie5'));
 const DeleteTransport = lazy(() => import('./vehicules/gérer_vehicules/delete'));
 const EnableAndDesable = lazy(() => import('./vehicules/gérer_vehicules/EnableDesable'));
 const InserImageTransport = lazy(() => import('./vehicules/gérer_vehicules/Partie1Image'));
@@ -41,6 +44,7 @@ const Pieces = lazy(()=>import('../Client/Pages/Pieces'))
 const Detail = lazy(()=>import('../Client/Pages/Detail'))
 const Contact = lazy(()=>import('../Client/Component/Modal'))
 const DeposerAnnnonce = lazy(() => import('../Client/Pages/DeposerAnnonce'));
+const Satisfaction = lazy(() => import('../Client/Component/99%desatisfaction'));
 const GererAnnonce = lazy(() => import('./annonce/Annonce'));
 const CommandePerDay = lazy(() => import('./dashboard/Commande-Per-Day'));
 const ImageSlide = lazy(() => import('./image-slide'));
@@ -88,6 +92,7 @@ class AppRoutes extends Component {
           <Route exact path={'/detail/:id'} component={ Detail } />
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
+          <Route exact path={'/satisfaction'} component={ Satisfaction } />
           <AdminRoute path="/vehicules/marques" component={ Marque } />
           <AdminRoute path="/vehicules/ajouter_marques" component={ AddBrand } />
           <AdminRoute path="/vehicules/ajouter_carrosserie" component={ AddBodywork } />
@@ -111,6 +116,9 @@ class AppRoutes extends Component {
           <AdminRoute path="/vehicules/gérer_vehicules" component={ GererVehicule } />
           <AdminRoute path="/vehicules/ajouter_les_images/partie1/:id" component={ AjouterImageTransport1 } />
           <AdminRoute path="/vehicules/ajouter_les_images/partie2/:id" component={ AjouterImageTransport2 } />
+          <AdminRoute path="/vehicules/ajouter_les_images/partie3/:id" component={ AjouterImageTransport3 } />
+          <AdminRoute path="/vehicules/ajouter_les_images/partie4/:id" component={ AjouterImageTransport4 } />
+          <AdminRoute path="/vehicules/ajouter_les_images/partie5/:id" component={ AjouterImageTransport5 } />
           <AdminRoute path="/vehicules/supprimer_transport/:id" component={ DeleteTransport } />
           <AdminRoute path="/vehicules/active-desactive/:id" component={ EnableAndDesable } />
           <AdminRoute path="/contacts/question" component={ ContactFQA } />

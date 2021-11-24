@@ -55,9 +55,6 @@ const Product = () => {
                 </Card>
 
 
-
-
-
             </Container>
 
 

@@ -293,9 +293,9 @@ const CreateAnnonce = () => {
                         onChange={(e) => setCategory(e.target.value)}
                     >
                       <option defaultValue={'Selectionner la marque'}>Selectionner le type de camion</option>
-                        <option  value={1} >Tracteur</option>
-                        <option  value={2} >Benne</option>
-                        <option  value={3} >Semis</option>
+                        <option  value={'Tracteur'} >Tracteur</option>
+                        <option  value={'Benne'} >Benne</option>
+                        <option  value={'Semis'} >Semis</option>
                     </select>
                   </Form.Group>
                   <Form.Group>

@@ -1,8 +1,12 @@
 import axios from 'axios'
 
 const TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/';
-const TRANSPORT_API_URL_IMAGE_PART1 = 'https://backend-e-commerce-transport.jimtag.fr/api/transport/image/';
-const TRANSPORT_API_URL_IMAGE_PART2 = 'https://backend-e-commerce-transport.jimtag.fr/api/image/transport/';
+
+const TRANSPORT_API_URL_IMAGE_PART1 = 'https://backend-e-commerce-transport.jimtag.fr/api/one/part/image/transport/';
+const TRANSPORT_API_URL_IMAGE_PART2 = 'https://backend-e-commerce-transport.jimtag.fr/api/two/part/image/transport/';
+const TRANSPORT_API_URL_IMAGE_PART3 = 'https://backend-e-commerce-transport.jimtag.fr/api/three/part/image/transport/';
+const TRANSPORT_API_URL_IMAGE_PART4 = 'https://backend-e-commerce-transport.jimtag.fr/api/four/part/image/transport/';
+const TRANSPORT_API_URL_IMAGE_PART5 = 'https://backend-e-commerce-transport.jimtag.fr/api/five/part/image/transport/';
 
 
 class GererServices {
@@ -14,6 +18,15 @@ class GererServices {
         return  axios.put(TRANSPORT_API_URL_IMAGE_PART1+'updateTransportImage/', data)
     }
     postImageTransportPart2(data){
+        return  axios.put(TRANSPORT_API_URL_IMAGE_PART2+'updateTransportImage/', data)
+    }
+    postImageTransportPart3(data){
+        return  axios.put(TRANSPORT_API_URL_IMAGE_PART2+'updateTransportImage/', data)
+    }
+    postImageTransportPart4(data){
+        return  axios.put(TRANSPORT_API_URL_IMAGE_PART2+'updateTransportImage/', data)
+    }
+    postImageTransportPart5(data){
         return  axios.put(TRANSPORT_API_URL_IMAGE_PART2+'updateTransportImage/', data)
     }
     remove(id){

@@ -8,8 +8,8 @@ import {Link, useParams} from "react-router-dom";
 const Marque= () => {
 
     const [values,setValues] = useState({
-        thirdImage: '',
-        fourthImage: '',
+        ninthImage: '',
+        tenthImage: '',
         id: '',
         error: '',
         loading: false,
@@ -37,7 +37,7 @@ const Marque= () => {
     const clickSubmit = event =>{
         event.preventDefault()
         setValues({...values, error: '', loading:true})
-        AllServices.postImageTransportPart2(formData)
+        AllServices.postImageTransportPart5(formData)
             .then(data =>{
                 if(data.error){
                     setValues({...values,error: false})
@@ -45,8 +45,8 @@ const Marque= () => {
                 else{
                     setValues({
                         ...values,
-                        thirdImage: '',
-                        fourthImage: '',
+                        ninthImage: '',
+                        tenthImage: '',
                         id: '',
                         loading:false,
                         success: data.data.message,
@@ -76,6 +76,7 @@ const Marque= () => {
                     aria-hidden="true"
                 />
                 <center>chargement...</center>
+
             </Alert>
         )
 
@@ -94,24 +95,27 @@ const Marque= () => {
                     </ol>
                 </nav>
             </div>
-              <span>{showError()}</span>
-                         <span>{showLoading()}</span>
-                         <span>{showSuccess()}</span>
+             <span>{showError()}</span>
+                       <span>{showLoading()}</span>
+                        <span>{showSuccess()}</span>
             <div className="row">
+
+
                 <div className="col-lg-6 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
                             <form className="forms-sample">
+
                                 <Form.Group>
-                                    <h4 className="card-title px-2">Image 3</h4>
+                                    <h4 className="card-title px-2">Image 9</h4>
                                     <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
                                     <Form.Control
                                         type="file"
                                         className="form-control mb-2 mr-sm-2"
                                         id="inlineFormInputName2"
                                         accept={'image/*'}
-                                        name={'sixthImage'}
-                                        onChange={handleChange('thirdImage')}
+                                        name={'ninthImage'}
+                                        onChange={handleChange('ninthImage')}
                                     />
                                 </Form.Group>
                             </form>
@@ -124,30 +128,31 @@ const Marque= () => {
 
                             <form className="forms-sample">
                                 <Form.Group>
-                                    <h4 className="card-title px-2">Image 4</h4>
+                                    <h4 className="card-title px-2">Image 10</h4>
                                     <label className="sr-only" htmlFor="inlineFormInputName2">Image</label>
                                     <Form.Control
                                         type="file"
                                         className="form-control mb-2 mr-sm-2"
                                         id="inlineFormInputName2"
                                         accept={'image/*'}
-                                        name={'thirdImage'}
-                                        onChange={handleChange('fourthImage')}
+                                        name={'tenthImage'}
+                                        onChange={handleChange('tenthImage')}
                                     />
                                 </Form.Group>
+                                 <Form.Group>
+                                                                    <h4 className="card-title px-2">Id</h4>
+                                                                    <Form.Control
+                                                                        type="text"
+                                                                        className="form-control mb-2 mr-sm-2"
+                                                                        id="inlineFormInputName2"
+                                                                        placeholder="vehicule numero combien?"
+                                                                        value={id}
+                                                                        name={'id'}
+                                                                        onChange={handleChange('id')}
+                                                                    />
+                                                                </Form.Group>
 
-                                <Form.Group>
-                                    <h4 className="card-title px-2">Id</h4>
-                                    <Form.Control
-                                        type="text"
-                                        className="form-control mb-2 mr-sm-2"
-                                        id="inlineFormInputName2"
-                                        placeholder="vehicule numero combien?"
-                                        value={id}
-                                        name={'id'}
-                                        onChange={handleChange('id')}
-                                    />
-                                </Form.Group>
+
                                 <button
                                     type="submit"
                                     className="btn btn-primary mr-2 btn-fw"
