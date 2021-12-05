@@ -153,7 +153,7 @@ const CreateAnnonce = () => {
                         onChange={(e) => setCountryLoading(e.target.value)}
                     >
                       <option>selectionner le pays...</option>
-                      {countries && countries.map((country, index) => (
+                      {countries && countries.map(country => (
                           <option key={country.id} value={country.id}>{country.country}</option>
                       ))}
                     </select>

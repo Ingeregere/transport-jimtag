@@ -1,14 +1,14 @@
 import React from 'react'
 import Footer from '../../Component/Footer'
+import FAQ from '../../Component/FQA';
 import Navigation from "../../Component/Header";
-import ServicesClient from '../../Component/Service-client';
 
 
 function SatisfactionPage() {
     return (
         <>
             <Navigation />
-            <ServicesClient />
+            <FAQ />
             <Footer />
         </>
     )

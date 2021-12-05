@@ -1,0 +1,16 @@
+.page-body-wrapper.full-page-wrapper .main-panel .content-wrapper > div{
+    height: auto;
+}
+.page-body-wrapper.full-page-wrapper .main-panel .content-wrapper{
+    padding:  0;
+}
+.misenpageSat{
+    margin-top: 8em;
+    margin-bottom: 2em;
+}
+.headerBg{
+    background-color: #5ce1e6 !important;
+}
+p{
+    word-break: normal;
+}

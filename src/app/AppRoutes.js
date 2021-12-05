@@ -5,6 +5,7 @@ import Spinner from './share/Spinner';
 import AdminRoute from "./SecuriteRoute/AdminRoute";
 import PrivateRoute from "./SecuriteRoute/PrivateRoute";
 import UserRoute from "./SecuriteRoute/UserRoute";
+import Service24h from '../Client/Component/Nos-services';
 
 const Dashboard = lazy(() => import('./dashboard/Dashboard'));
 const UserDashboard = lazy(() => import('./dashboard/UserDashboard'));
@@ -43,8 +44,14 @@ const Divers = lazy(()=>import('../Client/Pages/Divers'))
 const Pieces = lazy(()=>import('../Client/Pages/Pieces'))
 const Detail = lazy(()=>import('../Client/Pages/Detail'))
 const Contact = lazy(()=>import('../Client/Component/Modal'))
+const Satisfaction = lazy(()=>import('../Client/Pages/99%desatisfaction'))
+const Paiement = lazy(()=>import('../Client/Pages/Paiement'))
+const ServicesClient = lazy(()=>import('../Client/Pages/Services'))
+const FAQ = lazy(()=>import('../Client/Pages/FAQ'))
+const ServicesClient24h = lazy(()=>import('../Client/Pages/Service24h'))
+
+
 const DeposerAnnnonce = lazy(() => import('../Client/Pages/DeposerAnnonce'));
-const Satisfaction = lazy(() => import('../Client/Component/99%desatisfaction'));
 const GererAnnonce = lazy(() => import('./annonce/Annonce'));
 const CommandePerDay = lazy(() => import('./dashboard/Commande-Per-Day'));
 const ImageSlide = lazy(() => import('./image-slide'));
@@ -93,6 +100,12 @@ class AppRoutes extends Component {
           <Route exact path={'/contact'} component={ Contact } />
           <Route exact path={'/nous-contact'} component={ ContactCustomer } />
           <Route exact path={'/satisfaction'} component={ Satisfaction } />
+          <Route exact path={'/paiement-sécurisé'} component={ Paiement } />
+          <Route exact path={'/nos-services'} component={ ServicesClient } />
+          <Route exact path={'/F.A.Q'} component={ FAQ } />
+          <Route exact path={'/service-client'} component={ ServicesClient24h } />
+
+
           <AdminRoute path="/vehicules/marques" component={ Marque } />
           <AdminRoute path="/vehicules/ajouter_marques" component={ AddBrand } />
           <AdminRoute path="/vehicules/ajouter_carrosserie" component={ AddBodywork } />
