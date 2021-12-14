@@ -1,22 +1,12 @@
 import axios from 'axios'
 
-const COUNTRY_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/countries/';
+const COUNTRY_API_URL = 'https://back-office.jimtag.fr/api/country/';
 
-class CategoryServices {
+class CountryServices {
     getAllCountry(){
-        return axios.get(COUNTRY_API_URL+'getAllCountry')
-    }
-    UpdateCountry(data){
-        return axios.put(COUNTRY_API_URL, data)
-    }
-    getCountryById(id){
-        return axios.get(COUNTRY_API_URL+'getCountryById/'+id)
-    }
-
-    postCountry(newCountry) {
-        return axios.post(COUNTRY_API_URL, newCountry)
+        return axios.get(COUNTRY_API_URL+'get-all-countries')
     }
 }
 
 
-export default new CategoryServices
+export default new CountryServices

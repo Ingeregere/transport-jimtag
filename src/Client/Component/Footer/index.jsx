@@ -1,22 +1,54 @@
 import React, {useEffect, useState} from 'react';
-import whatsappimage from "../../../assets/images/whatsappimage.svg";
-import AllServices from '../../../app/share/ServicesCustomer/Services'
-import {isAuthenticated} from "../../../app/user-pages/session";
+import { UncontrolledAlert } from "reactstrap";
+import whatsappimage from "../../../assets/images/whatsappimage.png";
+import AllServices from './Service'
 import "react-whatsapp-chat-widget/index.css";
 import {Link} from "react-router-dom";
 import './style.css'
+import { Alert } from 'react-bootstrap';
 
 const Footer = () => {
-    const [nameAndlastname, setName] = useState([])
+    const [email, setEmail] = useState('')
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState('')
 
-    const getNameLastnameChact = () =>{
-        AllServices.getAllData(isAuthenticated()[1]).then((response) =>{
-            setName(response.data)
-        })
+
+
+    const SendNewsLetter = (event) =>{
+        event.preventDefault();
+        const postnewsletter = { email }
+
+            AllServices.postNewsletter(postnewsletter)
+                .then(response=>{
+                    console.log('New newsletter is posted', response.data)
+                    setSuccess(response.data.message)
+                    setError('')
+                    setEmail('')
+
+                })
+                .catch(error =>{
+                    console.log('something went wrong', error)
+                    setError('true')
+                    setSuccess('')
+                })
+
+
+
     }
-    useEffect(()=>{
-        getNameLastnameChact()
-    },[])
+    const showError = () => (
+
+        <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
+            <strong><center>Veiller complète tous les champs</center></strong>
+        </Alert>
+    )
+    const showSuccess = () => (
+
+        <Alert className={"alert-success"} style={{ display: success ? '' : 'none' }}>
+            <strong> <center>{success} {' '} </center> </strong>
+        </Alert>
+    )
+
+  
     return (
         <>
             <div className="">
@@ -42,11 +74,20 @@ const Footer = () => {
                         </div>
 
                         <div className="col-md-4 offset-1 sectionFooter col-sm-12">
+                                {showSuccess() }
+                                {showError()}
                             <form>
-
+                               
                                 <div className="d-flex w-100 gap-2 mb-4">
-                                    <input id="newsletter1" type="email" className="form-control" placeholder="Email address" />
-                                    <button className="btn btn-dark ml-2" type="button">S'abonner</button>
+                                    <input 
+                                    id="newsletter1" 
+                                    type="email" 
+                                    className="form-control" 
+                                    placeholder="Email address" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <button className="btn btn-dark ml-2" type="submit" onClick={(event) => SendNewsLetter(event)}>S'abonner</button>
                                 </div>
                                 <h5 className={'text-white'}>S'abonner pour recevoir dernier annonce</h5>
                             </form>

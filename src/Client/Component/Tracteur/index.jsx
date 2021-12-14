@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import '../Benne/style.css'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
@@ -27,7 +27,7 @@ const Product = () => {
                                 <Card className={'mb-2 mt-2 mr-2 ml-2 cardProduct'}>
                                     <Row>
                                         <Col xs={12} md={6} className={'w-100'}>
-                                            <ShowImageTransport item={'transport'}  method={'viewFirstImageTransportById'} getId={product} />
+                                            <ShowImageTransport item={product} />
                                         </Col>
                                         <Col xs={12} md={6} >
                                             <Card.Body className={'cardbodymain'}>
@@ -50,14 +50,7 @@ const Product = () => {
                         ))}
                     </Row>
                 </Card>
-
-
-
-
-
             </Container>
-
-
         </>
     );
 };

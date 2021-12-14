@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
 import {Card, Carousel, Col, Container, Row} from "react-bootstrap";
-import {dataArticle} from "./data";
 import AllServices from "../../../app/image-slide/Service";
 import ShowCarousel from "./ShowCarousel";
 
@@ -12,15 +11,24 @@ const CarrouselAds = () => {
         setIndex(selectedIndex);
     };
     const [carousels, setCarousels] = useState([])
+    const [articles, setArticles] = useState([])
+
 
     useEffect(()=>{
         getAllCarousel()
+        getAllArticle()
+        
 
     },[])
 
     const getAllCarousel = () =>{
         AllServices.getAllCarousel().then((response) =>{
             setCarousels(response.data)
+        })
+    }
+    const getAllArticle = () =>{
+        AllServices.getAllArticles().then((response) =>{
+            setArticles(response.data)
         })
     }
 
@@ -36,9 +44,7 @@ const CarrouselAds = () => {
                                 carousels.map((carrousel,index) => (
                                     <Carousel.Item key={index}>
                                         <ShowCarousel
-                                            getId={carrousel}
-                                            item={'carousel'}
-                                            method={'viewImageCarouselById'}
+                                            item={carrousel}
                                             className="d-block w-100 imagecarrousel"
                                         />
                                     </Carousel.Item>
@@ -49,20 +55,12 @@ const CarrouselAds = () => {
 
                             <Col xs={12} md={6} sm={12} >
                                 {
-                                    dataArticle.map((article,index) =>(
+                                    articles.map((art,index) =>(
                                 <Card className="bg-dark text-white" key={index}>
-                                    <Card.Img src={article.image} alt="Card image imagecarrousel" />
-                                    <Card.ImgOverlay>
-                                        <Card.Title className={'title'} color={'primary'} variant={'container'}>
-                                            {/*{article.title}*/}
-                                        </Card.Title>
-                                        <Card.Title className={'subtitle'} color={'primary'} variant={'container'}>
-                                            {/*{article.subTitle}*/}
-                                        </Card.Title>
-                                        <h6 className={'descriptionH6 text-white'} >
-                                            {/*{article.description}*/}
-                                        </h6>
-                                    </Card.ImgOverlay>
+                                   <ShowCarousel
+                                            item={art}
+                                            className="d-block w-100 imagecarrousel"
+                                        />
                                 </Card>
                                     ))
                                 }

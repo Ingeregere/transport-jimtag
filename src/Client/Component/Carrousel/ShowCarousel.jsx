@@ -1,10 +1,10 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
-const API = "https://backend-e-commerce-transport.jimtag.fr/api/"
+const API = "https://www.back-office.jimtag.fr/images/transports/"
 
-const ShowImage = ({item, getId, method}) => {
+const ShowImage = ({item}) => {
     return (
-        <Card.Img variant="top" src={`${API}${item}/${method}/${getId.id}`} className={'imagecarrousel'} />
+        <Card.Img variant="top" src={`${API}${item.slide}`} className={'imagecarrousel'} />
     );
 };
 export default ShowImage;

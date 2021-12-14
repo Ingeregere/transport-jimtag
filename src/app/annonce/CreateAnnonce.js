@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Container, Form} from 'react-bootstrap';
-import AllServices from "./Services";
+import AllServices from "../vehicules/pays/PaysService";
 import './style.css'
 import '../../Client/Component/Product/style.css'
 import GoogleMapReact from "google-map-react";
@@ -52,17 +52,11 @@ const CreateAnnonce = () => {
 
 
   useEffect(()=>{
-    getAllCategory()
     getAllCountries()
 
   },[])
 
-  const getAllCategory = () =>{
-    AllServices.getAllCategory().then((response) =>{
-      setCategories(response.data)
-      // console.log(response.data)
-    })
-  }
+
   const getAllCountries = () =>{
     AllServices.getAllCountry().then((response) =>{
       setCountries(response.data)
@@ -154,7 +148,7 @@ const CreateAnnonce = () => {
                     >
                       <option>selectionner le pays...</option>
                       {countries && countries.map(country => (
-                          <option key={country.id} value={country.id}>{country.country}</option>
+                          <option key={country.id} value={country.id}>{country.name}</option>
                       ))}
                     </select>
                   </Form.Group>
@@ -224,7 +218,7 @@ const CreateAnnonce = () => {
                     >
                       <option>selectionner le pays...</option>
                       {countries && countries.map((country, index) => (
-                          <option key={country.id} value={country.id}>{country.country}</option>
+                          <option key={country.id} value={country.id}>{country.name}</option>
                       ))}
                     </select>
                   </Form.Group>

@@ -91,6 +91,7 @@ class AppRoutes extends Component {
           <AdminRoute exact path="/vehicules/ajouter_category" component={ AddCategory } />
           <AdminRoute exact path="/image-slide/ajouter-image" component={ AddSlide } />
           <AdminRoute exact path="/vehicules/categories/voir-image/:id" component={ VoirImageCategory } />
+        
           <Route exact path="/tracteurs" component={ Tracteur } />
           <Route exact path="/bennes" component={ Porteur } />
           <Route exact path="/semis" component={ Semis } />

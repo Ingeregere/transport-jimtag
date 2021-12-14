@@ -4,7 +4,7 @@ import {Col, Container, Form, Row} from "react-bootstrap";
 import ServiceMarque from "../../../app/vehicules/marques/ServiceMarque";
 import PaysService from "../../../app/vehicules/pays/PaysService";
 import CarrosseriesService from "../../../app/vehicules/carrosseries/CarrosseriesService";
-import CategoryService from '../../../app/vehicules/attribuer_vehicule/Services'
+import CategoryService from '../../../app/vehicules/categories/CategorieServices'
 import AllServices from "./Services"
 
 const SearchFilter = () => {
@@ -35,7 +35,7 @@ const SearchFilter = () => {
         })
     }
     const getAllCategories = () =>{
-        CategoryService.getAllCategoryTransport().then((response) =>{
+        CategoryService.getAllCategory().then((response) =>{
             setCategories(response.data)
             // console.log(response.data)
         })
@@ -83,7 +83,7 @@ const SearchFilter = () => {
                                 >
                                     <option defaultValue={'Selectionner la marque'}>Categorie</option>
                                     {categories && categories.map((category, index) => (
-                                        <option key={category.id} value={category.id} >{category.category}</option>
+                                        <option key={category.id} value={category.id} >{category.name}</option>
                                     ))}
                                 </select>
                             </Form.Group>
@@ -98,7 +98,7 @@ const SearchFilter = () => {
                                 >
                                     <option defaultValue={'Selectionner la marque'}>marque</option>
                                     {brands && brands.map((brand, index) => (
-                                        <option key={brand.id} value={brand.id} >{brand.brand}</option>
+                                        <option key={brand.id} value={brand.id} >{brand.name}</option>
                                     ))}
                                 </select>
                             </Form.Group>
@@ -124,7 +124,7 @@ const SearchFilter = () => {
                                 <select className="form-control" id="exampleSelectGender">
                                     <option defaultValue={'Selectionner le pays'}> pays</option>
                                     {countries && countries.map((country, index) => (
-                                        <option key={country.id} value={country.id}>{country.country}</option>
+                                        <option key={country.id} value={country.id}>{country.name}</option>
                                     ))}
                                 </select>
                             </Form.Group>

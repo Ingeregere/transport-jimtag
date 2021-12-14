@@ -1,32 +1,22 @@
 import axios from 'axios'
 
-const CAROUSEL_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/carousel/';
-const ARTICLE_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/articles/';
+const CAROUSEL_API_URL = 'https://back-office.jimtag.fr/api/carousel/';
+const ARTICLE_API_URL = 'https://back-office.jimtag.fr/api/article/';
 
 
 class CarrosseriesServices {
 
     getAllCarousel(){
-        return axios.get(CAROUSEL_API_URL+'getAllCarousels')
+        return axios.get(CAROUSEL_API_URL+'get-all-carousels')
     }
     getAllArticles(){
-        return axios.get(ARTICLE_API_URL)
+        return axios.get(ARTICLE_API_URL+'get-all-articles')
     }
-    getAllBodyworkById(id){
-        return axios.get(CAROUSEL_API_URL+'getBodyworkById/'+id)
-    }
-    updateArticles(formData){
-        return axios.put(ARTICLE_API_URL, formData)
-    }
-    removeCarousel(id){
-        return axios.delete(CAROUSEL_API_URL+id)
-    }
-    postCarousel(formData) {
-        return axios.post(CAROUSEL_API_URL, formData)
-    }
-    postArticle(formData) {
-        return axios.post(ARTICLE_API_URL, formData)
-    }
+  
+ 
+  
+  
+   
 }
 
 export default new CarrosseriesServices
