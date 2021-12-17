@@ -46,7 +46,7 @@ class Navbar extends Component {
                     </div>
                     <div className="nav-profile-text">
                       <p className="mb-1 text-black"><Trans>
-                        {/* {this.state.infoUser['firstName'] } {" "} { this.state.infoUser['lastName']} */}
+                        {isAuthenticated()}
                       </Trans></p>
                   </div>
                 </Dropdown.Toggle>
@@ -66,7 +66,7 @@ class Navbar extends Component {
               </Dropdown>
             </li>
 
-          </ul>
+          </ul>   
           <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" onClick={this.toggleOffcanvas}>
             <span className="mdi mdi-menu"></span>
           </button>
