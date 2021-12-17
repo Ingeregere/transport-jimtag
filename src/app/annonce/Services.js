@@ -24,7 +24,7 @@ class AllServices {
     }
 
     postAnnonces(newAnnonce) {
-        return axios.post(ANNONCE_API_URL, newAnnonce)
+        return axios.post('https://www.back-office.jimtag.fr/api/command/post-command/', newAnnonce)
     }
 
 

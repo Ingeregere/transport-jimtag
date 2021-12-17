@@ -10,13 +10,13 @@ class Navbar extends Component {
   state = {
     infoUser: []
   };
-  componentDidMount() {
-    this._isMounted = true;
-    AllServices.getAllData(isAuthenticated()[1])
-        .then(infos => {
-          this.setState({ infoUser: infos.data });
-        });
-  }
+  // componentDidMount() {
+  //   this._isMounted = true;
+  //   AllServices.getAllData(isAuthenticated()[1])
+  //       .then(infos => {
+  //         this.setState({ infoUser: infos.data });
+  //       });
+  // }
 
   componentWillUnmount() {
     this._isMounted = false;
@@ -28,23 +28,14 @@ class Navbar extends Component {
     return (
       <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <Link className="navbar-brand brand-logo" to="/"><img src={require('../../assets/images/logodash.png')} alt="logo" /></Link>
-          <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logodash.png')} alt="logo" /></Link>
+          <Link className="navbar-brand brand-logo" to="/"><img src={require('../../assets/images/logo.png')} alt="logo" /></Link>
+          <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logo.png')} alt="logo" /></Link>
         </div>
         <div className="navbar-menu-wrapper d-flex align-items-stretch">
           <button className="navbar-toggler navbar-toggler align-self-center" type="button" onClick={ () => document.body.classList.toggle('sidebar-icon-only') }>
             <span className="mdi mdi-menu"></span>
           </button>
-          <div className="search-field d-none d-md-block">
-            <form className="d-flex align-items-center h-100" action="#">
-              <div className="input-group">
-                <div className="input-group-prepend bg-transparent">
-                  <i className="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" className="form-control bg-transparent border-0" placeholder="Rechercher"/>
-              </div>
-            </form>
-          </div>
+          
           <ul className="navbar-nav navbar-nav-right">
 
             <li className="nav-item nav-profile nav-language">
@@ -55,7 +46,7 @@ class Navbar extends Component {
                     </div>
                     <div className="nav-profile-text">
                       <p className="mb-1 text-black"><Trans>
-                        {this.state.infoUser['firstName'] } {" "} { this.state.infoUser['lastName']}
+                        {/* {this.state.infoUser['firstName'] } {" "} { this.state.infoUser['lastName']} */}
                       </Trans></p>
                   </div>
                 </Dropdown.Toggle>
@@ -67,8 +58,8 @@ class Navbar extends Component {
                     <h5 className="dropdown-header text-uppercase pl-2 text-dark"><Trans>Utilisateurs Options</Trans></h5>
                     <div role="separator" className="dropdown-divider"></div>
                     <Dropdown.Item className="dropdown-item d-flex align-items-center justify-content-between" as={Link} to={'/'}>
-                      <span><Trans>Déconnexion</Trans></span>
-                      <i className="mdi mdi-lock ml-1"></i>
+                      <span><Trans>Accueil</Trans></span>
+                      <i className="mdi mdi-pen ml-1"></i>
                       </Dropdown.Item>
                   </div>
                 </Dropdown.Menu>

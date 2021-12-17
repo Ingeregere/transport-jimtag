@@ -1,8 +1,7 @@
 
 import axios from 'axios'
-import {API} from "../../../config";
 
-const API_CONTACT = `${API}/api/page/contact/`
+const API_CONTACT = 'https://www.back-office.jimtag.fr/api/page-contact/'
 
 
 class AllServices {
@@ -10,7 +9,7 @@ class AllServices {
         return axios.get(API_CONTACT+'getAllPageContact')
     }
     postContact(data) {
-        return axios.post(API_CONTACT, data)
+        return axios.post(API_CONTACT+'post-contact/',data)
     }
 
 }

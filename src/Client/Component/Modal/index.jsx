@@ -15,22 +15,13 @@ function ModalContact() {
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState('')
     const [email, setEmail] = useState('')
-    const [infoUser, setInfoUser] = useState([])
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [firstname, setFirstName] = useState('')
+    const [lastname, setLastName] = useState('')
     const [mobile, setMobile] = useState('')
     const [transport, setTransport] = useState(id)
     const [message, setMessage] = useState('')
 
- useEffect(()=>{
-     getAllDataUser()
- })
-    const getAllDataUser = () => {
-        AllServicesCustomer.getAllData(isAuthenticated()[1])
-            .then(infos => {
-               setInfoUser(infos.data)
-            });
-    }
+   
     const showError = () => (
 
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
@@ -50,8 +41,8 @@ function ModalContact() {
         event.preventDefault();
         const contactData = {
             email,
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             message,
             mobile,
             transport
@@ -106,7 +97,7 @@ function ModalContact() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Nom"
-                                        value={firstName}
+                                        value={firstname}
                                         onChange={(e)=>setFirstName(e.target.value)}
                                     />
                                 </Form.Group>
@@ -116,7 +107,8 @@ function ModalContact() {
                                     <Form.Label className={'text-dark'}>Prénom</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        value={lastName}
+                                        value={lastname}
+                                        placeholder="Prénom"
                                         onChange={(e)=>setLastName(e.target.value)}
                                     />
                                 </Form.Group>

@@ -12,8 +12,6 @@ const SearchFilter = () => {
     const [brand, setBrand] = useState('')
     const [countries, setCountries] = useState([])
     const [country, setCountry] = useState('')
-    const [bodyworks, setBodyWorks] = useState([])
-    const [bodywork, setBodyWork] = useState([])
     const [categories, setCategories] = useState([])
     const [category, setCategory] = useState('')
     const [box, setBox] = useState('')
@@ -23,7 +21,6 @@ const SearchFilter = () => {
         if(isMounted){
             getAllBrands()
             getAllCountries()
-            getAllBodyWork()
             getAllCategories()
         }
         return () => { isMounted = false };
@@ -46,11 +43,7 @@ const SearchFilter = () => {
             setCountries(response.data)
         })
     }
-    const getAllBodyWork = () =>{
-        CarrosseriesService.getAllBodywork().then((response) =>{
-            setBodyWorks(response.data)
-        })
-    }
+ 
     const clickSearch = (event) =>{
         event.preventDefault();
         AllServices.search(category,brand,country,box)

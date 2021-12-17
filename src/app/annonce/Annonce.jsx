@@ -5,22 +5,15 @@ import {isAuthenticated} from "../user-pages/session";
 import {Link} from "react-router-dom";
 
 const Annonce = () => {
-    const [annonces, setAnnonces] = useState([])
     const [annoncesToken, setAnnoncesToken] = useState([])
     useEffect(()=>{
-        getAllAnnonces()
         getAllCommandeTransport()
 
     },[])
 
     const getAllCommandeTransport = () =>{
-        ServicesCustomer.getAllCommandeTransport(isAuthenticated()[1]).then((response) =>{
+        ServicesCustomer.getAllCommandeTransport(isAuthenticated()).then((response) =>{
             setAnnoncesToken(response.data)
-        })
-    }
-    const getAllAnnonces = () =>{
-        AllServices.getAllAnnonces().then((response) =>{
-            setAnnonces(response.data)
         })
     }
 
@@ -63,26 +56,7 @@ const Annonce = () => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    { isAuthenticated() && isAuthenticated()[0]==='admin'?(
-                                        annonces.map((annonce,index) =>(
-                                                <tr key={annonce.id}>
-                                                    <td className="py-1"> {index+1}</td>
-                                                    <td className="py-1"> {annonce.countryLoading}</td>
-                                                    <td className="py-1"> {annonce.placeLoading}</td>
-                                                    <td className="py-1"> {annonce.countryDelivery}</td>
-                                                    <td className="py-1"> {annonce.placeDelivery}</td>
-                                                    <td className="py-1"> {annonce.kindProduct}</td>
-                                                    <td className="py-1"> {annonce.tonnage}</td>
-                                                    <td className="py-1"> {annonce.numberTransport}</td>
-                                                    <td className="py-1"> {annonce.budgetPlanned}{annonce.currency}</td>
-                                                    <td className="py-1"> {annonce.message}</td>
-                                                    <td className="py-1"> {annonce.email}</td>
-                                                    <td className="py-1"> {annonce.dateDelivery}</td>
-                                                    <td className="py-1"> {annonce.category}</td>
-                                                </tr>
-                                            )
-                                        )
-                                    ) :
+                                    { 
                                         annoncesToken.map((annonce,index) =>(
                                         <tr key={annonce.id}>
                                         <td className="py-1"> {index+1}</td>
@@ -93,18 +67,13 @@ const Annonce = () => {
                                         <td className="py-1"> {annonce.kindProduct}</td>
                                         <td className="py-1"> {annonce.tonnage}</td>
                                         <td className="py-1"> {annonce.numberTransport}</td>
-                                        <td className="py-1"> {annonce.budgetPlanned}</td>
+                                        <td className="py-1"> {annonce.budgetPlanned} <strong>{annonce.currency}</strong></td>
                                         <td className="py-1"> {annonce.message}</td>
                                         <td className="py-1"> {annonce.email}</td>
                                         <td className="py-1"> {annonce.dateDelivery}</td>
-                                        <td className="py-1"> {annonce.brand}</td>
+                                        <td className="py-1"> {annonce.category}</td>
                                         </tr>
-                                        )
-                                        )
-
-                                    }
-
-
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>

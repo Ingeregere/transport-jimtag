@@ -12,19 +12,12 @@ const Index= () => {
     const {id} = useParams()
 
     useEffect(()=>{
-        getAllContact()
         getAllContactTransportByToken()
 
     },[])
 
-    const getAllContact = () =>{
-        AllServices.getAllContactTransport().then((response) =>{
-            setContacts(response.data)
-        })
-    }
-
     const getAllContactTransportByToken = () =>{
-        AllServices.getAllContactTransportByToken(isAuthenticated()[1]).then((response) =>{
+        AllServices.getAllContactTransportByToken(isAuthenticated()).then((response) =>{
             setContactsToken(response.data)
         })
     }
@@ -65,40 +58,21 @@ const Index= () => {
                                         <th >Prénom</th>
                                         <th >Message</th>
                                         <th >Mobile</th>
-                                        <th >Modèle</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    { isAuthenticated() && isAuthenticated()[0]==='admin'?(
-
-                                        contacts.map((b,index) =>(
-                                            <tr key={b.id} className={'text-center'}>
-                                                <td >{index+1}</td>
-                                                <td>{b.brandTransport}</td>
-                                                <td>{b.categoryTransport}</td>
-                                                <td>{b.createdAt}</td>
-                                                <td>{b.email}</td>
-                                                <td>{b.firstName}</td>
-                                                <td>{b.lastName}</td>
-                                                <td>{b.message}</td>
-                                                <td>{b.mobile}</td>
-                                                <td>{b.modelTransport}</td>
-                                            </tr>
-                                        ))
-                                    ):
-
+                                    { 
                                         contactsToken.map((b,index) =>(
                                             <tr key={b.id} className={'text-center'}>
                                                 <td >{index+1}</td>
-                                                <td>{b.brandTransport}</td>
-                                                <td>{b.categoryTransport}</td>
+                                                <td>{b.brand}</td>
+                                                <td>{b.category}</td>
                                                 <td>{b.createdAt}</td>
                                                 <td>{b.email}</td>
-                                                <td>{b.firstName}</td>
-                                                <td>{b.lastName}</td>
+                                                <td>{b.firstname}</td>
+                                                <td>{b.lastname}</td>
                                                 <td>{b.message}</td>
                                                 <td>{b.mobile}</td>
-                                                <td>{b.modelTransport}</td>
                                             </tr>
                                         ))
                                     }

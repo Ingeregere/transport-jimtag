@@ -23,7 +23,11 @@ const Detail = () => {
     }
 
     useEffect(() =>{
-        getTransportById()
+        let isMounted = true;
+        if(isMounted){
+            getTransportById()
+        }
+        return () => { isMounted = false };
     },[])
     return (
         <>
@@ -54,14 +58,14 @@ const Detail = () => {
                                 </Col>
                         ))}
                         {currentproduct.map((transportbyid)=>(
-                            <Col lg={6} md={6} sm={6} xs={12}>
+                            <Col lg={6} md={6} sm={6} xs={12} key={transportbyid.id}>
                             <Card className={'mb-2 mt-2 ml-2 mr-2 cardProduct'}>
                                 <Card.Body>
                                     <Card.Title>Détail complet</Card.Title>
                                     <h6>Marque : {transportbyid.brand} </h6>
                                     <h6>Model : {transportbyid.model}</h6>
                                     <h6>Fonction: {transportbyid.box}</h6>
-                                    <h6>Année : {transportbyid.dateRegistration.date}</h6>
+                                    <h6>Année : {transportbyid.dateRegistration}</h6>
                                     <h6>Km : {transportbyid.kilometer}</h6>
                                     <h6>Etat et dimmensions des pneus : {transportbyid.pav}</h6>
                                     <h6>Charge autorisée et Volume du bac : {transportbyid.ptc}</h6>

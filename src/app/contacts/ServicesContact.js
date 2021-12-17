@@ -2,7 +2,7 @@ import axios from 'axios'
 import {API} from "../../config";
 
 const CONTACT_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
-const CONTACTBYTOKEN_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/customer/getContactByUsername/';
+const CONTACTBYTOKEN_TRANSPORT_API_URL = 'https://www.back-office.jimtag.fr/api/contact/get-all-contacts/';
 
 
 class ContactServices {

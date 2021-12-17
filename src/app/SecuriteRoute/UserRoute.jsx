@@ -6,7 +6,7 @@ const UserRoute=({component:Component, ...rest})=>(
     <Route
         {...rest}
         render={props =>
-            isAuthenticated() && isAuthenticated()[0]==='user' ? (
+            isAuthenticated() ? (
                 <Component {...props}/>
             ):(
                 <Redirect

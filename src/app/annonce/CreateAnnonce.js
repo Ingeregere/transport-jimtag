@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Container, Form} from 'react-bootstrap';
 import AllServices from "../vehicules/pays/PaysService";
+import PostCommand from "./Services";
+import AllCategories from "../vehicules/categories/CategorieServices";
 import './style.css'
 import '../../Client/Component/Product/style.css'
 import GoogleMapReact from "google-map-react";
@@ -19,7 +21,7 @@ const CreateAnnonce = () => {
   const [currency, setCurrency] = useState('')
   const [mobile, setMobile] = useState('')
   const [kindProduct, setKindProduct] = useState('')
-  const [mapKilometer, setMapKilometer] = useState(0)
+  const [mapKilometer, setMapKilometer] = useState(0.1)
   const [budgetPlanned, setBudgetPlanned] = useState('')
   const [numberTransport, setNumberTransport] = useState('')
   const [tonnage, setTonnage] = useState('')
@@ -53,8 +55,14 @@ const CreateAnnonce = () => {
 
   useEffect(()=>{
     getAllCountries()
+    getAllCategories()
 
   },[])
+  const getAllCategories = () =>{
+    AllCategories.getAllCategory().then((response) =>{
+      setCategories(response.data)
+    })
+  }
 
 
   const getAllCountries = () =>{
@@ -82,7 +90,7 @@ const CreateAnnonce = () => {
       placeLoading,
       tonnage
     }
-    AllServices.postAnnonces(newAnnonce)
+    PostCommand.postAnnonces(newAnnonce)
         .then(response=>{
           console.log('New annonce is added', response.data)
           setCategory('')
@@ -287,9 +295,9 @@ const CreateAnnonce = () => {
                         onChange={(e) => setCategory(e.target.value)}
                     >
                       <option defaultValue={'Selectionner la marque'}>Selectionner le type de camion</option>
-                        <option  value={'Tracteur'} >Tracteur</option>
-                        <option  value={'Benne'} >Benne</option>
-                        <option  value={'Semis'} >Semis</option>
+                        {categories.map((categ)=>(
+                          <option  key={categ.id} value={categ.id} >{categ.name}</option>
+                        ))}
                     </select>
                   </Form.Group>
                   <Form.Group>

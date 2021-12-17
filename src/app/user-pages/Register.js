@@ -7,16 +7,13 @@ import {Link, useHistory} from "react-router-dom";
 
 const Index= () => {
   const [address, setAddress] = useState('')
-  const [birthday, setBirthday] = useState('')
   const [country, setCountry] = useState()
   const [countries, setCountries] = useState([])
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [firstname, setFirstName] = useState('')
+  const [lastname, setLastName] = useState('')
   const [mobile, setMobile] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState(2)
-  const [sex, setSex] = useState('')
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState('')
   const history = useHistory()
@@ -37,15 +34,12 @@ const Index= () => {
     event.preventDefault();
     const data = {
       address,
-      birthday,
       country,
-      firstName,
-      lastName,
+      firstname,
+      lastname,
       mobile,
       password,
-      role,
-      sex,
-      username
+      email
     }
     AllServices.postUserProfile(data)
         .then(response=>{
@@ -53,14 +47,12 @@ const Index= () => {
           setSuccess(response.data.message)
           setError('')
           setAddress('')
-          setBirthday('')
           setCountry('')
           setMobile('')
           setFirstName('')
           setLastName('')
           setPassword('')
-          setSex('')
-          setUsername('')
+          setEmail('')
 
 
         })
@@ -111,7 +103,7 @@ const Index= () => {
                         className="form-control"
                         id="exampleInputEmail3"
                         placeholder="Nom"
-                        value={firstName}
+                        value={firstname}
                         onChange={(e) => setFirstName(e.target.value)}
                     />
                   </Form.Group>
@@ -122,7 +114,7 @@ const Index= () => {
                         className="form-control"
                         id="exampleInputPassword4"
                         placeholder="Prénom"
-                        value={lastName}
+                        value={lastname}
                         onChange={(e) => setLastName(e.target.value)}
                     />
                   </Form.Group>
@@ -133,8 +125,8 @@ const Index= () => {
                         className="form-control"
                         id="exampleInputCity1"
                         placeholder="email"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                   </Form.Group>
                   <Form.Group>
@@ -147,23 +139,11 @@ const Index= () => {
                     >
                       <option defaultValue={'Selectionner la marque'}>Selectionner pays</option>
                       {countries && countries.map((b, index) => (
-                          <option key={b.id} value={b.id} >{b.country}</option>
+                          <option key={b.id} value={b.id} >{b.name}</option>
                       ))}
 
                     </select>
                   </Form.Group>
-                  <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="kindProduct">Adresse</label>
-                    <Form.Control
-                        type="text"
-                        className="form-control "
-                        id="exampleInputName1"
-                        placeholder="Adresse"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
-                  </Form.Group>
-
 
                 </form>
               </div>
@@ -174,19 +154,16 @@ const Index= () => {
               <div className="card-body">
 
                 <form className="forms-sample">
-                  <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="brand" >sexe</label>
-                    <select
-                        className="form-control"
-                        id="exampleSelectGender"
-                        value={sex}
-                        onChange={(e) => setSex(e.target.value)}
-                    >
-                      <option defaultValue={'Selectionner la marque'}>Selectionner sex</option>
-
-                      <option value={'male'}>Masculin</option>
-                      <option value={'female'}>Féminin </option>
-                    </select>
+                <Form.Group>
+                    <label className={'text-dark text-capitalize'} htmlFor="kindProduct">Adresse</label>
+                    <Form.Control
+                        type="text"
+                        className="form-control "
+                        id="exampleInputName1"
+                        placeholder="Adresse"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                    />
                   </Form.Group>
 
                   <Form.Group>
@@ -212,17 +189,7 @@ const Index= () => {
                     />
                   </Form.Group>
 
-                  <Form.Group>
-                    <label className={'text-dark text-capitalize'} htmlFor="dateDelivery">Date de naissance</label>
-                    <Form.Control
-                        type="date"
-                        className="form-control"
-                        id="exampleInputCity1"
-                        placeholder="date de naissance"
-                        value={birthday}
-                        onChange={(e) => setBirthday(e.target.value)}
-                    />
-                  </Form.Group>
+                
 
                   <div className="mt-3">
                     <button

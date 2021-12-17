@@ -18,20 +18,18 @@ const Login =() =>{
     const isAuthenticate = (event) =>{
     event.preventDefault();
     const data = { username, password}
-        console.log(data)
     AllServices.postAuthenticate(data)
         .then(response=>{
-          if(response.data.message === 'username or password is not correct.' || response.data.message === 'no-authorization') {
+          if(response.data.message === 'Certains champs sont vides, veuillez réessayer pour remplir tous les champs.' || response.data.message === 'no-authority') {
             setUsername('')
             setPassword('')
             setError('false')
           }else {
 
-            const loginData = response.data.message;
-            const authorite = loginData.split('-');
+            const loginData = response.data.token;
+            const authorite = loginData;
               authenticate(authorite,()=>{
-                  setRole(authorite[0])
-                  setToken(authorite[1])
+                  setToken(authorite)
               })
            history.push('/')
           }

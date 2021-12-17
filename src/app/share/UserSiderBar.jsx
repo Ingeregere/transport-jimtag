@@ -2,21 +2,12 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import { Trans } from 'react-i18next';
-import {isAuthenticated} from "../user-pages/session";
-import AllServices from './ServicesCustomer/Services'
 
 class Sidebar extends Component {
     _isMounted = false;
     state = {
         infoUser: []
     };
-    componentDidMount() {
-        this._isMounted = true;
-        AllServices.getAllData(isAuthenticated()[1])
-            .then(infos => {
-                this.setState({ infoUser: infos.data });
-            });
-    }
 
     componentWillUnmount() {
         this._isMounted = false;
@@ -72,18 +63,10 @@ class Sidebar extends Component {
     render () {
         return (
             <>
-                <nav className="sidebar sidebar-offcanvas" id="sidebar">
+                <nav className="sidebar sidebar-offcanvas" id="sidebar" >
                     <ul className="nav">
                         <li className="nav-item nav-category"><Trans>
-                            {this.state.infoUser['firstName'] } {" "} { this.state.infoUser['lastName']}
                         </Trans></li>
-                        {/*<li className={ this.isPathActive('/dashboard') ? 'nav-item active' : 'nav-item' }>*/}
-                        {/*    <Link className="nav-link" to="/user">*/}
-                        {/*        <span className="icon-bg"><i className="mdi mdi-cube menu-icon"></i></span>*/}
-                        {/*        <span className="menu-title"><Trans>Tableau de bord</Trans></span>*/}
-                        {/*    </Link>*/}
-                        {/*</li>*/}
-
                         <br />
                         <li className={ this.isPathActive('/annonce') ? 'nav-item active' : 'nav-item' }>
                             <div className={ this.state.formElementsMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('formElementsMenuOpen') } data-toggle="collapse">

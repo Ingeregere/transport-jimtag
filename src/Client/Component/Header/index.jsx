@@ -38,15 +38,8 @@ const NavbarHeader = () => {
                             Louer un camion
                         </button>
                     </NavLink>
-                    {isAuthenticated() && isAuthenticated()[0] === 'admin' &&(
-                        <NavLink as={Link} to={'/admin'}>
-                            <button type="button" className="btn btn-dark btn-fw ">
-                                <span className="icon-bg iconBtn"><i className="mdi mdi-account-circle"></i></span>
-                                Mon espace
-                            </button>
-                        </NavLink>
-                    )}
-                    {isAuthenticated() && isAuthenticated()[0] === 'user' &&(
+            
+                    {isAuthenticated() &&(
                         <NavLink as={Link} to={'/commande/gérer_commande'}>
                             <button type="button" className="btn btn-dark btn-fw ">
                                 <span className="icon-bg iconBtn"><i className="mdi mdi-account-circle"></i></span>

@@ -6,8 +6,8 @@ import CreateAnnonce from "../../../app/annonce/CreateAnnonce";
 import {Alert, Container, Form} from "react-bootstrap";
 
 const Contact = () => {
-    const [firstName, setName] = useState('')
-    const [lastName, setLastname] = useState('')
+    const [firstname, setName] = useState('')
+    const [lastname, setLastname] = useState('')
     const [mobile, setTelephone] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -17,8 +17,8 @@ const Contact = () => {
     const saveContact = (event) =>{
         event.preventDefault();
         const data = {
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             mobile,
             email,
             message
@@ -77,8 +77,10 @@ const Contact = () => {
                                         className="form-control"
                                         id="exampleInputPassword4"
                                         placeholder="Entrer votre nom"
-                                        value={firstName}
+                                        value={firstname}
                                         onChange={(e) => setName(e.target.value)}
+                                        required={true}
+
                                     />
                                 </Form.Group>
                                 <Form.Group>
@@ -88,7 +90,7 @@ const Contact = () => {
                                         className="form-control"
                                         id="exampleInputPassword4"
                                         placeholder="Entrer votre Prénom"
-                                        value={lastName}
+                                        value={lastname}
                                         onChange={(e) => setLastname(e.target.value)}
                                     />
                                 </Form.Group>

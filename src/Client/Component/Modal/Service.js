@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-const CONTACT_TRANSPORT_API_URL = 'https://backend-e-commerce-transport.jimtag.fr/api/contacts/';
 
 
 class AllServices {
     post(data){
-        return axios.post(CONTACT_TRANSPORT_API_URL+'createContact',data)
+        return axios.post('https://www.back-office.jimtag.fr/api/contact/post-contact/',data)
     }
 }
 export default new AllServices

@@ -16,9 +16,9 @@ const Footer = () => {
 
     const SendNewsLetter = (event) =>{
         event.preventDefault();
-        const postnewsletter = { email }
+        const newsletter = { email }
 
-            AllServices.postNewsletter(postnewsletter)
+            AllServices.postNewsletter(newsletter)
                 .then(response=>{
                     console.log('New newsletter is posted', response.data)
                     setSuccess(response.data.message)
@@ -38,7 +38,7 @@ const Footer = () => {
     const showError = () => (
 
         <Alert className={"alert-danger"} style={{ display: error ? '' : 'none' }}>
-            <strong><center>Veiller complète tous les champs</center></strong>
+            <strong><center>vérifier correctement votre email</center></strong>
         </Alert>
     )
     const showSuccess = () => (
@@ -81,7 +81,7 @@ const Footer = () => {
                                 <div className="d-flex w-100 gap-2 mb-4">
                                     <input 
                                     id="newsletter1" 
-                                    type="email" 
+                                    type="calendar"
                                     className="form-control" 
                                     placeholder="Email address" 
                                     value={email}
