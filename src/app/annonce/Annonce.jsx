@@ -50,7 +50,6 @@ const Annonce = () => {
                                         <th> Nombre(s) de camions </th>
                                         <th> Budget prévu </th>
                                         <th> Message </th>
-                                        <th> Email </th>
                                         <th> Date de livraison </th>
                                         <th> Type de camion </th>
                                     </tr>
@@ -69,7 +68,6 @@ const Annonce = () => {
                                         <td className="py-1"> {annonce.numberTransport}</td>
                                         <td className="py-1"> {annonce.budgetPlanned} <strong>{annonce.currency}</strong></td>
                                         <td className="py-1"> {annonce.message}</td>
-                                        <td className="py-1"> {annonce.email}</td>
                                         <td className="py-1"> {annonce.dateDelivery}</td>
                                         <td className="py-1"> {annonce.category}</td>
                                         </tr>
