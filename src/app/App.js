@@ -19,14 +19,14 @@ class App extends Component {
 
     let navbarComponent = !this.state.isFullPageLayout ? <Navbar/> : '';
     let sidebarComponent = !this.state.isFullPageLayout ? <Sidebar/> : '';
-    let usersidebarComponent = !this.state.isFullPageLayout ? <UserSiderBar/> : '';
+    let usersidebarComponent = !this.state.isFullPageLayout ? <Sidebar/> : '';
     let footerComponent = !this.state.isFullPageLayout ? <Footer/> : '';
     return (
 
       <div className="container-scroller">
         { navbarComponent }
         <div className="container-fluid page-body-wrapper">
-          { isAuthenticated() && isAuthenticated()[0] === 'admin'? sidebarComponent : usersidebarComponent}
+          { isAuthenticated()? sidebarComponent : usersidebarComponent}
           <div className="main-panel">
             <div className="content-wrapper">
               <AppRoutes/>

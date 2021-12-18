@@ -3,32 +3,15 @@ import '../HomeProduct/style.css'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import ShowImageTransport from "../../Component/HomeProduct/ShowImageTransport";
-import AllServices from "./Services";
 
-const Product = () => {
-    const [values, setValues] = useState([])
-    const [brand, setBrand] = useState('')
-    const [country, setCountry] = useState('')
-    const [box, setBox] = useState('')
-    const currentURL = window.location.pathname
-    console.log("voici url:"+ currentURL)
-
-    useEffect(()=>{
-        let isMounted = true;
-
-        AllServices.search(1, 1, 'manual').then((response) =>{
-            if (isMounted) setValues(response.data)
-        })
-        return () => { isMounted = false };
-    },[])
-
-
+const ProductSearched = (Results=[]) => {
+   
     return (
         <>
             <Container>
                 <Card className={'cardMain'}>
                     <Row>
-                        {values.map((product) =>(
+                        {Results.map((product) =>(
                             <Col lg={6} md={6} sm={6} xs={12} key={product.id}>
 
 
@@ -70,4 +53,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default ProductSearched;

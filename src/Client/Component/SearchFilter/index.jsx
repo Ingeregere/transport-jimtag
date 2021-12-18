@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './style.css'
-import {Col, Container, Form, Row} from "react-bootstrap";
+import {Col, Container, Form, Row,Button,Card} from "react-bootstrap";
 import ServiceMarque from "../../../app/vehicules/marques/ServiceMarque";
 import PaysService from "../../../app/vehicules/pays/PaysService";
-import CarrosseriesService from "../../../app/vehicules/carrosseries/CarrosseriesService";
 import CategoryService from '../../../app/vehicules/categories/CategorieServices'
 import AllServices from "./Services"
+import '../HomeProduct/style.css'
+import {Link} from "react-router-dom";
+import ShowImageTransport from "../../Component/HomeProduct/ShowImageTransport";
 
 const SearchFilter = () => {
+    const [result, setResult] = useState([])
     const [brands, setBrands] = useState([])
     const [brand, setBrand] = useState('')
     const [countries, setCountries] = useState([])
@@ -43,24 +46,65 @@ const SearchFilter = () => {
             setCountries(response.data)
         })
     }
+    const SearchData = () =>{
+    //    console.log(category,brand,box,country)
+    if(category && brand && box && country){
+        AllServices.search({category: category || undefined, brand: brand || undefined,country: country || undefined,box: box || undefined}).then(response =>{
+            setResult(response.data)
+            console.log(result)
+        })
+    }
+    }
  
-    const clickSearch = (event) =>{
+    const ClickSearch = (event) =>{
         event.preventDefault();
-        AllServices.search(category,brand,country,box)
-            .then(response=>{
-                console.log('New search')
+        SearchData()
+    }
+ 
+    const searchedProducts = (results = [])=> {
+        return(
+            <>
+            {/* <h3 className={'text-dark'}>Voici votre recherche</h3> */}
+            <Card className={'cardMain'}>
+                    <Row>
+                        {results.map((product) =>(
+                            <Col lg={6} md={6} sm={6} xs={12} key={product.id}>
 
-            })
-            .catch(error =>{
-                console.log('something went wrong')
-            })
+                                <Card className={'mb-2 mt-2 mr-2 ml-2 cardProduct'}>
+                                    <Row>
+                                        <Col xs={12} md={6} className={'w-100'}>
+                                            <ShowImageTransport item={product} />
+                                        </Col>
+                                        <Col xs={12} md={6} >
+                                            <Card.Body className={'cardbodymain'}>
+                                                <p></p>
+                                                <h6>Marque : {product.brand} </h6>
+                                                <h6>Model : {product.model}</h6>
+                                                <h6>Fonction: {product.box}</h6>
+                                                <h6>Année : {product.dateRegistration}</h6>
+                                                <h6>Km : {product.kilometer}</h6>
+                                                <Link to={`/detail/${product.id}`}>
+                                                    <Button variant="primary" >En savoir plus</Button>
+                                                </Link>
+                                            </Card.Body>
+                                        </Col>
+                                    </Row>
+                                </Card>
+
+
+                            </Col>
+                        ))}
+                    </Row>
+                </Card>
+            </>
+        )
     }
 
     return (
         <>
             <Container >
 
-                <Form className={'mt-3 mainForm'}>
+                <Form className={'mt-3 mainForm'} onSubmit={ClickSearch}>
                     <Row >
 
                         <Col md={2} lg={2} sm={6} xs={6} className={'btnSubmitView'}>
@@ -105,16 +149,23 @@ const SearchFilter = () => {
                                         onChange={(e) => setBox(e.target.value)}
                                 >
                                     <option defaultValue={'Boite de vitesse'}>Boite de vitesse</option>
-                                    <option value={'automatic'}>Automatique</option>
-                                    <option value={'manual'}>Manuel</option>
-                                    <option value={'sequential'}>Sequentiel</option>
+                                    <option value={'automatique'}>automatique</option>
+                                    <option value={'semi-automatique'}>semi-automatique</option>
+                                    <option value={'manuelle'}>manuelle</option>
+                                    <option value={'sequentielle'}>sequentielle</option>
+
                                 </select>
                             </Form.Group>
                         </Col>
                         <Col md={2} lg={2} sm={6} xs={6}>
                             <Form.Group >
                                 <label htmlFor="exampleSelectGender" className={'Namelabel'}>Pays</label>
-                                <select className="form-control" id="exampleSelectGender">
+                                <select 
+                                className="form-control" 
+                                id="exampleSelectGender"
+                                value={country}
+                                onChange={(e) => setCountry(e.target.value)}
+                                >
                                     <option defaultValue={'Selectionner le pays'}> pays</option>
                                     {countries && countries.map((country, index) => (
                                         <option key={country.id} value={country.id}>{country.name}</option>
@@ -125,12 +176,18 @@ const SearchFilter = () => {
                         <Col md={2} lg={2} sm={6} xs={6} className={'btnSubmit'}>
                             <p className={'mb-4'}></p>
                             <button
-                                type="button" className="btn btn-primary btn-fw btnSub">Envoyer votre recherche</button>
+                                type="submit" 
+                                className="btn btn-primary btn-fw btnSub"
+                                >
+                                    Envoyer votre recherche
+                            </button>
                         </Col>
 
                     </Row>
 
                 </Form>
+                {searchedProducts(result)}
+
 
             </Container>
 
